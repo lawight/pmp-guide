@@ -3,129 +3,196 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff" id="themeColor">
 <title>PMP 备考学习站</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = {
-  darkMode: 'class',
-  theme: { extend: {
-    colors: {
-      paper: 'var(--paper)', ink: 'var(--ink)', sub: 'var(--sub)', mut: 'var(--mut)',
-      line: 'var(--line)', soft: 'var(--soft)', accent: '#0066ff',
-    },
-    fontFamily: { sans: ['Inter','Helvetica Neue','PingFang SC','Hiragino Sans GB','Microsoft YaHei','sans-serif'] },
-    lineHeight: { read: '1.75' },
-  }}
-};
-</script>
 <style>
-/* 可读性优先：正文纯黑、层级清晰、对比度充足（辅助文字不低于 #767676） */
-:root { --paper:#ffffff; --ink:#111111; --sub:#4a4a4a; --mut:#767676; --line:#d9d9d9; --soft:#f5f5f5; }
-.dark { --paper:#111111; --ink:#f0f0f0; --sub:#c0c0c0; --mut:#9a9a9a; --line:#333333; --soft:#1c1c1c; }
-html { scroll-behavior:smooth; }
-body { transition:background-color .3s, color .3s; }
+/* ===== 可读性优先 · 纯 CSS · 零依赖 ===== */
+:root {
+  --paper:#ffffff; --ink:#111111; --sub:#4a4a4a; --mut:#767676;
+  --line:#d9d9d9; --soft:#f5f5f5; --accent:#0066ff;
+  --sidebar-w:13.5rem; --sidebar-w-collapsed:3.5rem;
+}
+.dark {
+  --paper:#111111; --ink:#f0f0f0; --sub:#c0c0c0; --mut:#9a9a9a;
+  --line:#333333; --soft:#1c1c1c; --accent:#6aa9ff;
+}
+html { scroll-behavior:smooth; color-scheme:light; }
+html.dark { color-scheme:dark; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--paper); color:var(--ink);
+  font-family:Inter,"Helvetica Neue","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  line-height:1.75; -webkit-font-smoothing:antialiased;
+  transition:background-color .3s,color .3s; }
 ::selection { background:#111; color:#fff; }
 .dark ::selection { background:#fff; color:#111; }
-h2.module { cursor:pointer; }
-.mbody { display:none; }
-.mbody.show { display:block; }
+a { color:var(--accent); }
 
-/* ---- 正文可读性：md 渲染的裸标签统一加样式 ---- */
-main p { font-size:16.5px; line-height:1.75; color:var(--ink); margin:.8rem 0; }
-main ul { margin:.8rem 0; padding-left:1.5rem; }
-main li { font-size:16.5px; line-height:1.7; color:var(--ink); margin:.45rem 0; }
-main h3 { font-size:17.5px; font-weight:600; color:var(--ink); margin:2.2rem 0 .6rem; padding-bottom:.45rem; border-bottom:1px solid var(--line); }
-main h4 { font-size:15.5px; font-weight:600; color:var(--sub); margin:1.4rem 0 .4rem; }
-main strong { color:var(--ink); font-weight:600; }
-main code { background:var(--soft); border:1px solid var(--line); padding:.05rem .4rem; border-radius:4px; font-size:.9em; }
-main pre.ascii { background:var(--soft); border:1px solid var(--line); border-radius:6px; padding:1rem 1.1rem;
-  overflow-x:auto; font-size:13.5px; line-height:1.6; font-family:ui-monospace,Menlo,monospace; white-space:pre; }
-main blockquote { margin:1rem 0; padding:.2rem 0 .2rem 1.1rem; border-left:3px solid var(--line); color:var(--sub); font-size:15.5px; line-height:1.7; }
-main blockquote p { margin:.35rem 0; }
-/* 💡 讲解块：学习区块，突出"为什么/怎么用/例子/坑" */
-main .explain { margin:1rem 0 1.2rem; padding: .9rem 1.1rem .9rem 1.2rem; background:#f0f6ff;
-  border-left:4px solid #0066ff; border-radius:6px; font-size:15px; line-height:1.75; color:var(--ink); }
-.dark main .explain { background:#122033; }
-main .explain strong { color:#0044cc; font-weight:600; }
-.dark main .explain strong { color:#7ab0ff; }
-main .twrap table { font-size:14.5px; line-height:1.6; }
-main .twrap th { font-weight:600; color:var(--ink); background:var(--soft); }
-main .twrap td { color:var(--ink); }
+/* ---- 布局：侧栏 + 内容 ---- */
+#layout { display:flex; }
+#sidebar { width:var(--sidebar-w); position:fixed; inset:0 auto 0 0; z-index:40;
+  background:var(--paper); border-right:1px solid var(--line);
+  display:flex; flex-direction:column; transition:width .3s; }
+#layout.collapsed #sidebar { width:var(--sidebar-w-collapsed); }
+#content { flex:1; min-width:0; margin-left:var(--sidebar-w); transition:margin-left .3s; }
+#layout.collapsed #content { margin-left:var(--sidebar-w-collapsed); }
 
-/* 左侧导航 */
-#sidebar { width:14rem; }
-#layout.collapsed #sidebar { width:4rem; }
-#layout.collapsed #content { margin-left:4rem; }
-#layout.collapsed .sb-label { display:none; }
+/* 侧栏内容 */
+#sbHead { display:flex; align-items:center; height:3.5rem; padding:0 1rem; border-bottom:1px solid var(--line); }
+#sbTitle { font-size:15px; font-weight:600; white-space:nowrap; }
+#sbCollapse { margin-left:auto; background:none; border:none; color:var(--mut); font-size:15px; cursor:pointer; }
+#sbCollapse:hover { color:var(--ink); }
 #layout.collapsed #sbTitle { display:none; }
-#layout.collapsed #sbCollapse { margin-left:auto; margin-right:auto; }
-#sbNav a { display:flex; align-items:center; gap:.5rem; padding:.55rem .75rem; font-size:.9rem; color:var(--sub);
-  border-left:2px solid transparent; border-radius:4px; transition:background-color .15s,color .15s; }
+#layout.collapsed #sbCollapse { margin:0 auto; }
+#sbNav { flex:1; overflow-y:auto; padding:12px 8px; }
+#sbNav a { display:flex; align-items:center; gap:8px; padding:9px 12px; font-size:14.5px; color:var(--sub);
+  text-decoration:none; border-left:2px solid transparent; border-radius:4px;
+  transition:background-color .15s,color .15s; }
 #sbNav a:hover { background:var(--soft); color:var(--ink); }
 #sbNav a.active { background:var(--soft); color:var(--ink); border-left-color:var(--ink); font-weight:600; }
-#sbNav a .sb-idx { color:var(--mut); font-size:.78rem; width:1.7rem; flex:none; }
-#sbNav a.active .sb-idx { color:var(--ink); }
-#mask { display:none; position:fixed; inset:0; background:rgba(0,0,0,.3); z-index:35; }
+#sbNav a .sb-idx { color:var(--mut); font-size:12px; width:1.8rem; flex:none; }
+#layout.collapsed #sbNav a .sb-idx { margin:0 auto; width:auto; }
+#layout.collapsed .sb-label { display:none; }
+#mask { display:none; position:fixed; inset:0; background:rgba(0,0,0,.35); z-index:35; }
 #mask.show { display:block; }
+
+/* ---- 头部 ---- */
+.hero { text-align:center; padding:40px 16px 28px; }
+.hero h1 { margin:0 0 12px; font-size:32px; font-weight:700; letter-spacing:0; }
+.hero .sub { font-size:16.5px; color:var(--sub); margin:0 0 14px; }
+.hero .meta { font-size:13px; color:var(--mut); }
+
+/* ---- 控制条 ---- */
+.ctrl { position:sticky; top:0; z-index:20; background:var(--paper); border-bottom:1px solid var(--line);
+  padding:10px 16px; display:flex; align-items:center; flex-wrap:wrap; gap:10px 16px; }
+.ctrl input[type=search] { flex:1 1 220px; min-width:160px; background:transparent; border:none;
+  border-bottom:2px solid #bbb; color:var(--ink); font-size:16px; padding:6px 2px; outline:none; border-radius:0; }
+.ctrl input[type=search]:focus { border-bottom-color:var(--accent); }
+.ctrl input::placeholder { color:var(--mut); }
+.tabbar { display:flex; gap:18px; }
+.tabbar button { background:none; border:none; border-bottom:2px solid transparent; padding:6px 2px;
+  font-size:15px; color:var(--mut); cursor:pointer; }
+.tabbar button.on { color:var(--ink); border-bottom-color:var(--ink); }
+.btns { display:flex; gap:8px; }
+.btn { background:none; border:1px solid var(--line); color:var(--sub); font-size:13px; padding:7px 12px;
+  border-radius:4px; cursor:pointer; transition:border-color .2s,color .2s; }
+.btn:hover { border-color:var(--ink); color:var(--ink); }
+#sbOpen { display:none; }
+
+/* ---- 主内容 ---- */
+main { max-width:840px; margin:0 auto; padding:36px 20px 60px; }
+.idx { display:grid; grid-template-columns:repeat(12,1fr); gap:16px 24px; margin-bottom:36px; }
+.idx a { grid-column:span 4; padding-bottom:6px; border-bottom:2px solid var(--line); font-size:14px;
+  color:var(--sub); text-decoration:none; transition:color .2s,border-color .2s; }
+.idx a:hover { color:var(--ink); border-bottom-color:var(--ink); }
+@media (min-width:768px) { .idx a { grid-column:span 3; } }
+@media (max-width:480px) { .idx a { grid-column:span 6; } }
+
+.chips { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:28px; }
+.chip { border:1px solid var(--line); background:none; color:var(--sub); font-size:14px; padding:8px 16px;
+  border-radius:999px; cursor:pointer; transition:all .2s; }
+.chip:hover { border-color:var(--ink); color:var(--ink); }
+.chip.on { background:var(--ink); border-color:var(--ink); color:var(--paper); }
+
+/* 模块 */
+h2.module { cursor:pointer; font-size:20px; font-weight:700; color:var(--ink); padding:22px 0 12px;
+  margin:0; border-bottom:1px solid var(--line); display:flex; align-items:center; gap:10px; }
+h2.module .arrow { margin-left:auto; color:var(--mut); font-size:11px; transition:transform .25s; }
+h2.module.open .arrow { transform:rotate(180deg); }
+.mbody { display:none; padding:4px 0 30px; }
+.mbody.show { display:block; }
+
+/* 正文（md 渲染） */
+main p { font-size:16.5px; line-height:1.75; margin:.8rem 0; }
+main ul { margin:.8rem 0; padding-left:1.5rem; }
+main li { font-size:16.5px; line-height:1.7; margin:.45rem 0; }
+main h3 { font-size:17.5px; font-weight:600; margin:2.2rem 0 .6rem; padding-bottom:.45rem; border-bottom:1px solid var(--line); }
+main h4 { font-size:15.5px; font-weight:600; color:var(--sub); margin:1.4rem 0 .4rem; }
+main strong { font-weight:600; }
+main code { background:var(--soft); border:1px solid var(--line); padding:1px 6px; border-radius:4px; font-size:.9em;
+  font-family:ui-monospace,Menlo,monospace; }
+main pre.ascii { background:var(--soft); border:1px solid var(--line); border-radius:6px; padding:14px 16px;
+  overflow-x:auto; font-size:13.5px; line-height:1.6; font-family:ui-monospace,Menlo,monospace; white-space:pre; }
+main blockquote { margin:1rem 0; padding:2px 0 2px 18px; border-left:3px solid var(--line); color:var(--sub); font-size:15.5px; }
+main blockquote p { margin:.35rem 0; }
+main .twrap { overflow-x:auto; margin:14px 0; }
+main table { border-collapse:collapse; width:100%; font-size:14.5px; line-height:1.6; }
+main th { text-align:left; padding:8px 12px; border-bottom:1px solid var(--ink); font-weight:600; background:var(--soft); white-space:nowrap; }
+main td { padding:8px 12px; border-bottom:1px solid var(--line); }
+main tr:last-child td { border-bottom:none; }
+main .explain { margin:14px 0 18px; padding:12px 16px 12px 18px; background:#f0f6ff;
+  border-left:4px solid var(--accent); border-radius:6px; font-size:15px; line-height:1.75; }
+.dark main .explain { background:#132238; }
+main .explain strong { color:#0044cc; }
+.dark main .explain strong { color:#7ab0ff; }
+
+.foot { margin-top:48px; padding-top:20px; border-top:1px solid var(--line);
+  text-align:center; font-size:13px; color:var(--mut); }
+
+/* 返回顶部 */
+#topbtn { position:fixed; right:18px; bottom:24px; width:44px; height:44px; border-radius:50%;
+  border:1px solid var(--line); background:var(--paper); color:var(--mut); font-size:16px; cursor:pointer;
+  opacity:0; pointer-events:none; transition:opacity .3s,color .2s,border-color .2s; }
+#topbtn:hover { color:var(--ink); border-color:var(--ink); }
+#topbtn.show { opacity:1; pointer-events:auto; }
+
+/* ---- 移动端 ---- */
 @media (max-width:767px) {
-  #sidebar { transform:translateX(-100%); }
+  #sidebar { transform:translateX(-100%); width:15rem; transition:transform .3s,width .3s; }
   #sidebar.open { transform:translateX(0); }
-  #content { margin-left:0 !important; }
+  #content { margin-left:0; }
+  #layout.collapsed #content { margin-left:0; }
+  #sbOpen { display:inline-block; }
+  .hero h1 { font-size:26px; }
+  main { padding:24px 14px 48px; }
+  .ctrl { padding:8px 12px; }
+  .tabbar button { font-size:14px; }
+  main p, main li { font-size:16px; }
 }
 </style>
 </head>
-<body class="bg-paper text-ink font-sans antialiased">
+<body>
 
-<div id="layout" class="md:flex">
+<div id="layout">
 
-  <!-- 左侧导航栏 -->
-  <aside id="sidebar" class="fixed inset-y-0 left-0 z-40 bg-paper border-r border-line flex flex-col
-         transition-all duration-300 md:translate-x-0">
-    <div class="flex items-center h-14 px-4 border-b border-line">
-      <span id="sbTitle" class="text-[15px] font-semibold">目录</span>
-      <button id="sbCollapse" class="ml-auto text-mut hover:text-ink text-base transition-colors duration-300" title="收缩/展开">«</button>
+  <aside id="sidebar">
+    <div id="sbHead">
+      <span id="sbTitle">目录</span>
+      <button id="sbCollapse" title="收缩/展开">«</button>
     </div>
-    <nav id="sbNav" class="flex-1 overflow-y-auto py-3 px-2"></nav>
+    <nav id="sbNav"></nav>
   </aside>
   <div id="mask"></div>
 
-  <div id="content" class="flex-1 min-w-0 md:ml-56 transition-all duration-300">
+  <div id="content">
 
-    <!-- 头部：紧凑，信息密度回归 -->
-    <header class="text-center px-6 pt-10 pb-8">
-      <h1 class="text-4xl font-bold tracking-normal mb-3">PMP 备考学习站</h1>
-      <p class="text-[17px] text-sub leading-read mb-4">
-        考试 9.12 · 模块掌握度制 · 乐凯课程仅作资料 · 考纲：人员 42% / 过程 50% / 业务 8%
-      </p>
-      <p class="text-[13px] text-mut">
-        12 模块 · A 默写 / B 辨析 / C 应用 / D 计算 · 🖼 图 / 🎵 口诀 / 🧠 技巧 / 📝 死记
-      </p>
+    <header class="hero">
+      <h1>PMP 备考学习站</h1>
+      <p class="sub">考试 9.12 · 模块掌握度制 · 乐凯课程仅作资料 · 考纲：人员 42% / 过程 50% / 业务 8%</p>
+      <p class="meta">12 模块 · A 默写 / B 辨析 / C 应用 / D 计算 · 🖼 图 / 🎵 口诀 / 🧠 技巧 / 📝 死记</p>
     </header>
 
-    <!-- 控制条 -->
-    <div class="sticky top-0 z-20 bg-paper border-b border-line px-6 py-3 flex flex-wrap items-center gap-x-6 gap-y-2">
-      <button id="sbOpen" class="md:hidden text-sm px-3 py-1.5 border border-line text-sub hover:border-ink hover:text-ink transition-all duration-300">☰ 目录</button>
-      <input id="q" type="search" placeholder="搜索考点 / 关键词，如 EVM、冲突、WIP…"
-        class="flex-1 min-w-[12rem] bg-transparent border-b-2 border-gray-300 focus:border-accent outline-none text-[16px] py-1 placeholder:text-mut transition-colors duration-300">
-      <nav class="flex gap-6">
-        <button data-tab="kb" class="text-[15px] pb-1 border-b-2 text-ink border-ink">知识库</button>
-        <button data-tab="pts" class="text-[15px] pb-1 border-b-2 border-transparent text-mut hover:text-ink transition-colors duration-300">考点清单</button>
-      </nav>
-      <button id="expAll" class="text-[13px] px-3 py-1.5 border border-line text-sub hover:border-ink hover:text-ink transition-all duration-300">收起全部</button>
-      <button id="theme" class="text-[13px] px-3 py-1.5 border border-line text-sub hover:border-ink hover:text-ink transition-all duration-300">深色</button>
+    <div class="ctrl">
+      <button id="sbOpen" class="btn">☰ 目录</button>
+      <input id="q" type="search" placeholder="搜索考点 / 关键词，如 EVM、冲突、WIP…">
+      <div class="tabbar">
+        <button data-tab="kb" class="on">知识库</button>
+        <button data-tab="pts">考点清单</button>
+      </div>
+      <div class="btns">
+        <button id="expAll" class="btn">收起全部</button>
+        <button id="theme" class="btn">深色</button>
+      </div>
     </div>
 
-    <main class="max-w-[840px] mx-auto px-6 py-10">
-
+    <main>
       <section id="kb">
-        <nav id="idx" class="grid grid-cols-12 gap-x-6 gap-y-4 mb-10" aria-label="模块索引"></nav>
-
-        <div class="flex flex-wrap gap-2 mb-8" id="typeChips">
-          <span class="chip px-4 py-1.5 text-[14px] border cursor-pointer transition-all duration-200 bg-ink text-paper border-ink">全部</span>
-          <span class="chip px-4 py-1.5 text-[14px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-200" data-type="fig">🖼 图</span>
-          <span class="chip px-4 py-1.5 text-[14px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-200" data-type="rhyme">🎵 口诀</span>
-          <span class="chip px-4 py-1.5 text-[14px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-200" data-type="trick">🧠 技巧</span>
-          <span class="chip px-4 py-1.5 text-[14px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-200" data-type="mem">📝 死记</span>
+        <nav id="idx" class="idx" aria-label="模块索引"></nav>
+        <div class="chips" id="typeChips">
+          <span class="chip on" data-type="all">全部</span>
+          <span class="chip" data-type="fig">🖼 图</span>
+          <span class="chip" data-type="rhyme">🎵 口诀</span>
+          <span class="chip" data-type="trick">🧠 技巧</span>
+          <span class="chip" data-type="mem">📝 死记</span>
         </div>
         <h2>PMP 知识库（记忆设计版 · 2026-08-15）</h2>
 <blockquote><p>职责：12 模块保留考点的知识内容 + <strong>记忆设计</strong>。配套 04-考点清单.md（考什么/等级）。</p><p>记忆类型标注：🖼 图（画出来记）· 🎵 口诀（顺口溜）· 🧠 技巧（判断捷径/触发词）· 📝 死记（列表硬背）。</p><p>💡 讲解：核心考点附"为什么/怎么用/例子/坑"四段讲解（网页中蓝色区块），先懂原理再背结论。</p><p>学习流程：看讲解懂原理 → 按类型记忆 → 模块测试检验 → 错题进队列。</p><p>术语约定：所有英文缩写首次出现处都标注中文全称（如 EVM=挣值管理），先懂词、再背题。PMI=项目管理协会（Project Management Institute），PMP=项目管理专业人士认证。</p></blockquote>
@@ -393,12 +460,12 @@ CV = EV − AC（成本差）        CPI = EV / AC（成本比）</pre>
       </section>
 
       <section id="pts" class="hidden">
-        <div class="flex flex-wrap gap-2 mb-8" id="gradeChips">
-          <span class="chip px-4 py-1.5 text-[14px] border cursor-pointer transition-all duration-200 bg-ink text-paper border-ink">全部等级</span>
-          <span class="chip px-4 py-1.5 text-[14px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-200" data-grade="A">A 默写</span>
-          <span class="chip px-4 py-1.5 text-[14px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-200" data-grade="B">B 辨析</span>
-          <span class="chip px-4 py-1.5 text-[14px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-200" data-grade="C">C 应用</span>
-          <span class="chip px-4 py-1.5 text-[14px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-200" data-grade="D">D 计算</span>
+        <div class="chips" id="gradeChips">
+          <span class="chip on" data-grade="all">全部等级</span>
+          <span class="chip" data-grade="A">A 默写</span>
+          <span class="chip" data-grade="B">B 辨析</span>
+          <span class="chip" data-grade="C">C 应用</span>
+          <span class="chip" data-grade="D">D 计算</span>
         </div>
         <h2>PMP 考点清单（12 模块全量 · 含掌握等级与考核要求 · 2026-08-15）</h2>
 <blockquote><p>用途：抽背、出题、模块测试、考前复盘的考点总表。</p><p><strong>掌握等级（A/B/C/D）</strong>：每个考点按认知要求分级，达到对应等级才算掌握，见下方定义。</p><p><strong>豁免规则（2026-08-15）</strong>：标 <code>✂️ 不看</code> 的考点<strong>完全不需要看</strong>——低概率（★）且对通过率影响 <1%，不学习、不抽背、不出题、不计入模块达标判定。其余考点按等级要求掌握。时间充裕想加回时取消标记即可。</p><p><strong>领域映射（按考纲）</strong>：M0~M7 = 过程 Process（50%）；M8~M9 = 人员 People（42%）；M10 = 敏捷/混合（<strong>横跨过程与人员的命题方式</strong>，约 50% 的题）；M11 = 业务环境（8%）。模拟/测试按领域拆解得分。</p></blockquote>
@@ -545,22 +612,18 @@ CV = EV − AC（成本差）        CPI = EV / AC（成本比）</pre>
 <tr><td>外部变更驱动</td><td>情境</td><td>C</td><td>★★</td></tr>
 <tr><td>可持续性与社会影响</td><td>概念</td><td>B</td><td>★ ✂️ 不看</td></tr>
 </tbody></table></div>
-        <p id="emptyPts" class="hidden text-center text-mut text-sm py-12">没有匹配的考点</p>
+        <p id="emptyPts" class="hidden" style="text-align:center;color:var(--mut);padding:40px 0">没有匹配的考点</p>
       </section>
 
-      <footer class="mt-16 pt-6 border-t border-line text-center text-[13px] text-mut">
-        数据源 lark-ws/pmp/（git 私有仓库）· 学习站自动同步
-      </footer>
+      <footer class="foot">数据源 lark-ws/pmp/（git 私有仓库）· 学习站自动同步</footer>
     </main>
   </div>
 </div>
 
-<button id="topbtn" title="回到顶部"
-  class="fixed right-6 bottom-7 w-11 h-11 rounded-full border border-line bg-paper text-mut text-base
-         opacity-0 pointer-events-none transition-all duration-300 hover:border-ink hover:text-ink">↑</button>
+<button id="topbtn" title="回到顶部">↑</button>
 
 <script>
-// ---- 通用：模块定位（展开并滚动）----
+// ---- 通用 ----
 function gotoModule(h) {
   var mbody = h.nextElementSibling;
   if (mbody && mbody.classList.contains('mbody') && !mbody.classList.contains('show')) {
@@ -579,26 +642,16 @@ function setModuleOpen(h, open) {
 
 // ---- 展开/收起全部 ----
 var expBtn = document.getElementById('expAll');
-function expandAll() {
-  document.querySelectorAll('#kb h2.module').forEach(function(h){ setModuleOpen(h, true); });
-  expBtn.textContent = '收起全部';
-}
-function collapseAll() {
-  document.querySelectorAll('#kb h2.module').forEach(function(h){ setModuleOpen(h, false); });
-  expBtn.textContent = '展开全部';
-}
 var allExpanded = true;
-expBtn.onclick = function(){
-  if (allExpanded) { collapseAll(); } else { expandAll(); }
-  allExpanded = !allExpanded;
-};
+function expandAll() { document.querySelectorAll('#kb h2.module').forEach(function(h){ setModuleOpen(h, true); }); expBtn.textContent = '收起全部'; allExpanded = true; }
+function collapseAll() { document.querySelectorAll('#kb h2.module').forEach(function(h){ setModuleOpen(h, false); }); expBtn.textContent = '展开全部'; allExpanded = false; }
+expBtn.onclick = function(){ if (allExpanded) collapseAll(); else expandAll(); };
 
-// ---- 左侧导航 ----
+// ---- 侧栏 ----
 (function buildSidebar(){
   var sbNav = document.getElementById('sbNav');
   var hs = document.querySelectorAll('#kb h2.module');
   var items = [];
-
   function add(short, idx, target, section) {
     var a = document.createElement('a');
     a.href = '#' + target.id;
@@ -622,14 +675,12 @@ expBtn.onclick = function(){
   });
 
   var layout = document.getElementById('layout');
-  var collapseBtn = document.getElementById('sbCollapse');
-  function applyCollapsed(c) {
-    layout.classList.toggle('collapsed', c);
-    collapseBtn.textContent = c ? '»' : '«';
+  document.getElementById('sbCollapse').onclick = function(){
+    var c = layout.classList.toggle('collapsed');
+    document.getElementById('sbCollapse').textContent = c ? '»' : '«';
     try { localStorage.setItem('pmp-sb', c ? '1' : '0'); } catch (e) {}
-  }
-  collapseBtn.onclick = function(){ applyCollapsed(!layout.classList.contains('collapsed')); };
-  try { applyCollapsed(localStorage.getItem('pmp-sb') === '1'); } catch (e) {}
+  };
+  try { if (localStorage.getItem('pmp-sb') === '1') { layout.classList.add('collapsed'); document.getElementById('sbCollapse').textContent = '»'; } } catch (e) {}
 
   var sidebar = document.getElementById('sidebar');
   var mask = document.getElementById('mask');
@@ -637,7 +688,6 @@ expBtn.onclick = function(){
   mask.onclick = closeMobile;
   function closeMobile(){ sidebar.classList.remove('open'); mask.classList.remove('show'); }
 
-  // 滚动高亮
   var sections = [
     { id:'kb', el:document.getElementById('kb') },
     { id:'pts', el:document.getElementById('pts') }
@@ -654,7 +704,7 @@ expBtn.onclick = function(){
   spy();
 })();
 
-// ---- 模块索引（完整名称，不截断）----
+// ---- 索引 ----
 (function buildIndex(){
   var idx = document.getElementById('idx');
   if (!idx) return;
@@ -664,7 +714,6 @@ expBtn.onclick = function(){
     if (!short) short = h.textContent.trim();
     var item = document.createElement('a');
     item.href = '#' + h.id;
-    item.className = 'col-span-4 md:col-span-3 pb-1.5 border-b-2 border-line text-[14px] text-sub hover:text-ink hover:border-ink transition-colors duration-200 break-words';
     item.textContent = short;
     item.onclick = function(e){ e.preventDefault(); gotoModule(h); };
     idx.appendChild(item);
@@ -672,27 +721,24 @@ expBtn.onclick = function(){
 })();
 
 // ---- tabs ----
-var tabBtns = document.querySelectorAll('.ctrl nav button');
+var tabBtns = document.querySelectorAll('.tabbar button');
 function showTab(name) {
-  tabBtns.forEach(function(x){
-    var on = x.dataset.tab === name;
-    x.className = 'text-[15px] pb-1 border-b-2 ' + (on ? 'text-ink border-ink' : 'border-transparent text-mut hover:text-ink transition-colors duration-300');
-  });
+  tabBtns.forEach(function(x){ x.classList.toggle('on', x.dataset.tab === name); });
   document.getElementById('kb').classList.toggle('hidden', name !== 'kb');
   document.getElementById('pts').classList.toggle('hidden', name !== 'pts');
 }
 tabBtns.forEach(function(b){ b.onclick = function(){ showTab(b.dataset.tab); }; });
 
-// ---- accordion（默认全部展开）----
-function initAccordion(root) {
-  var hs = root.querySelectorAll('h2.module');
+// ---- accordion（默认全展开）----
+(function initAccordion(){
+  var hs = document.querySelectorAll('#kb h2.module');
   hs.forEach(function(h) {
     var body = document.createElement('div');
     body.className = 'mbody';
     var n = h.nextElementSibling;
     while (n && n.tagName !== 'H2') { var nx = n.nextElementSibling; body.appendChild(n); n = nx; }
     h.after(body);
-    h.insertAdjacentHTML('beforeend', '<span class="arrow ml-auto text-mut text-[11px] inline-block transition-transform duration-300">▲</span>');
+    h.insertAdjacentHTML('beforeend', '<span class="arrow">▲</span>');
     setModuleOpen(h, true);
     h.onclick = function(){
       var open = body.classList.toggle('show');
@@ -701,8 +747,7 @@ function initAccordion(root) {
       if (ar) ar.style.transform = open ? 'rotate(180deg)' : '';
     };
   });
-}
-initAccordion(document.getElementById('kb'));
+})();
 
 // ---- 类型标记 ----
 var TYPE_MAP = { '🖼':'fig','🎵':'rhyme','🧠':'trick','📝':'mem' };
@@ -710,41 +755,28 @@ document.querySelectorAll('#kb h3').forEach(function(h3){
   var types = Object.keys(TYPE_MAP).filter(function(e){ return h3.textContent.indexOf(e) !== -1; });
   if (types.length) {
     h3.dataset.types = types.map(function(e){ return TYPE_MAP[e]; }).join(',');
-    h3.insertAdjacentHTML('beforeend', '<span class="tag ml-2 text-mut text-[12px]">' + types.join(' ') + '</span>');
+    h3.insertAdjacentHTML('beforeend', '<span class="tag" style="margin-left:8px;color:var(--mut);font-size:12px">' + types.join(' ') + '</span>');
   }
 });
 
-// ---- 类型筛选 ----
+// ---- 筛选 ----
+function bindChips(id, cb) {
+  document.getElementById(id).querySelectorAll('.chip').forEach(function(c){ c.onclick = function(){
+    document.getElementById(id).querySelectorAll('.chip').forEach(function(x){ x.classList.remove('on'); });
+    c.classList.add('on');
+    cb(c.dataset.type || c.dataset.grade);
+  };});
+}
 var typeFilter = 'all';
-document.getElementById('typeChips').querySelectorAll('.chip').forEach(function(c){ c.onclick = function(){
-  document.getElementById('typeChips').querySelectorAll('.chip').forEach(function(x){
-    x.classList.remove('on','bg-ink','text-paper','border-ink');
-    x.classList.add('border-line','text-sub');
-  });
-  c.classList.add('on','bg-ink','text-paper','border-ink');
-  c.classList.remove('border-line','text-sub');
-  typeFilter = c.dataset.type; applyFilters();
-};});
+bindChips('typeChips', function(v){ typeFilter = v; applyFilters(); });
 
-// ---- 考点表格行标等级 ----
 document.querySelectorAll('#pts table tbody tr').forEach(function(tr){
   var td = tr.querySelectorAll('td')[2];
   if (td) tr.dataset.grade = td.textContent;
 });
-
-// ---- 等级筛选 ----
 var gradeFilter = 'all';
-document.getElementById('gradeChips').querySelectorAll('.chip').forEach(function(c){ c.onclick = function(){
-  document.getElementById('gradeChips').querySelectorAll('.chip').forEach(function(x){
-    x.classList.remove('on','bg-ink','text-paper','border-ink');
-    x.classList.add('border-line','text-sub');
-  });
-  c.classList.add('on','bg-ink','text-paper','border-ink');
-  c.classList.remove('border-line','text-sub');
-  gradeFilter = c.dataset.grade; applyFilters();
-};});
+bindChips('gradeChips', function(v){ gradeFilter = v; applyFilters(); });
 
-// ---- 搜索（命中即展开对应模块，保证结果可见）----
 var q = document.getElementById('q');
 var query = '';
 q.addEventListener('input', function(){
@@ -771,28 +803,29 @@ function applyFilters() {
     tr.style.display = show ? '' : 'none';
     if (show) any = true;
   });
-  document.getElementById('emptyPts').classList.toggle('hidden', any);
+  document.getElementById('emptyPts').style.display = any ? 'none' : 'block';
 }
 
-// ---- 深色模式 ----
+// ---- 深色模式（.dark class + CSS 变量，纯本地生效）----
 var themeBtn = document.getElementById('theme');
+var themeColor = document.getElementById('themeColor');
 function setTheme(d) {
   document.documentElement.classList.toggle('dark', d === 'dark');
-  themeBtn.textContent = (d === 'dark') ? '浅色' : '深色';
+  themeBtn.textContent = d === 'dark' ? '浅色' : '深色';
+  if (themeColor) themeColor.setAttribute('content', d === 'dark' ? '#111111' : '#ffffff');
 }
 themeBtn.onclick = function(){
   var next = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
   setTheme(next);
-  try { localStorage.setItem('pmp-theme-v6', next); } catch (e) {}
+  try { localStorage.setItem('pmp-theme', next); } catch (e) {}
 };
-try { setTheme(localStorage.getItem('pmp-theme-v6') || 'light'); } catch (e) { setTheme('light'); }
+try { setTheme(localStorage.getItem('pmp-theme') || 'light'); } catch (e) { setTheme('light'); }
 
 // ---- 返回顶部 ----
 var topBtn = document.getElementById('topbtn');
 window.addEventListener('scroll', function(){
   var show = window.scrollY > 600;
-  topBtn.style.opacity = show ? '1' : '0';
-  topBtn.style.pointerEvents = show ? 'auto' : 'none';
+  topBtn.classList.toggle('show', show);
 });
 topBtn.onclick = function(){ window.scrollTo({ top: 0, behavior: 'smooth' }); };
 </script>
