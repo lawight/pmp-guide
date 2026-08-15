@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PMP 备考学习站</title>
+<style>
+:root { --bg:#f6f8fb; --card:#fff; --ink:#1f2d3d; --mut:#7a8ba0; --line:#e3e9f0; --acc:#2b6cb0; --acc2:#dd6b20; --ok:#2f855a; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif; background:var(--bg); color:var(--ink); line-height:1.65; }
+header { position:sticky; top:0; z-index:10; background:linear-gradient(120deg,#1a365d,#2b6cb0); color:#fff; padding:14px 24px; display:flex; align-items:baseline; gap:14px; box-shadow:0 2px 8px rgba(0,0,0,.15); }
+header h1 { margin:0; font-size:20px; }
+header span { font-size:13px; opacity:.85; }
+nav { position:sticky; top:58px; z-index:9; background:#fff; border-bottom:1px solid var(--line); padding:8px 24px; display:flex; gap:10px; flex-wrap:wrap; }
+nav a { color:var(--acc); text-decoration:none; font-size:13px; padding:3px 10px; border:1px solid var(--line); border-radius:999px; background:#fafcff; }
+nav a:hover { background:var(--acc); color:#fff; }
+main { max-width:980px; margin:0 auto; padding:20px 16px 80px; }
+section { margin-top:26px; }
+h2.module { background:#fff; border:1px solid var(--line); border-left:5px solid var(--acc); border-radius:8px; padding:12px 16px; font-size:19px; margin:34px 0 14px; }
+h3 { font-size:16px; color:var(--acc); margin:22px 0 8px; border-bottom:1px dashed var(--line); padding-bottom:4px; }
+h4 { font-size:14.5px; margin:16px 0 6px; color:#3b4a5c; }
+p { margin:8px 0; }
+ul { margin:6px 0; padding-left:22px; }
+li { margin:4px 0; }
+strong { color:#1a365d; }
+code { background:#eef3f9; border:1px solid var(--line); border-radius:4px; padding:1px 5px; font-size:.92em; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; }
+pre.ascii { background:#0f1b2d; color:#cfe3ff; border-radius:8px; padding:14px 16px; overflow-x:auto; font-size:13.5px; line-height:1.5; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; white-space:pre; }
+blockquote { margin:10px 0; padding:8px 14px; background:#fff8ec; border-left:4px solid var(--acc2); border-radius:0 6px 6px 0; color:#5b4636; font-size:13.5px; }
+blockquote p { margin:2px 0; }
+.twrap { overflow-x:auto; border:1px solid var(--line); border-radius:8px; margin:10px 0; }
+table { border-collapse:collapse; width:100%; background:#fff; font-size:13.5px; }
+th { background:#f0f5fb; text-align:left; padding:8px 10px; border-bottom:2px solid var(--line); white-space:nowrap; }
+td { padding:7px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+tr:last-child td { border-bottom:none; }
+.toctop { background:#fff; border:1px solid var(--line); border-radius:8px; padding:12px 16px; font-size:13px; }
+.toctop a { color:var(--acc); text-decoration:none; margin-right:12px; white-space:nowrap; }
+.toctop a:hover { text-decoration:underline; }
+.foot { text-align:center; color:var(--mut); font-size:12px; margin-top:40px; }
+</style>
+</head>
+<body>
+<header><h1>PMP 备考学习站</h1><span>9.12 考试 · 模块掌握度制 · 乐凯=资料</span></header>
+<nav>
+  <a href="#kb">📖 知识库（学）</a>
+  <a href="#pts">🎯 考点清单（考）</a>
+  <a href="#m0">M0</a><a href="#m1">M1</a><a href="#m2">M2</a><a href="#m3">M3</a><a href="#m4">M4</a><a href="#m5">M5</a><a href="#m6">M6</a><a href="#m7">M7</a><a href="#m8">M8</a><a href="#m9">M9</a><a href="#m10">M10</a><a href="#m11">M11</a>
+</nav>
+<main>
+<section id="kb">
+<h2 class="module" id="kb-head">📖 知识库 · 记忆设计版</h2>
+<h2>PMP 知识库（记忆设计版 · 2026-08-15）</h2>
+<blockquote><p>职责：12 模块保留考点的知识内容 + <strong>记忆设计</strong>。配套 04-考点清单.md（考什么/等级）。</p><p>记忆类型标注：🖼 图（画出来记）· 🎵 口诀（顺口溜）· 🧠 技巧（判断捷径/触发词）· 📝 死记（列表硬背）。</p><p>学习流程：按类型记忆 → 模块测试检验 → 错题进队列。</p></blockquote>
+<p>---</p>
+<h2 class="module" id="M0-框架与五大过程组">M0 框架与五大过程组</h2>
+<h4>五大过程组 🖼 🎵 A级默写</h4>
+<pre class="ascii">启动 → 规划 → 执行 → 监控 → 收尾
+（立项）（定路线）（干活）（纠偏）（结算）</pre>
+<p>🎵 口诀：<strong>"启规执监收"</strong>——启动立项、规划路线、执行干活、监控纠偏、收尾结算。</p>
+<p>🧠 技巧：判断题问"第一步做什么"，先想是哪个过程组：没立项→启动；没计划→规划；干到一半→执行/监控；干完了→收尾。</p>
+<h4>项目 vs 项目集 vs 项目组合 📝</h4>
+<div class="twrap"><table><thead><tr><th></th><th>定义</th><th>关键词</th></tr></thead><tbody>
+<tr><td>项目</td><td>临时性努力创造独特可交付物</td><td>临时+独特</td></tr>
+<tr><td>项目集</td><td>关联项目统一协调，获单独管理得不到的收益</td><td>1+1>2</td></tr>
+<tr><td>项目组合</td><td>为战略目标集合项目/项目集/运营，按优先级排资源</td><td>战略+优先级</td></tr>
+</tbody></table></div>
+<h4>组织影响：PM 权力连续谱 🖼</h4>
+<pre class="ascii">职能型 ─── 弱矩阵 ─── 平衡矩阵 ─── 强矩阵 ─── 项目型
+PM权力小 ───────────────────────────────→ PM权力大</pre>
+<p>🧠 技巧：题目说"PM 权力小/资源在职能经理手里"→职能型；"PM 全权"→项目型。</p>
+<h4>PM / 职能经理 / 发起人 🧠</h4>
+<ul><li>PM=对项目成败负责（日常）；职能经理=给资源（领域）；发起人=出钱+授权+章程。</li></ul>
+<h4>EEF vs OPA 🎵</h4>
+<p>🎵 口诀：<strong>"外 EEF 管不着，内 OPA 随便抄"</strong>——EEF 外部环境不可控（法规/文化/市场）；OPA 内部资产可复用（流程/模板/经验教训）。</p>
+<h4>章程 vs 计划 🧠</h4>
+<p>🧠 技巧：<strong>章程=授权证（能干什么），计划=施工图（怎么干）</strong>。授权问题永远先查章程。</p>
+<p>---</p>
+<h2 class="module" id="M1-整合管理">M1 整合管理</h2>
+<h4>变更管理流程五步 🖼 🎵 A级默写</h4>
+<pre class="ascii">①记录 → ②评估影响 → ③CCB审批 → ④批准/拒绝 → ⑤实施+更新基准</pre>
+<p>🎵 口诀：<strong>"变更三连：记录→评估→审批"</strong>（后两步：批了才实施）。</p>
+<p>🧠 技巧（最高频考点）：看到"范围/需求变化、干系人要求加功能"→<strong>先走变更流程</strong>；选项出现"直接做/直接拒绝/立即实现"=跳步，错。</p>
+<h4>变更请求 4 类 📝</h4>
+<p>纠正措施（纠偏差）/ 预防措施（防未来）/ 缺陷补救（修缺陷）/ 计划更新（改文档）。</p>
+<p>🎵 助记：<strong>"纠偏、防患、补漏、改文档"</strong>。</p>
+<h4>CCB 职责 🧠</h4>
+<p>批准/拒绝变更请求；<strong>不是所有变更都上 CCB</strong>——PM 权限内的小变更自己批。题目陷阱："任何变更都要 CCB"✗。</p>
+<h4>收尾三件事 🎵 A级默写</h4>
+<p>🎵 口诀：<strong>"验收早做、经验教训、资产更新"</strong>（验收在收尾前已做完；收尾核心=经验教训+组织过程资产）。</p>
+<p>🧠 技巧：收尾题选"收集经验教训/更新资产"，不选庆功会/最终风险审计。</p>
+<h4>项目收尾 vs 阶段收尾 🧠</h4>
+<p>🧠 技巧：<strong>阶段=中场检查</strong>（过了这阶段还有下阶段）；<strong>项目=终场结算</strong>（彻底结束）。</p>
+<h4>章程内容 📝 A级默写</h4>
+<p>目的/目标 · 高层级需求 · 可测量成功标准 · 总体预算与里程碑 · 发起人授权 · 关键干系人。</p>
+<p>🎵 助记：<strong>"目、需、标、钱、权、人"</strong>。</p>
+<p>---</p>
+<h2 class="module" id="M2-范围管理">M2 范围管理</h2>
+<h4>范围确认 vs 范围控制 🧠 🎵</h4>
+<p>🎵 口诀：<strong>"确认验收对不对，控制变化怎么管"</strong>。</p>
+<p>🧠 技巧：问"验收/签字"→确认；问"范围变了怎么办"→控制（走变更）。</p>
+<h4>蔓延 vs 镀金 🎵</h4>
+<p>🎵 口诀：<strong>"蔓延是别人加，镀金是自己加"</strong>——蔓延=客户/干系人加需求不走流程；镀金=PM/团队主动加功能。都是错。</p>
+<p>🧠 技巧：看到"客户要求加功能但没走流程"→蔓延；"团队主动多做"→镀金。</p>
+<h4>WBS 与 100% 规则 🧠</h4>
+<p>下层 = 上层的<strong>完全分解</strong>，不重不漏；最低层=工作包。</p>
+<p>🧠 技巧：WBS 是<strong>范围</strong>工具（不是进度），按可交付物分解，不是按活动/部门。</p>
+<h4>范围说明书内容 📝</h4>
+<p>范围描述 · 验收标准 · 可交付物 · 除外责任 · 制约因素 · 假设条件。</p>
+<p>🎵 助记：<strong>"描验交除制假"</strong>。</p>
+<h4>滚动式规划 🧠</h4>
+<p><strong>近详远粗</strong>，渐进明细（规划和 WBS 都适用）。</p>
+<p>---</p>
+<h2 class="module" id="M3-进度管理">M3 进度管理</h2>
+<h4>依赖类型 4 种 📝 A级默写</h4>
+<p><strong>FS</strong> 完成→开始（最常见）· <strong>SS</strong> 开始→开始 · <strong>FF</strong> 完成→完成 · <strong>SF</strong> 开始→完成（罕见）。</p>
+<p>🎵 助记：<strong>"完开始（FS）最常见"</strong>；硬依赖=物理必然，软依赖=惯例，外部=项目外。</p>
+<h4>关键路径 CPM 🖼 🧠 D级计算</h4>
+<pre class="ascii">A(3) ──→ C(4) ──→ E(2)     路径 A-C-E = 9天 ← 关键路径（最长）
+  ↘ B(2) ─→ D(5) ─→ E(2)   路径 B-D-E = 9天 ← 也关键（两条）</pre>
+<p>🧠 技巧：<strong>最长路径=最短工期</strong>；关键路径上<strong>浮动=0</strong>；多条关键路径=风险更高。先找最长，标出浮动 0 的链。</p>
+<h4>总浮动 vs 自由浮动 🎵</h4>
+<p>🎵 口诀：<strong>"总浮动看项目（不误总工期），自由浮动看后活（不误后续最早开始）"</strong>。</p>
+<h4>正推/反推 🧠 D级计算</h4>
+<p>正推（从头）：ES=前序 EF 最大 +1（取最大）；反推（从尾）：LF=后序 LS 最小 −1（取最小）；浮动=LS−ES。</p>
+<h4>赶工 vs 快速跟进 🎵</h4>
+<p>🎵 口诀：<strong>"赶工加钱（成本↑），跟进冒险（风险↑）"</strong>。</p>
+<p>🧠 技巧：题目给"有预算"→赶工；"有并行空间"→快速跟进；都要<strong>先评估影响再选</strong>。</p>
+<h4>资源平衡 vs 平滑 🎵</h4>
+<p>🎵 口诀：<strong>"平衡延工期，平滑不延"</strong>——平衡受资源硬约束（可能拖期）；平滑只在浮动内调（不拖期）。</p>
+<h4>PERT 三点估算 🎵 D级计算</h4>
+<p>🎵 口诀：<strong>"(O+4M+P)÷6"</strong>；标准差=(P−O)÷6。</p>
+<p>🧠 技巧：看到"最乐观/最可能/最悲观"→PERT；把三个数套公式。</p>
+<h4>应急储备 vs 管理储备 🎵</h4>
+<p>🎵 口诀：<strong>"应急备已知（基准内），管理留未知（基准外）"</strong>——管理储备动用需批准。</p>
+<p>---</p>
+<h2 class="module" id="M4-成本与-EVM">M4 成本与 EVM</h2>
+<h4>EVM 公式全表 🖼 🎵 A级默写 + D级计算</h4>
+<pre class="ascii">         计划价值 PV（按计划该干完多少）
+实际成本 AC（花了多少）      挣值 EV（干完的活值多少）
+SV = EV − PV（进度差）        SPI = EV / PV（进度比）
+CV = EV − AC（成本差）        CPI = EV / AC（成本比）</pre>
+<p>🎵 口诀：<strong>"EV 在上，好于 1 就好"</strong>——SPI/CPI 分子都是 EV；>1 超前/节约，<1 落后/超支。</p>
+<p>🧠 技巧：SV/CV 是<strong>减法</strong>（正=好），SPI/CPI 是<strong>除法</strong>（>1=好）；题目给指标先判断是"差"还是"比"。</p>
+<h4>EAC/ETC/TCPI 🎵 D级计算</h4>
+<p>🎵 口诀：<strong>"典型除 CPI，非典型加缺口"</strong>——</p>
+<ul><li>典型（偏差继续）：EAC = BAC ÷ CPI</li><li>非典型（偏差结束）：EAC = AC + (BAC − EV)</li><li>ETC = EAC − AC；TCPI = (BAC − EV) ÷ (BAC − AC)</li></ul>
+<h4>估算方法 4 种 📝</h4>
+<p>类比（快粗）< 参数（统计模型）< 自下而上（最准最贵）< 三点 PERT（含不确定）。</p>
+<p>🧠 技巧：问"最准确"→自下而上；问"最快"→类比。</p>
+<h4>成本基准 vs 管理储备 🎵</h4>
+<p>🎵 口诀：<strong>"基准是尺子（绩效测量），管理储备是保险箱（未知风险）"</strong>。</p>
+<p>---</p>
+<h2 class="module" id="M5-质量管理">M5 质量管理</h2>
+<h4>质量 vs 等级 🎵</h4>
+<p>🎵 口诀：<strong>"等级分高低，质量论好坏"</strong>——低等级≠低质量（经济舱服务好=低等级高质量）。</p>
+<h4>QA vs QC 🎵</h4>
+<p>🎵 口诀：<strong>"QA 管过程（保证），QC 查结果（控制）"</strong>。</p>
+<p>🧠 技巧：问"审计流程/确保按计划"→QA；问"检查交付物/发现缺陷"→QC。</p>
+<h4>预防 vs 检查 🎵</h4>
+<p>🎵 口诀：<strong>"预防在前省，检查在后贵"</strong>。</p>
+<h4>7 大工具 🎵 C级应用</h4>
+<p>🎵 口诀：<strong>"帕重、鱼因、控受、直布、散关、流步、核数"</strong>——</p>
+<ul><li><strong>帕累托</strong>=抓重点（80/20 优先解决）</li><li><strong>鱼骨图</strong>=找根因（RCA）</li><li><strong>控制图</strong>=看受控（连续 7 点同侧=失控）</li><li><strong>直方图</strong>=看分布 · <strong>散点图</strong>=看相关 · <strong>流程图</strong>=看步骤 · <strong>核查表</strong>=收集数据</li></ul>
+<p>🧠 技巧：题问"缺陷集中在少数原因"→帕累托；"找根本原因"→鱼骨；"过程是否稳定"→控制图。</p>
+<h4>质量成本 CoQ 🎵</h4>
+<p>🎵 口诀：<strong>"预防评估是一致，内外失败不一致"</strong>（一致性=预防+评估；非一致性=内部失败+外部失败）。</p>
+<p>---</p>
+<h2 class="module" id="M6-风险管理">M6 风险管理</h2>
+<h4>风险管理流程 🖼 🎵 A级默写</h4>
+<pre class="ascii">识别 → 定性 → 定量 → 规划应对 → 实施应对 → 监控</pre>
+<p>🎵 口诀：<strong>"识定定应实监"</strong>（识别、定性、定量、应对、实施、监控）。</p>
+<p>🧠 技巧：识别后<strong>先记风险登记册</strong>；"直接实施应对/直接上报"=跳步，错。</p>
+<h4>应对策略 🎵 A级默写</h4>
+<p>威胁：<strong>规避</strong>（消除）/ <strong>转移</strong>（保险/外包）/ <strong>减轻</strong>（降概率影响）/ <strong>接受</strong>。</p>
+<p>机会：<strong>开拓</strong>（确保）/ <strong>提高</strong>（加大）/ <strong>分享</strong>（合作）/ 接受。</p>
+<p>🎵 口诀：<strong>"威胁规转移减受，机会开提分接"</strong>。</p>
+<p>🧠 技巧：题给"买保险/外包"→转移；"取消风险活动"→规避；"预留预算"→接受。</p>
+<h4>定性 vs 定量 🧠</h4>
+<p>定性=概率×影响矩阵<strong>排序</strong>（快、主观）；定量=EMV/蒙特卡洛<strong>数值</strong>（慢、客观）。问"优先级"→定性；问"数值/概率分布"→定量。</p>
+<h4>EMV 决策树 🧠 D级计算</h4>
+<p><strong>EMV = 概率 × 影响</strong>；决策树逐分支算期望值，<strong>取收益最大/损失最小</strong>的分支。</p>
+<h4>风险 vs 问题 🎵</h4>
+<p>🎵 口诀：<strong>"风险未来事，问题已发生"</strong>——已发生走问题/变更，未发生走风险管理。</p>
+<h4>残余 vs 次生 🎵</h4>
+<p>🎵 口诀：<strong>"残余剩的，次生新长的"</strong>（应对后残留=残余；应对带来的新风险=次生）。</p>
+<p>---</p>
+<h2 class="module" id="M7-采购与合同">M7 采购与合同</h2>
+<h4>合同类型 5 种 🖼 🎵 A级默写</h4>
+<div class="twrap"><table><thead><tr><th>合同</th><th>全称</th><th>风险承担</th></tr></thead><tbody>
+<tr><td>FFP</td><td>固定总价</td><td><strong>卖方</strong>担成本风险</td></tr>
+<tr><td>FPIF</td><td>总价+激励</td><td>卖方（有激励空间）</td></tr>
+<tr><td>CPFF</td><td>成本+固定费</td><td><strong>买方</strong>担</td></tr>
+<tr><td>CPIF</td><td>成本+激励</td><td>买方</td></tr>
+<tr><td>T&M</td><td>工料</td><td>混合（短工期/范围不清用）</td></tr>
+</tbody></table></div>
+<p>🎵 口诀：<strong>"固定总价卖方担，成本补偿买方担，工料混合两头沾"</strong>。</p>
+<p>🧠 技巧：题目问"哪个风险最小给卖方/范围清楚"→FFP；"范围不确定"→T&M。</p>
+<h4>采购流程 📝 A级默写</h4>
+<p><strong>规划采购 → 实施采购（询价/评标/签约）→ 控制采购（管理/索赔）→ 结束采购</strong>。</p>
+<h4>索赔 vs 争议 🧠</h4>
+<p>索赔=按合同提权利主张（先查合同条款）；争议=索赔谈不拢升级。采购出问题<strong>先查合同</strong>，不直接换供应商。</p>
+<p>---</p>
+<h2 class="module" id="M8-资源与团队">M8 资源与团队</h2>
+<h4>团队五阶段 🖼 🎵 A级默写</h4>
+<pre class="ascii">组建 → 风暴 → 规范 → 成熟 → 解散
+（客气）（冲突）（磨合）（高效）（散伙）</pre>
+<p>🎵 口诀：<strong>"建风规熟散"</strong>。</p>
+<p>🧠 技巧：题说"团队刚成立/彼此客气"→组建；"激烈冲突/争论"→风暴；"已高效自转"→成熟。</p>
+<h4>冲突五法 🎵 A级默写 + C级应用</h4>
+<p><strong>撤退</strong>（回避）/ <strong>缓和</strong>（求同）/ <strong>妥协</strong>（各让一步）/ <strong>强迫</strong>（赢输）/ <strong>合作</strong>（双赢，最优）。</p>
+<p>🎵 口诀：<strong>"退缓妥强合，合作最优先"</strong>。</p>
+<p>🧠 技巧：PMI 偏好=<strong>先私下沟通再正式</strong>，目标=合作双赢；直接替团队决定/强制=错。</p>
+<h4>仆人式领导 🧠 C级应用</h4>
+<p>移除障碍 · 授权赋能 · 教练辅导 · 服务团队。题给"团队求助/障碍/士气低"→仆人式领导（不微管理、不责备）。</p>
+<h4>激励理论 📝</h4>
+<p>马斯洛=需求层次（生理→安全→社交→尊重→自我实现）；赫茨伯格=保健（不满源）+激励（满意源）；麦克利兰=成就/权力/亲和。</p>
+<h4>RAM/RACI 🧠</h4>
+<p><strong>R</strong>=干活（执行）、<strong>A</strong>=问责（唯一背锅）、<strong>C</strong>=咨询、<strong>I</strong>=知情。问"谁负责这项工作"→R；"谁最终负责"→A。</p>
+<h4>权力类型 5 种 📝 A级默写</h4>
+<p><strong>正式</strong>（职位）/ <strong>奖励</strong> / <strong>专家</strong> / <strong>参照</strong>（个人魅力）/ <strong>惩罚</strong>。</p>
+<p>---</p>
+<h2 class="module" id="M9-沟通与干系人">M9 沟通与干系人</h2>
+<h4>沟通渠道公式 🧠 D级计算</h4>
+<p><strong>n(n−1) ÷ 2</strong>（n=人数）。</p>
+<p>🧠 技巧：5 人=10，6 人=15，7 人=21——<strong>加 1 人就加 n 条</strong>。先算人数，套公式。</p>
+<h4>沟通方式 🎵</h4>
+<p>🎵 口诀：<strong>"交互双向最有效（会议），推发拉取是单向"</strong>（推式=邮件/报告发出去；拉式=知识库/门户自己取）。</p>
+<h4>权力/利益方格 🖼 C级应用</h4>
+<pre class="ascii">           权力高
+   令其满意 │ 重点管理      ← 权力高利益高 = 重点管理
+───────────┼───────────
+   监督     │ 随时告知      ← 权力低利益高 = 随时告知
+           权力低
+   利益低   │  利益高</pre>
+<p>🎵 口诀：<strong>"高高重管，高利低满，低高告知，低低监督"</strong>（高权高利=重点管理；高权低利=令其满意；低权高利=随时告知；低权低利=监督）。</p>
+<h4>干系人参与度矩阵 🖼 🎵 A级默写</h4>
+<pre class="ascii">不知晓 → 抵制 → 中立 → 支持 → 引导
+（完全不知道）（反对）（不表态）（配合）（主动推动）</pre>
+<p>🎵 口诀：<strong>"不知抵制中立支持引导"</strong>；目标=把差距推向"支持/引导"。</p>
+<h4>期望管理 🧠 C级应用</h4>
+<p><strong>先沟通后行动</strong>；管理期望≠承诺做不到。干系人反对→先私下会面了解关切（摸底 P9）。</p>
+<p>---</p>
+<h2 class="module" id="M10-敏捷与混合">M10 敏捷与混合</h2>
+<h4>Scrum 三角色 🎵 A级默写</h4>
+<p>🎵 口诀：<strong>"PO 管价值，SM 护流程，团队自交付"</strong>——PO 定优先级；SM 移除障碍/仆人式；开发团队自组织。</p>
+<h4>Scrum 四事件 🖼 🎵 A级默写 + C级应用</h4>
+<pre class="ascii">Sprint 规划（定目标选任务）→ 每日站会（15min 同步）→ 评审（看产品）→ 回顾（改过程）→ 下一轮</pre>
+<p>🎵 口诀：<strong>"规站评回"；"评审看产品，回顾改过程"</strong>（摸底 A2 就是它）。</p>
+<p>🧠 技巧：题问"展示增量"→评审；"改进协作/过程"→回顾；"15 分钟同步"→站会。</p>
+<h4>Scrum 三工件 🎵 A级默写</h4>
+<p>🎵 口诀：<strong>"PO 管产品池（Backlog），团队领冲刺池（Sprint Backlog），增量按 DoD 交付"</strong>。</p>
+<h4>Sprint 内不中途加需求 🧠 C级应用</h4>
+<p>新需求<strong>进产品 Backlog，下个 Sprint 排期</strong>（摸底 A1）。"立即做/延长 Sprint"都错。</p>
+<h4>看板 🧠 C级应用</h4>
+<p><strong>WIP 限制</strong>暴露瓶颈、提升流动效率；拉动式、连续流。题问"WIP 目的"→暴露瓶颈不是减量/禁并行。</p>
+<h4>看板 vs Scrum 🖼</h4>
+<div class="twrap"><table><thead><tr><th></th><th>Scrum</th><th>看板</th></tr></thead><tbody>
+<tr><td>迭代</td><td>固定 Sprint</td><td>连续流</td></tr>
+<tr><td>角色</td><td>三角色</td><td>无强制角色</td></tr>
+<tr><td>工件</td><td>三工件</td><td>看板/泳道</td></tr>
+<tr><td>变更</td><td>Sprint 内不接新需求</td><td>随时可加（WIP 内）</td></tr>
+</tbody></table></div>
+<h4>混合方法 🧠 C级应用</h4>
+<p><strong>稳定部分用预测，不稳定部分用迭代</strong>（摸底 A4）；"先预测后敏捷"=Agile-fall 反面教材。</p>
+<h4>迭代 vs 增量 🎵</h4>
+<p>🎵 口诀：<strong>"迭代反复磨，增量每段加"</strong>。</p>
+<h4>DoD vs DoR 🧠</h4>
+<p>DoD=<strong>完成</strong>的定义（增量达标线）；DoR=<strong>开始</strong>的定义（就绪线）。</p>
+<h4>故事点/计划扑克 🧠</h4>
+<p>相对估算（不是小时）；团队一起出牌、讨论达成共识。</p>
+<h4>敏捷宣言 4 价值观 📝 A级默写</h4>
+<p><strong>个体互动</strong> > 流程工具 · <strong>可用软件</strong> > 详实文档 · <strong>客户合作</strong> > 合同谈判 · <strong>响应变化</strong> > 遵循计划。</p>
+<p>🎵 助记：<strong>"人、软、客、变"</strong>。</p>
+<h4>用户故事 🧠</h4>
+<p>As a（角色）… I want（需求）… so that（价值）…；INVEST=独立/可协商/有价值/可估算/小/可测试。</p>
+<p>---</p>
+<h2 class="module" id="M11-业务环境与合规">M11 业务环境与合规</h2>
+<h4>法规/合规影响 🧠 C级应用</h4>
+<p>外部法规变化→<strong>先评估合规影响，必要时走变更流程</strong>（摸底 B1）；"暂停项目/继续原计划"都错。</p>
+<h4>战略对齐 🧠</h4>
+<p>项目支撑组织战略；组合管理按战略优先级排资源。</p>
+</section>
+<section id="pts">
+<h2 class="module" id="pts-head">🎯 考点清单 · 等级与考核</h2>
+<h2>PMP 考点清单（12 模块全量 · 含掌握等级与考核要求 · 2026-08-15）</h2>
+<blockquote><p>用途：抽背、出题、模块测试、考前复盘的考点总表。</p><p><strong>掌握等级（A/B/C/D）</strong>：每个考点按认知要求分级，达到对应等级才算掌握，见下方定义。</p><p><strong>豁免规则（2026-08-15）</strong>：标 <code>✂️ 不看</code> 的考点<strong>完全不需要看</strong>——低概率（★）且对通过率影响 <1%，不学习、不抽背、不出题、不计入模块达标判定。其余考点按等级要求掌握。时间充裕想加回时取消标记即可。</p></blockquote>
+<h2 class="module" id="掌握等级与考核要求">掌握等级与考核要求</h2>
+<div class="twrap"><table><thead><tr><th>等级</th><th>名称</th><th>掌握要求</th><th>考核方式</th><th>达标线</th></tr></thead><tbody>
+<tr><td><strong>A</strong></td><td>默写级</td><td>能一字不差写出：公式 / 流程顺序 / 清单 / 名称</td><td>dsh 随机抽 3 条默写（口头或纸上），错了现场补默</td><td><strong>全对</strong></td></tr>
+<tr><td><strong>B</strong></td><td>辨析级</td><td>能说清易混概念的区别，并各举一个应用场景</td><td>dsh 给一对概念，你对比讲解</td><td>通过（讲不出=未达标）</td></tr>
+<tr><td><strong>C</strong></td><td>应用级</td><td>情境题能按 PMI 思维做对决策（第一步做什么）</td><td>模块测试情境题 + 每日抽背情境题</td><td>模块阈值（70~90%）</td></tr>
+<tr><td><strong>D</strong></td><td>计算级</td><td>能正确计算并判读结果含义</td><td>计算题一组 5 题，限时</td><td><strong>5/5 或 ≥90%</strong></td></tr>
+</tbody></table></div>
+<p><strong>模块达标 = 该模块所有考点达到各自等级要求（✂️ 不看考点除外）+ 错题 100% 闭环</strong>。A/B 级靠抽背默写复检（1/3/7 天），C 级靠刷题正确率，D 级靠计算全对。</p>
+<p>---</p>
+<h2 class="module" id="M0-框架与五大过程组">M0 框架与五大过程组</h2>
+<div class="twrap"><table><thead><tr><th>考点</th><th>考法</th><th>等级</th><th>重要度</th></tr></thead><tbody>
+<tr><td>项目 vs 项目集 vs 项目组合</td><td>概念</td><td>B</td><td>★★</td></tr>
+<tr><td>五大过程组顺序与归属</td><td>概念</td><td><strong>A（默写 5 组顺序）</strong></td><td>★★★</td></tr>
+<tr><td>项目生命周期 vs 产品生命周期</td><td>概念</td><td>B</td><td>★ ✂️ 不看</td></tr>
+<tr><td>组织影响：职能/矩阵/项目型（PM 权力）</td><td>情境</td><td>B</td><td>★★</td></tr>
+<tr><td>PM vs 职能经理 vs 发起人</td><td>情境</td><td>C</td><td>★★</td></tr>
+<tr><td>事业环境因素 EEF vs 组织过程资产 OPA</td><td>概念</td><td>B</td><td>★★</td></tr>
+<tr><td>章程 vs 项目管理计划</td><td>概念</td><td>B</td><td>★★</td></tr>
+</tbody></table></div>
+<h2 class="module" id="M1-整合管理">M1 整合管理</h2>
+<div class="twrap"><table><thead><tr><th>考点</th><th>考法</th><th>等级</th><th>重要度</th></tr></thead><tbody>
+<tr><td><strong>变更管理流程五步</strong></td><td>流程</td><td><strong>A（默写：记录→评估→CCB→批准→实施）+ C</strong></td><td>★★★</td></tr>
+<tr><td>变更请求类型（纠正/预防/缺陷补救/更新）</td><td>概念</td><td>A（默写 4 类）</td><td>★★</td></tr>
+<tr><td>CCB 职责</td><td>情境</td><td>C</td><td>★★</td></tr>
+<tr><td>配置管理 vs 变更管理</td><td>概念</td><td>B</td><td>★ ✂️ 不看</td></tr>
+<tr><td><strong>收尾三件事</strong></td><td>概念</td><td><strong>A（默写：验收早做/经验教训/资产更新）+ C</strong></td><td>★★★</td></tr>
+<tr><td>项目收尾 vs 阶段收尾</td><td>概念</td><td>B</td><td>★★</td></tr>
+<tr><td>章程内容（授权/目标/发起人）</td><td>概念</td><td>A（默写 3 项）</td><td>★★</td></tr>
+<tr><td>知识管理（经验教训库）</td><td>情境</td><td>C</td><td>★ ✂️ 不看</td></tr>
+</tbody></table></div>
+<h2 class="module" id="M2-范围管理">M2 范围管理</h2>
+<div class="twrap"><table><thead><tr><th>考点</th><th>考法</th><th>等级</th><th>重要度</th></tr></thead><tbody>
+<tr><td>WBS 分解：100% 规则、可交付物导向</td><td>概念</td><td>B</td><td>★★</td></tr>
+<tr><td>范围确认 vs 范围控制</td><td>情境</td><td><strong>B（辨析）+ C</strong></td><td>★★★</td></tr>
+<tr><td><strong>蔓延 vs 镀金</strong></td><td>情境</td><td><strong>B（辨析）+ C</strong></td><td>★★★</td></tr>
+<tr><td>范围说明书内容</td><td>概念</td><td>A（默写要点）</td><td>★★</td></tr>
+<tr><td>收集需求工具（访谈/焦点/头脑风暴/亲和）</td><td>概念</td><td>A（默写清单）</td><td>★ ✂️ 不看</td></tr>
+<tr><td>WBS 词典</td><td>概念</td><td>B</td><td>★ ✂️ 不看</td></tr>
+<tr><td>滚动式规划</td><td>概念</td><td>B</td><td>★★</td></tr>
+</tbody></table></div>
+<h2 class="module" id="M3-进度管理">M3 进度管理</h2>
+<div class="twrap"><table><thead><tr><th>考点</th><th>考法</th><th>等级</th><th>重要度</th></tr></thead><tbody>
+<tr><td>活动 vs 里程碑</td><td>概念</td><td>B</td><td>★★</td></tr>
+<tr><td>依赖类型 FS/SS/FF/SF</td><td>概念</td><td>A（默写 4 种）</td><td>★★</td></tr>
+<tr><td><strong>关键路径：最长路径、浮动=0</strong></td><td>计算</td><td><strong>D</strong></td><td>★★★</td></tr>
+<tr><td>总浮动 vs 自由浮动</td><td>计算</td><td>D</td><td>★★</td></tr>
+<tr><td>正推/反推 ES/EF/LS/LF</td><td>计算</td><td>D</td><td>★★</td></tr>
+<tr><td><strong>赶工 vs 快速跟进</strong></td><td>情境</td><td><strong>B（辨析）+ C</strong></td><td>★★★</td></tr>
+<tr><td>资源平衡 vs 资源平滑</td><td>概念</td><td>B</td><td>★★</td></tr>
+<tr><td>三点估算 PERT</td><td>计算</td><td><strong>D</strong></td><td>★★</td></tr>
+<tr><td>应急储备 vs 管理储备</td><td>概念</td><td>B</td><td>★★</td></tr>
+<tr><td>关键链法（缓冲）</td><td>概念</td><td>B</td><td>★ ✂️ 不看</td></tr>
+</tbody></table></div>
+<h2 class="module" id="M4-成本与-EVM">M4 成本与 EVM</h2>
+<div class="twrap"><table><thead><tr><th>考点</th><th>考法</th><th>等级</th><th>重要度</th></tr></thead><tbody>
+<tr><td>估算方法 4 种（类比/参数/自下而上/三点）</td><td>概念</td><td>A（默写 4 种 + 精度排序）</td><td>★★</td></tr>
+<tr><td>成本基准 vs 管理储备</td><td>概念</td><td>B</td><td>★★</td></tr>
+<tr><td><strong>EVM 公式全套（PV/EV/AC/SV/CV/SPI/CPI）</strong></td><td>计算</td><td><strong>A（默写公式表）+ D</strong></td><td>★★★</td></tr>
+<tr><td><strong>EAC/ETC/TCPI（典型/非典型）</strong></td><td>计算</td><td><strong>D</strong></td><td>★★★</td></tr>
+<tr><td>EVM 判读（>1 好 <1 差）</td><td>情境</td><td>C</td><td>★★★</td></tr>
+<tr><td>BAC 完工预算</td><td>概念</td><td>B</td><td>★★</td></tr>
+</tbody></table></div>
+<h2 class="module" id="M5-质量管理">M5 质量管理</h2>
+<div class="twrap"><table><thead><tr><th>考点</th><th>考法</th><th>等级</th><th>重要度</th></tr></thead><tbody>
+<tr><td>质量 vs 等级</td><td>概念</td><td>B</td><td>★★</td></tr>
+<tr><td>预防 vs 检查</td><td>情境</td><td>B</td><td>★★</td></tr>
+<tr><td>QA vs QC</td><td>概念</td><td><strong>B（辨析）+ C</strong></td><td>★★★</td></tr>
+<tr><td><strong>7 大工具场景（帕累托/鱼骨/控制图…）</strong></td><td>情境</td><td><strong>C</strong></td><td>★★★</td></tr>
+<tr><td>质量成本 CoQ</td><td>概念</td><td>B</td><td>★★</td></tr>
+<tr><td>精确度 vs 准确度</td><td>概念</td><td>B</td><td>★ ✂️ 不看</td></tr>
+<tr><td>持续改进 PDCA</td><td>情境</td><td>C</td><td>★★</td></tr>
+</tbody></table></div>
+<h2 class="module" id="M6-风险管理">M6 风险管理</h2>
+<div class="twrap"><table><thead><tr><th>考点</th><th>考法</th><th>等级</th><th>重要度</th></tr></thead><tbody>
+<tr><td>风险 vs 问题</td><td>概念</td><td>B</td><td>★★</td></tr>
+<tr><td><strong>风险管理流程顺序（识别→定性→定量→应对→监控）</strong></td><td>流程</td><td><strong>A（默写 5 步）+ C</strong></td><td>★★★</td></tr>
+<tr><td><strong>应对策略（规避/转移/减轻/接受 + 开拓/提高/分享）</strong></td><td>情境</td><td><strong>A（默写 7 种）+ C</strong></td><td>★★★</td></tr>
+<tr><td>定性分析：概率×影响矩阵</td><td>情境</td><td>C</td><td>★★</td></tr>
+<tr><td><strong>EMV 决策树 / 蒙特卡洛</strong></td><td>计算</td><td><strong>D</strong></td><td>★★★</td></tr>
+<tr><td>风险登记册（先记录再分析）</td><td>情境</td><td>C</td><td>★★</td></tr>
+<tr><td>残余风险 vs 次生风险</td><td>概念</td><td>B</td><td>★★</td></tr>
+<tr><td>应急应对 vs 弹回计划</td><td>概念</td><td>B</td><td>★ ✂️ 不看</td></tr>
+<tr><td>整体风险 vs 单个风险</td><td>概念</td><td>B</td><td>★ ✂️ 不看</td></tr>
+</tbody></table></div>
+<h2 class="module" id="M7-采购与合同">M7 采购与合同</h2>
+<div class="twrap"><table><thead><tr><th>考点</th><th>考法</th><th>等级</th><th>重要度</th></tr></thead><tbody>
+<tr><td><strong>合同类型 5 种（FFP/FPIF/CPFF/CPIF/T&M）</strong></td><td>概念</td><td><strong>A（默写 5 种）+ B</strong></td><td>★★★</td></tr>
+<tr><td>风险承担（固定总价→卖方；成本补偿→买方）</td><td>概念</td><td>B</td><td>★★</td></tr>
+<tr><td>采购流程（规划→实施→控制→收尾）</td><td>流程</td><td>A（默写 4 步）</td><td>★★</td></tr>
+<tr><td>索赔 vs 争议</td><td>情境</td><td>B</td><td>★★</td></tr>
+<tr><td>供方选择：加权评分</td><td>情境</td><td>C</td><td>★ ✂️ 不看</td></tr>
+<tr><td>采购文档 SOW/建议书</td><td>概念</td><td>B</td><td>★ ✂️ 不看</td></tr>
+</tbody></table></div>
+<h2 class="module" id="M8-资源与团队">M8 资源与团队</h2>
+<div class="twrap"><table><thead><tr><th>考点</th><th>考法</th><th>等级</th><th>重要度</th></tr></thead><tbody>
+<tr><td><strong>团队五阶段（组建→风暴→规范→成熟→解散）</strong></td><td>情境</td><td><strong>A（默写 5 阶段）+ C</strong></td><td>★★★</td></tr>
+<tr><td><strong>冲突五法（撤退/缓和/妥协/强迫/合作）</strong></td><td>情境</td><td><strong>A（默写 5 种）+ C</strong></td><td>★★★</td></tr>
+<tr><td><strong>仆人式领导（移除障碍/授权/教练）</strong></td><td>情境</td><td><strong>C</strong></td><td>★★★</td></tr>
+<tr><td>激励理论（马斯洛/赫茨伯格/麦克利兰）</td><td>概念</td><td>B</td><td>★★</td></tr>
+<tr><td>责任分配矩阵 RAM/RACI</td><td>概念</td><td>B</td><td>★★</td></tr>
+<tr><td>虚拟团队管理</td><td>情境</td><td>C</td><td>★★</td></tr>
+<tr><td>培训 vs 导师</td><td>情境</td><td>C</td><td>★★</td></tr>
+<tr><td>权力类型 5 种</td><td>概念</td><td>A（默写 5 种）</td><td>★★</td></tr>
+<tr><td>团队章程</td><td>概念</td><td>B</td><td>★ ✂️ 不看</td></tr>
+</tbody></table></div>
+<h2 class="module" id="M9-沟通与干系人">M9 沟通与干系人</h2>
+<div class="twrap"><table><thead><tr><th>考点</th><th>考法</th><th>等级</th><th>重要度</th></tr></thead><tbody>
+<tr><td><strong>沟通渠道公式 n(n-1)/2</strong></td><td>计算</td><td><strong>D</strong></td><td>★★★</td></tr>
+<tr><td>沟通方式：交互/推式/拉式</td><td>概念</td><td>B</td><td>★★</td></tr>
+<tr><td><strong>权力/利益方格</strong></td><td>情境</td><td><strong>C</strong></td><td>★★★</td></tr>
+<tr><td><strong>干系人参与度矩阵（不知晓→抵制→中立→支持→引导）</strong></td><td>情境</td><td><strong>A（默写 5 档）+ C</strong></td><td>★★★</td></tr>
+<tr><td>沟通管理计划内容</td><td>概念</td><td>B</td><td>★★</td></tr>
+<tr><td>沟通障碍（时区/语言/文化）</td><td>情境</td><td>C</td><td>★★</td></tr>
+<tr><td>干系人登记册</td><td>概念</td><td>B</td><td>★★</td></tr>
+<tr><td>期望管理（先沟通后行动）</td><td>情境</td><td>C</td><td>★★★</td></tr>
+</tbody></table></div>
+<h2 class="module" id="M10-敏捷与混合（权重最高，~50%-题）">M10 敏捷与混合（权重最高，~50% 题）</h2>
+<div class="twrap"><table><thead><tr><th>考点</th><th>考法</th><th>等级</th><th>重要度</th></tr></thead><tbody>
+<tr><td><strong>Scrum 三角色（PO/SM/开发团队）</strong></td><td>概念</td><td><strong>A（默写 3 角色职责）</strong></td><td>★★★</td></tr>
+<tr><td><strong>Scrum 四事件（规划/站会/评审/回顾）</strong></td><td>情境</td><td><strong>A（默写 4 事件）+ C</strong></td><td>★★★</td></tr>
+<tr><td><strong>Scrum 三工件（产品 Backlog/Sprint Backlog/增量）</strong></td><td>概念</td><td><strong>A（默写 3 工件）</strong></td><td>★★★</td></tr>
+<tr><td>Sprint 内不中途加需求</td><td>情境</td><td><strong>C</strong></td><td>★★★</td></tr>
+<tr><td><strong>评审（看产品）vs 回顾（改过程）</strong></td><td>情境</td><td><strong>B（辨析）+ C</strong></td><td>★★★</td></tr>
+<tr><td>看板：WIP 限制/拉动</td><td>情境</td><td><strong>C</strong></td><td>★★★</td></tr>
+<tr><td>看板 vs Scrum</td><td>概念</td><td>B</td><td>★★</td></tr>
+<tr><td>混合方法（稳定预测/不稳定迭代）</td><td>情境</td><td><strong>C</strong></td><td>★★★</td></tr>
+<tr><td>迭代 vs 增量</td><td>概念</td><td>B</td><td>★★</td></tr>
+<tr><td>DoD vs DoR</td><td>概念</td><td>B</td><td>★★</td></tr>
+<tr><td>故事点/计划扑克</td><td>情境</td><td>C</td><td>★★</td></tr>
+<tr><td>velocity/燃尽图</td><td>概念</td><td>B</td><td>★★</td></tr>
+<tr><td>用户故事（INVEST）</td><td>概念</td><td>B</td><td>★★</td></tr>
+<tr><td>自组织团队/仆人式领导</td><td>情境</td><td>C</td><td>★★★</td></tr>
+<tr><td>敏捷宣言 4 价值观</td><td>概念</td><td>A（默写 4 条）</td><td>★★</td></tr>
+<tr><td>MVP/发布规划</td><td>概念</td><td>B</td><td>★★</td></tr>
+</tbody></table></div>
+<h2 class="module" id="M11-业务环境与合规（8%，考前扫尾）">M11 业务环境与合规（8%，考前扫尾）</h2>
+<div class="twrap"><table><thead><tr><th>考点</th><th>考法</th><th>等级</th><th>重要度</th></tr></thead><tbody>
+<tr><td>法规/合规影响</td><td>情境</td><td>C</td><td>★★</td></tr>
+<tr><td>组织治理与政策</td><td>概念</td><td>B</td><td>★ ✂️ 不看</td></tr>
+<tr><td>战略对齐</td><td>概念</td><td>B</td><td>★★</td></tr>
+<tr><td>外部变更驱动</td><td>情境</td><td>C</td><td>★★</td></tr>
+<tr><td>可持续性与社会影响</td><td>概念</td><td>B</td><td>★ ✂️ 不看</td></tr>
+</tbody></table></div>
+</section>
+<div class="foot">生成：2026-08-15 · 数据源 lark-ws/pmp/（git 私有仓库）</div>
+</main>
+</body>
+</html>
