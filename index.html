@@ -13,37 +13,53 @@ tailwind.config = {
       paper: 'var(--paper)', ink: 'var(--ink)', sub: 'var(--sub)', mut: 'var(--mut)',
       line: 'var(--line)', soft: 'var(--soft)', accent: '#0066ff',
     },
-    fontFamily: { sans: ['Inter','Helvetica Neue','SF Pro Display','PingFang SC','Hiragino Sans GB','Microsoft YaHei','sans-serif'] },
-    letterSpacing: { tightest: '-0.02em', wide2: '0.02em', wide3: '0.03em' },
-    lineHeight: { read: '1.8' },
+    fontFamily: { sans: ['Inter','Helvetica Neue','PingFang SC','Hiragino Sans GB','Microsoft YaHei','sans-serif'] },
+    lineHeight: { read: '1.75' },
   }}
 };
 </script>
 <style>
-:root { --paper:#ffffff; --ink:#1a1a1a; --sub:#666666; --mut:#999999; --line:#e5e5e5; --soft:#f5f5f5; }
-.dark { --paper:#111111; --ink:#e6e6e6; --sub:#9ca3af; --mut:#6b7280; --line:#272727; --soft:#1a1a1a; }
+/* 可读性优先：正文纯黑、层级清晰、对比度充足（辅助文字不低于 #767676） */
+:root { --paper:#ffffff; --ink:#111111; --sub:#4a4a4a; --mut:#767676; --line:#d9d9d9; --soft:#f5f5f5; }
+.dark { --paper:#111111; --ink:#f0f0f0; --sub:#c0c0c0; --mut:#9a9a9a; --line:#333333; --soft:#1c1c1c; }
 html { scroll-behavior:smooth; }
 body { transition:background-color .3s, color .3s; }
-::selection { background:#000; color:#fff; }
-.dark ::selection { background:#fff; color:#000; }
+::selection { background:#111; color:#fff; }
+.dark ::selection { background:#fff; color:#111; }
 h2.module { cursor:pointer; }
 .mbody { display:none; }
 .mbody.show { display:block; }
 
-/* ---- 左侧导航：可收缩 ---- */
-#sidebar { width:13rem; }
-#layout.collapsed #sidebar { width:3.5rem; }
-#layout.collapsed #content { margin-left:3.5rem; }
+/* ---- 正文可读性：md 渲染的裸标签统一加样式 ---- */
+main p { font-size:16.5px; line-height:1.75; color:var(--ink); margin:.8rem 0; }
+main ul { margin:.8rem 0; padding-left:1.5rem; }
+main li { font-size:16.5px; line-height:1.7; color:var(--ink); margin:.45rem 0; }
+main h3 { font-size:17.5px; font-weight:600; color:var(--ink); margin:2.2rem 0 .6rem; padding-bottom:.45rem; border-bottom:1px solid var(--line); }
+main h4 { font-size:15.5px; font-weight:600; color:var(--sub); margin:1.4rem 0 .4rem; }
+main strong { color:var(--ink); font-weight:600; }
+main code { background:var(--soft); border:1px solid var(--line); padding:.05rem .4rem; border-radius:4px; font-size:.9em; }
+main pre.ascii { background:var(--soft); border:1px solid var(--line); border-radius:6px; padding:1rem 1.1rem;
+  overflow-x:auto; font-size:13.5px; line-height:1.6; font-family:ui-monospace,Menlo,monospace; white-space:pre; }
+main blockquote { margin:1rem 0; padding:.2rem 0 .2rem 1.1rem; border-left:3px solid var(--line); color:var(--sub); font-size:15.5px; line-height:1.7; }
+main blockquote p { margin:.35rem 0; }
+main .twrap table { font-size:14.5px; line-height:1.6; }
+main .twrap th { font-weight:600; color:var(--ink); background:var(--soft); }
+main .twrap td { color:var(--ink); }
+
+/* 左侧导航 */
+#sidebar { width:14rem; }
+#layout.collapsed #sidebar { width:4rem; }
+#layout.collapsed #content { margin-left:4rem; }
 #layout.collapsed .sb-label { display:none; }
 #layout.collapsed #sbTitle { display:none; }
 #layout.collapsed #sbCollapse { margin-left:auto; margin-right:auto; }
-#sbNav a { display:flex; align-items:center; gap:.5rem; padding:.4rem .6rem; font-size:.83rem; color:var(--sub);
-  border-left:1px solid transparent; transition:color .2s,border-color .2s; }
-#sbNav a:hover { color:var(--ink); }
-#sbNav a.active { color:var(--ink); border-left-color:var(--ink); }
-#sbNav a .sb-idx { color:var(--mut); font-size:.72rem; width:1.6rem; flex:none; letter-spacing:.02em; }
+#sbNav a { display:flex; align-items:center; gap:.5rem; padding:.55rem .75rem; font-size:.9rem; color:var(--sub);
+  border-left:2px solid transparent; border-radius:4px; transition:background-color .15s,color .15s; }
+#sbNav a:hover { background:var(--soft); color:var(--ink); }
+#sbNav a.active { background:var(--soft); color:var(--ink); border-left-color:var(--ink); font-weight:600; }
+#sbNav a .sb-idx { color:var(--mut); font-size:.78rem; width:1.7rem; flex:none; }
 #sbNav a.active .sb-idx { color:var(--ink); }
-#mask { display:none; position:fixed; inset:0; background:rgba(0,0,0,.25); z-index:35; }
+#mask { display:none; position:fixed; inset:0; background:rgba(0,0,0,.3); z-index:35; }
 #mask.show { display:block; }
 @media (max-width:767px) {
   #sidebar { transform:translateX(-100%); }
@@ -59,51 +75,51 @@ h2.module { cursor:pointer; }
   <!-- 左侧导航栏 -->
   <aside id="sidebar" class="fixed inset-y-0 left-0 z-40 bg-paper border-r border-line flex flex-col
          transition-all duration-300 md:translate-x-0">
-    <div class="flex items-center h-16 px-5 border-b border-line">
-      <span id="sbTitle" class="text-sm tracking-wide2">目录</span>
-      <button id="sbCollapse" class="ml-auto text-mut hover:text-ink text-sm transition-colors duration-300" title="收缩/展开">«</button>
+    <div class="flex items-center h-14 px-4 border-b border-line">
+      <span id="sbTitle" class="text-[15px] font-semibold">目录</span>
+      <button id="sbCollapse" class="ml-auto text-mut hover:text-ink text-base transition-colors duration-300" title="收缩/展开">«</button>
     </div>
-    <nav id="sbNav" class="flex-1 overflow-y-auto py-4 px-2"></nav>
+    <nav id="sbNav" class="flex-1 overflow-y-auto py-3 px-2"></nav>
   </aside>
   <div id="mask"></div>
 
-  <div id="content" class="flex-1 min-w-0 md:ml-52 transition-all duration-300">
+  <div id="content" class="flex-1 min-w-0 md:ml-56 transition-all duration-300">
 
-    <!-- Hero -->
-    <header class="text-center px-8 pt-24 pb-20">
-      <h1 class="text-6xl font-light tracking-tightest leading-tight mb-10">PMP 备考学习站</h1>
-      <p class="text-xl font-normal tracking-wide2 text-sub leading-read max-w-[34rem] mx-auto mb-12">
-        考试 9.12 · 模块掌握度制 · 乐凯课程仅作资料<br>
-        考核按考纲领域：人员 42% / 过程 50% / 业务 8%
+    <!-- 头部：紧凑，信息密度回归 -->
+    <header class="text-center px-6 pt-10 pb-8">
+      <h1 class="text-4xl font-bold tracking-normal mb-3">PMP 备考学习站</h1>
+      <p class="text-[17px] text-sub leading-read mb-4">
+        考试 9.12 · 模块掌握度制 · 乐凯课程仅作资料 · 考纲：人员 42% / 过程 50% / 业务 8%
       </p>
-      <p class="text-sm font-light tracking-wide3 text-mut">
-        12 模块&nbsp;&nbsp;·&nbsp;&nbsp;A 默写 · B 辨析 · C 应用 · D 计算&nbsp;&nbsp;·&nbsp;&nbsp;🖼 图 · 🎵 口诀 · 🧠 技巧 · 📝 死记
+      <p class="text-[13px] text-mut">
+        12 模块 · A 默写 / B 辨析 / C 应用 / D 计算 · 🖼 图 / 🎵 口诀 / 🧠 技巧 / 📝 死记
       </p>
     </header>
 
     <!-- 控制条 -->
-    <div class="sticky top-0 z-20 bg-paper border-b border-line px-8 py-4 flex flex-wrap items-center gap-x-10 gap-y-3">
-      <button id="sbOpen" class="md:hidden text-[13px] px-3 py-1.5 border border-line text-sub hover:border-ink hover:text-ink transition-all duration-300">☰ 目录</button>
+    <div class="sticky top-0 z-20 bg-paper border-b border-line px-6 py-3 flex flex-wrap items-center gap-x-6 gap-y-2">
+      <button id="sbOpen" class="md:hidden text-sm px-3 py-1.5 border border-line text-sub hover:border-ink hover:text-ink transition-all duration-300">☰ 目录</button>
       <input id="q" type="search" placeholder="搜索考点 / 关键词，如 EVM、冲突、WIP…"
-        class="flex-1 min-w-[10rem] bg-transparent border-b border-grayc focus:border-accent outline-none text-[15px] py-1.5 placeholder:text-mut transition-colors duration-300">
-      <nav class="flex gap-8">
-        <button data-tab="kb" class="text-[13px] pb-1 border-b text-ink border-ink">知识库</button>
-        <button data-tab="pts" class="text-[13px] pb-1 border-b border-transparent text-mut hover:text-ink transition-colors duration-300">考点清单</button>
+        class="flex-1 min-w-[12rem] bg-transparent border-b-2 border-gray-300 focus:border-accent outline-none text-[16px] py-1 placeholder:text-mut transition-colors duration-300">
+      <nav class="flex gap-6">
+        <button data-tab="kb" class="text-[15px] pb-1 border-b-2 text-ink border-ink">知识库</button>
+        <button data-tab="pts" class="text-[15px] pb-1 border-b-2 border-transparent text-mut hover:text-ink transition-colors duration-300">考点清单</button>
       </nav>
-      <button id="theme" class="text-[13px] px-4 py-1.5 border border-line text-sub hover:border-ink hover:text-ink transition-all duration-300">深色</button>
+      <button id="expAll" class="text-[13px] px-3 py-1.5 border border-line text-sub hover:border-ink hover:text-ink transition-all duration-300">收起全部</button>
+      <button id="theme" class="text-[13px] px-3 py-1.5 border border-line text-sub hover:border-ink hover:text-ink transition-all duration-300">深色</button>
     </div>
 
-    <main class="max-w-[800px] mx-auto px-8 py-16">
+    <main class="max-w-[840px] mx-auto px-6 py-10">
 
       <section id="kb">
-        <nav id="idx" class="grid grid-cols-12 gap-x-8 gap-y-6 mb-20" aria-label="模块索引"></nav>
+        <nav id="idx" class="grid grid-cols-12 gap-x-6 gap-y-4 mb-10" aria-label="模块索引"></nav>
 
-        <div class="flex flex-wrap gap-2 mb-12" id="typeChips">
-          <span class="chip px-4 py-1 text-[13px] border cursor-pointer transition-all duration-300 bg-ink text-paper border-ink">全部</span>
-          <span class="chip px-4 py-1 text-[13px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-300" data-type="fig">🖼 图</span>
-          <span class="chip px-4 py-1 text-[13px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-300" data-type="rhyme">🎵 口诀</span>
-          <span class="chip px-4 py-1 text-[13px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-300" data-type="trick">🧠 技巧</span>
-          <span class="chip px-4 py-1 text-[13px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-300" data-type="mem">📝 死记</span>
+        <div class="flex flex-wrap gap-2 mb-8" id="typeChips">
+          <span class="chip px-4 py-1.5 text-[14px] border cursor-pointer transition-all duration-200 bg-ink text-paper border-ink">全部</span>
+          <span class="chip px-4 py-1.5 text-[14px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-200" data-type="fig">🖼 图</span>
+          <span class="chip px-4 py-1.5 text-[14px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-200" data-type="rhyme">🎵 口诀</span>
+          <span class="chip px-4 py-1.5 text-[14px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-200" data-type="trick">🧠 技巧</span>
+          <span class="chip px-4 py-1.5 text-[14px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-200" data-type="mem">📝 死记</span>
         </div>
         <h2>PMP 知识库（记忆设计版 · 2026-08-15）</h2>
 <blockquote><p>职责：12 模块保留考点的知识内容 + <strong>记忆设计</strong>。配套 04-考点清单.md（考什么/等级）。</p><p>记忆类型标注：🖼 图（画出来记）· 🎵 口诀（顺口溜）· 🧠 技巧（判断捷径/触发词）· 📝 死记（列表硬背）。</p><p>学习流程：按类型记忆 → 模块测试检验 → 错题进队列。</p><p>术语约定：所有英文缩写首次出现处都标注中文全称（如 EVM=挣值管理），先懂词、再背题。PMI=项目管理协会（Project Management Institute），PMP=项目管理专业人士认证。</p></blockquote>
@@ -339,12 +355,12 @@ CV = EV − AC（成本差）        CPI = EV / AC（成本比）</pre>
       </section>
 
       <section id="pts" class="hidden">
-        <div class="flex flex-wrap gap-2 mb-12" id="gradeChips">
-          <span class="chip px-4 py-1 text-[13px] border cursor-pointer transition-all duration-300 bg-ink text-paper border-ink">全部等级</span>
-          <span class="chip px-4 py-1 text-[13px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-300" data-grade="A">A 默写</span>
-          <span class="chip px-4 py-1 text-[13px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-300" data-grade="B">B 辨析</span>
-          <span class="chip px-4 py-1 text-[13px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-300" data-grade="C">C 应用</span>
-          <span class="chip px-4 py-1 text-[13px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-300" data-grade="D">D 计算</span>
+        <div class="flex flex-wrap gap-2 mb-8" id="gradeChips">
+          <span class="chip px-4 py-1.5 text-[14px] border cursor-pointer transition-all duration-200 bg-ink text-paper border-ink">全部等级</span>
+          <span class="chip px-4 py-1.5 text-[14px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-200" data-grade="A">A 默写</span>
+          <span class="chip px-4 py-1.5 text-[14px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-200" data-grade="B">B 辨析</span>
+          <span class="chip px-4 py-1.5 text-[14px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-200" data-grade="C">C 应用</span>
+          <span class="chip px-4 py-1.5 text-[14px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-200" data-grade="D">D 计算</span>
         </div>
         <h2>PMP 考点清单（12 模块全量 · 含掌握等级与考核要求 · 2026-08-15）</h2>
 <blockquote><p>用途：抽背、出题、模块测试、考前复盘的考点总表。</p><p><strong>掌握等级（A/B/C/D）</strong>：每个考点按认知要求分级，达到对应等级才算掌握，见下方定义。</p><p><strong>豁免规则（2026-08-15）</strong>：标 <code>✂️ 不看</code> 的考点<strong>完全不需要看</strong>——低概率（★）且对通过率影响 <1%，不学习、不抽背、不出题、不计入模块达标判定。其余考点按等级要求掌握。时间充裕想加回时取消标记即可。</p><p><strong>领域映射（按考纲）</strong>：M0~M7 = 过程 Process（50%）；M8~M9 = 人员 People（42%）；M10 = 敏捷/混合（<strong>横跨过程与人员的命题方式</strong>，约 50% 的题）；M11 = 业务环境（8%）。模拟/测试按领域拆解得分。</p></blockquote>
@@ -491,10 +507,10 @@ CV = EV − AC（成本差）        CPI = EV / AC（成本比）</pre>
 <tr><td>外部变更驱动</td><td>情境</td><td>C</td><td>★★</td></tr>
 <tr><td>可持续性与社会影响</td><td>概念</td><td>B</td><td>★ ✂️ 不看</td></tr>
 </tbody></table></div>
-        <p id="emptyPts" class="hidden text-center text-mut text-sm py-16">没有匹配的考点</p>
+        <p id="emptyPts" class="hidden text-center text-mut text-sm py-12">没有匹配的考点</p>
       </section>
 
-      <footer class="mt-24 pt-8 border-t border-line text-center text-xs font-light text-mut">
+      <footer class="mt-16 pt-6 border-t border-line text-center text-[13px] text-mut">
         数据源 lark-ws/pmp/（git 私有仓库）· 学习站自动同步
       </footer>
     </main>
@@ -515,14 +531,37 @@ function gotoModule(h) {
   }
   h.scrollIntoView({ behavior:'smooth', block:'start' });
 }
+function setModuleOpen(h, open) {
+  var mbody = h.nextElementSibling;
+  if (!mbody || !mbody.classList.contains('mbody')) return;
+  mbody.classList.toggle('show', open);
+  h.classList.toggle('open', open);
+  var ar = h.querySelector('.arrow'); if (ar) ar.style.transform = open ? 'rotate(180deg)' : '';
+}
 
-// ---- 左侧导航：构建 + 收缩 + 滚动高亮 + 移动端 ----
+// ---- 展开/收起全部 ----
+var expBtn = document.getElementById('expAll');
+function expandAll() {
+  document.querySelectorAll('#kb h2.module').forEach(function(h){ setModuleOpen(h, true); });
+  expBtn.textContent = '收起全部';
+}
+function collapseAll() {
+  document.querySelectorAll('#kb h2.module').forEach(function(h){ setModuleOpen(h, false); });
+  expBtn.textContent = '展开全部';
+}
+var allExpanded = true;
+expBtn.onclick = function(){
+  if (allExpanded) { collapseAll(); } else { expandAll(); }
+  allExpanded = !allExpanded;
+};
+
+// ---- 左侧导航 ----
 (function buildSidebar(){
   var sbNav = document.getElementById('sbNav');
   var hs = document.querySelectorAll('#kb h2.module');
   var items = [];
 
-  function add(short, idx, target, activeSection) {
+  function add(short, idx, target, section) {
     var a = document.createElement('a');
     a.href = '#' + target.id;
     a.innerHTML = '<span class="sb-idx">' + idx + '</span><span class="sb-label">' + short + '</span>';
@@ -532,22 +571,18 @@ function gotoModule(h) {
       else target.scrollIntoView({ behavior:'smooth', block:'start' });
       closeMobile();
     };
-    a.dataset.section = activeSection;
+    a.dataset.section = section;
     sbNav.appendChild(a);
     items.push(a);
   }
-
-  // 知识库 / 考点清单入口
   add('知识库', '01', document.getElementById('kb'), 'kb');
   add('考点清单', '02', document.getElementById('pts'), 'pts');
-  // 12 模块
   hs.forEach(function(h, i){
     var short = h.textContent.replace(/^[^ ]+\s*/, '').trim();
     if (!short) short = h.textContent.trim();
     add(short, 'M' + i, h, 'module');
   });
 
-  // 收缩（桌面）
   var layout = document.getElementById('layout');
   var collapseBtn = document.getElementById('sbCollapse');
   function applyCollapsed(c) {
@@ -555,42 +590,33 @@ function gotoModule(h) {
     collapseBtn.textContent = c ? '»' : '«';
     try { localStorage.setItem('pmp-sb', c ? '1' : '0'); } catch (e) {}
   }
-  collapseBtn.onclick = function(){
-    applyCollapsed(!layout.classList.contains('collapsed'));
-  };
+  collapseBtn.onclick = function(){ applyCollapsed(!layout.classList.contains('collapsed')); };
   try { applyCollapsed(localStorage.getItem('pmp-sb') === '1'); } catch (e) {}
 
-  // 移动端开合
   var sidebar = document.getElementById('sidebar');
   var mask = document.getElementById('mask');
   document.getElementById('sbOpen').onclick = function(){ sidebar.classList.add('open'); mask.classList.add('show'); };
   mask.onclick = closeMobile;
   function closeMobile(){ sidebar.classList.remove('open'); mask.classList.remove('show'); }
 
-  // 滚动高亮（scroll spy）
+  // 滚动高亮
   var sections = [
     { id:'kb', el:document.getElementById('kb') },
     { id:'pts', el:document.getElementById('pts') }
   ];
   hs.forEach(function(h){ sections.push({ id:'module', el:h }); });
-
   function spy() {
-    var current = 'kb';
-    var y = window.scrollY + 120;
-    sections.forEach(function(s){
-      if (s.el.offsetTop <= y) current = (s.id === 'module') ? 'module' : s.id;
-    });
-    items.forEach(function(a){
-      var on = (a.dataset.section === current) || (current === 'module' && a.dataset.section === 'module');
-      a.classList.toggle('active', on);
-    });
+    var y = window.scrollY + 140;
+    var cur = 'kb';
+    sections.forEach(function(s){ if (s.el.offsetTop <= y) cur = s.id; });
+    items.forEach(function(a){ a.classList.toggle('active', a.dataset.section === cur); });
   }
   window.addEventListener('scroll', spy, { passive:true });
   window.addEventListener('resize', spy);
   spy();
 })();
 
-// ---- 模块索引（12 列网格）----
+// ---- 模块索引（完整名称，不截断）----
 (function buildIndex(){
   var idx = document.getElementById('idx');
   if (!idx) return;
@@ -600,7 +626,7 @@ function gotoModule(h) {
     if (!short) short = h.textContent.trim();
     var item = document.createElement('a');
     item.href = '#' + h.id;
-    item.className = 'col-span-4 md:col-span-3 pb-2 border-b border-line text-sm text-sub hover:text-ink hover:border-ink transition-colors duration-300 truncate';
+    item.className = 'col-span-4 md:col-span-3 pb-1.5 border-b-2 border-line text-[14px] text-sub hover:text-ink hover:border-ink transition-colors duration-200 break-words';
     item.textContent = short;
     item.onclick = function(e){ e.preventDefault(); gotoModule(h); };
     idx.appendChild(item);
@@ -612,24 +638,24 @@ var tabBtns = document.querySelectorAll('.ctrl nav button');
 function showTab(name) {
   tabBtns.forEach(function(x){
     var on = x.dataset.tab === name;
-    x.className = 'text-[13px] pb-1 border-b ' + (on ? 'text-ink border-ink' : 'border-transparent text-mut hover:text-ink transition-colors duration-300');
+    x.className = 'text-[15px] pb-1 border-b-2 ' + (on ? 'text-ink border-ink' : 'border-transparent text-mut hover:text-ink transition-colors duration-300');
   });
   document.getElementById('kb').classList.toggle('hidden', name !== 'kb');
   document.getElementById('pts').classList.toggle('hidden', name !== 'pts');
 }
 tabBtns.forEach(function(b){ b.onclick = function(){ showTab(b.dataset.tab); }; });
 
-// ---- accordion ----
+// ---- accordion（默认全部展开）----
 function initAccordion(root) {
   var hs = root.querySelectorAll('h2.module');
-  hs.forEach(function(h, i) {
+  hs.forEach(function(h) {
     var body = document.createElement('div');
     body.className = 'mbody';
     var n = h.nextElementSibling;
     while (n && n.tagName !== 'H2') { var nx = n.nextElementSibling; body.appendChild(n); n = nx; }
     h.after(body);
     h.insertAdjacentHTML('beforeend', '<span class="arrow ml-auto text-mut text-[11px] inline-block transition-transform duration-300">▲</span>');
-    if (i === 0) { h.classList.add('open'); body.classList.add('show'); }
+    setModuleOpen(h, true);
     h.onclick = function(){
       var open = body.classList.toggle('show');
       h.classList.toggle('open', open);
@@ -646,7 +672,7 @@ document.querySelectorAll('#kb h3').forEach(function(h3){
   var types = Object.keys(TYPE_MAP).filter(function(e){ return h3.textContent.indexOf(e) !== -1; });
   if (types.length) {
     h3.dataset.types = types.map(function(e){ return TYPE_MAP[e]; }).join(',');
-    h3.insertAdjacentHTML('beforeend', '<span class="tag ml-2 text-mut text-[11px] font-light">' + types.join(' ') + '</span>');
+    h3.insertAdjacentHTML('beforeend', '<span class="tag ml-2 text-mut text-[12px]">' + types.join(' ') + '</span>');
   }
 });
 
@@ -680,10 +706,14 @@ document.getElementById('gradeChips').querySelectorAll('.chip').forEach(function
   gradeFilter = c.dataset.grade; applyFilters();
 };});
 
-// ---- 搜索 ----
+// ---- 搜索（命中即展开对应模块，保证结果可见）----
 var q = document.getElementById('q');
 var query = '';
-q.addEventListener('input', function(){ query = q.value.trim().toLowerCase(); applyFilters(); });
+q.addEventListener('input', function(){
+  query = q.value.trim().toLowerCase();
+  if (query) expandAll();
+  applyFilters();
+});
 
 function applyFilters() {
   document.querySelectorAll('#kb h3').forEach(function(h3){
@@ -715,9 +745,9 @@ function setTheme(d) {
 themeBtn.onclick = function(){
   var next = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
   setTheme(next);
-  try { localStorage.setItem('pmp-theme-v5', next); } catch (e) {}
+  try { localStorage.setItem('pmp-theme-v6', next); } catch (e) {}
 };
-try { setTheme(localStorage.getItem('pmp-theme-v5') || 'light'); } catch (e) { setTheme('light'); }
+try { setTheme(localStorage.getItem('pmp-theme-v6') || 'light'); } catch (e) { setTheme('light'); }
 
 // ---- 返回顶部 ----
 var topBtn = document.getElementById('topbtn');
