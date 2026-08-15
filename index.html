@@ -29,47 +29,83 @@ body { transition:background-color .3s, color .3s; }
 h2.module { cursor:pointer; }
 .mbody { display:none; }
 .mbody.show { display:block; }
+
+/* ---- 左侧导航：可收缩 ---- */
+#sidebar { width:13rem; }
+#layout.collapsed #sidebar { width:3.5rem; }
+#layout.collapsed #content { margin-left:3.5rem; }
+#layout.collapsed .sb-label { display:none; }
+#layout.collapsed #sbTitle { display:none; }
+#layout.collapsed #sbCollapse { margin-left:auto; margin-right:auto; }
+#sbNav a { display:flex; align-items:center; gap:.5rem; padding:.4rem .6rem; font-size:.83rem; color:var(--sub);
+  border-left:1px solid transparent; transition:color .2s,border-color .2s; }
+#sbNav a:hover { color:var(--ink); }
+#sbNav a.active { color:var(--ink); border-left-color:var(--ink); }
+#sbNav a .sb-idx { color:var(--mut); font-size:.72rem; width:1.6rem; flex:none; letter-spacing:.02em; }
+#sbNav a.active .sb-idx { color:var(--ink); }
+#mask { display:none; position:fixed; inset:0; background:rgba(0,0,0,.25); z-index:35; }
+#mask.show { display:block; }
+@media (max-width:767px) {
+  #sidebar { transform:translateX(-100%); }
+  #sidebar.open { transform:translateX(0); }
+  #content { margin-left:0 !important; }
+}
 </style>
 </head>
 <body class="bg-paper text-ink font-sans antialiased">
 
-<!-- Hero：留白即设计，排版即视觉 -->
-<header class="text-center px-8 pt-24 pb-20">
-  <h1 class="text-6xl font-light tracking-tightest leading-tight mb-10">PMP 备考学习站</h1>
-  <p class="text-xl font-normal tracking-wide2 text-sub leading-read max-w-[34rem] mx-auto mb-12">
-    考试 9.12 · 模块掌握度制 · 乐凯课程仅作资料<br>
-    考核按考纲领域：人员 42% / 过程 50% / 业务 8%
-  </p>
-  <p class="text-sm font-light tracking-wide3 text-mut">
-    12 模块&nbsp;&nbsp;·&nbsp;&nbsp;A 默写 · B 辨析 · C 应用 · D 计算&nbsp;&nbsp;·&nbsp;&nbsp;🖼 图 · 🎵 口诀 · 🧠 技巧 · 📝 死记
-  </p>
-</header>
+<div id="layout" class="md:flex">
 
-<!-- 控制条：白底单线，无阴影 -->
-<div class="sticky top-0 z-20 bg-paper border-b border-line px-8 py-4 flex flex-wrap items-center gap-x-10 gap-y-3">
-  <input id="q" type="search" placeholder="搜索考点 / 关键词，如 EVM、冲突、WIP…"
-    class="flex-1 min-w-[10rem] bg-transparent border-b border-grayc focus:border-accent outline-none text-[15px] py-1.5 placeholder:text-mut transition-colors duration-300">
-  <nav class="flex gap-8">
-    <button data-tab="kb" class="text-[13px] pb-1 border-b text-ink border-ink">知识库</button>
-    <button data-tab="pts" class="text-[13px] pb-1 border-b border-transparent text-mut hover:text-ink transition-colors duration-300">考点清单</button>
-  </nav>
-  <button id="theme" class="text-[13px] px-4 py-1.5 border border-line text-sub hover:border-ink hover:text-ink transition-all duration-300">深色</button>
-</div>
-
-<main class="max-w-[800px] mx-auto px-8 py-16">
-
-  <section id="kb">
-    <!-- 模块索引：12 列精确网格 -->
-    <nav id="idx" class="grid grid-cols-12 gap-x-8 gap-y-6 mb-20" aria-label="模块索引"></nav>
-
-    <div class="flex flex-wrap gap-2 mb-12" id="typeChips">
-      <span class="chip px-4 py-1 text-[13px] border cursor-pointer transition-all duration-300 bg-ink text-paper border-ink">全部</span>
-      <span class="chip px-4 py-1 text-[13px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-300" data-type="fig">🖼 图</span>
-      <span class="chip px-4 py-1 text-[13px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-300" data-type="rhyme">🎵 口诀</span>
-      <span class="chip px-4 py-1 text-[13px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-300" data-type="trick">🧠 技巧</span>
-      <span class="chip px-4 py-1 text-[13px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-300" data-type="mem">📝 死记</span>
+  <!-- 左侧导航栏 -->
+  <aside id="sidebar" class="fixed inset-y-0 left-0 z-40 bg-paper border-r border-line flex flex-col
+         transition-all duration-300 md:translate-x-0">
+    <div class="flex items-center h-16 px-5 border-b border-line">
+      <span id="sbTitle" class="text-sm tracking-wide2">目录</span>
+      <button id="sbCollapse" class="ml-auto text-mut hover:text-ink text-sm transition-colors duration-300" title="收缩/展开">«</button>
     </div>
-    <h2>PMP 知识库（记忆设计版 · 2026-08-15）</h2>
+    <nav id="sbNav" class="flex-1 overflow-y-auto py-4 px-2"></nav>
+  </aside>
+  <div id="mask"></div>
+
+  <div id="content" class="flex-1 min-w-0 md:ml-52 transition-all duration-300">
+
+    <!-- Hero -->
+    <header class="text-center px-8 pt-24 pb-20">
+      <h1 class="text-6xl font-light tracking-tightest leading-tight mb-10">PMP 备考学习站</h1>
+      <p class="text-xl font-normal tracking-wide2 text-sub leading-read max-w-[34rem] mx-auto mb-12">
+        考试 9.12 · 模块掌握度制 · 乐凯课程仅作资料<br>
+        考核按考纲领域：人员 42% / 过程 50% / 业务 8%
+      </p>
+      <p class="text-sm font-light tracking-wide3 text-mut">
+        12 模块&nbsp;&nbsp;·&nbsp;&nbsp;A 默写 · B 辨析 · C 应用 · D 计算&nbsp;&nbsp;·&nbsp;&nbsp;🖼 图 · 🎵 口诀 · 🧠 技巧 · 📝 死记
+      </p>
+    </header>
+
+    <!-- 控制条 -->
+    <div class="sticky top-0 z-20 bg-paper border-b border-line px-8 py-4 flex flex-wrap items-center gap-x-10 gap-y-3">
+      <button id="sbOpen" class="md:hidden text-[13px] px-3 py-1.5 border border-line text-sub hover:border-ink hover:text-ink transition-all duration-300">☰ 目录</button>
+      <input id="q" type="search" placeholder="搜索考点 / 关键词，如 EVM、冲突、WIP…"
+        class="flex-1 min-w-[10rem] bg-transparent border-b border-grayc focus:border-accent outline-none text-[15px] py-1.5 placeholder:text-mut transition-colors duration-300">
+      <nav class="flex gap-8">
+        <button data-tab="kb" class="text-[13px] pb-1 border-b text-ink border-ink">知识库</button>
+        <button data-tab="pts" class="text-[13px] pb-1 border-b border-transparent text-mut hover:text-ink transition-colors duration-300">考点清单</button>
+      </nav>
+      <button id="theme" class="text-[13px] px-4 py-1.5 border border-line text-sub hover:border-ink hover:text-ink transition-all duration-300">深色</button>
+    </div>
+
+    <main class="max-w-[800px] mx-auto px-8 py-16">
+
+      <section id="kb">
+        <nav id="idx" class="grid grid-cols-12 gap-x-8 gap-y-6 mb-20" aria-label="模块索引"></nav>
+
+        <div class="flex flex-wrap gap-2 mb-12" id="typeChips">
+          <span class="chip px-4 py-1 text-[13px] border cursor-pointer transition-all duration-300 bg-ink text-paper border-ink">全部</span>
+          <span class="chip px-4 py-1 text-[13px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-300" data-type="fig">🖼 图</span>
+          <span class="chip px-4 py-1 text-[13px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-300" data-type="rhyme">🎵 口诀</span>
+          <span class="chip px-4 py-1 text-[13px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-300" data-type="trick">🧠 技巧</span>
+          <span class="chip px-4 py-1 text-[13px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-300" data-type="mem">📝 死记</span>
+        </div>
+        <h2>PMP 知识库（记忆设计版 · 2026-08-15）</h2>
 <blockquote><p>职责：12 模块保留考点的知识内容 + <strong>记忆设计</strong>。配套 04-考点清单.md（考什么/等级）。</p><p>记忆类型标注：🖼 图（画出来记）· 🎵 口诀（顺口溜）· 🧠 技巧（判断捷径/触发词）· 📝 死记（列表硬背）。</p><p>学习流程：按类型记忆 → 模块测试检验 → 错题进队列。</p><p>术语约定：所有英文缩写首次出现处都标注中文全称（如 EVM=挣值管理），先懂词、再背题。PMI=项目管理协会（Project Management Institute），PMP=项目管理专业人士认证。</p></blockquote>
 <p>---</p>
 <h2 class="module" id="M0-框架与五大过程组">M0 框架与五大过程组</h2>
@@ -300,17 +336,17 @@ CV = EV − AC（成本差）        CPI = EV / AC（成本比）</pre>
 <p>外部法规变化→<strong>先评估合规影响，必要时走变更流程</strong>（摸底 B1）；"暂停项目/继续原计划"都错。</p>
 <h4>战略对齐 🧠</h4>
 <p>项目支撑组织战略；组合管理按战略优先级排资源。</p>
-  </section>
+      </section>
 
-  <section id="pts" class="hidden">
-    <div class="flex flex-wrap gap-2 mb-12" id="gradeChips">
-      <span class="chip px-4 py-1 text-[13px] border cursor-pointer transition-all duration-300 bg-ink text-paper border-ink">全部等级</span>
-      <span class="chip px-4 py-1 text-[13px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-300" data-grade="A">A 默写</span>
-      <span class="chip px-4 py-1 text-[13px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-300" data-grade="B">B 辨析</span>
-      <span class="chip px-4 py-1 text-[13px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-300" data-grade="C">C 应用</span>
-      <span class="chip px-4 py-1 text-[13px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-300" data-grade="D">D 计算</span>
-    </div>
-    <h2>PMP 考点清单（12 模块全量 · 含掌握等级与考核要求 · 2026-08-15）</h2>
+      <section id="pts" class="hidden">
+        <div class="flex flex-wrap gap-2 mb-12" id="gradeChips">
+          <span class="chip px-4 py-1 text-[13px] border cursor-pointer transition-all duration-300 bg-ink text-paper border-ink">全部等级</span>
+          <span class="chip px-4 py-1 text-[13px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-300" data-grade="A">A 默写</span>
+          <span class="chip px-4 py-1 text-[13px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-300" data-grade="B">B 辨析</span>
+          <span class="chip px-4 py-1 text-[13px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-300" data-grade="C">C 应用</span>
+          <span class="chip px-4 py-1 text-[13px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-300" data-grade="D">D 计算</span>
+        </div>
+        <h2>PMP 考点清单（12 模块全量 · 含掌握等级与考核要求 · 2026-08-15）</h2>
 <blockquote><p>用途：抽背、出题、模块测试、考前复盘的考点总表。</p><p><strong>掌握等级（A/B/C/D）</strong>：每个考点按认知要求分级，达到对应等级才算掌握，见下方定义。</p><p><strong>豁免规则（2026-08-15）</strong>：标 <code>✂️ 不看</code> 的考点<strong>完全不需要看</strong>——低概率（★）且对通过率影响 <1%，不学习、不抽背、不出题、不计入模块达标判定。其余考点按等级要求掌握。时间充裕想加回时取消标记即可。</p><p><strong>领域映射（按考纲）</strong>：M0~M7 = 过程 Process（50%）；M8~M9 = 人员 People（42%）；M10 = 敏捷/混合（<strong>横跨过程与人员的命题方式</strong>，约 50% 的题）；M11 = 业务环境（8%）。模拟/测试按领域拆解得分。</p></blockquote>
 <h2 class="module" id="掌握等级与考核要求">掌握等级与考核要求</h2>
 <div class="twrap"><table><thead><tr><th>等级</th><th>名称</th><th>掌握要求</th><th>考核方式</th><th>达标线</th></tr></thead><tbody>
@@ -455,20 +491,123 @@ CV = EV − AC（成本差）        CPI = EV / AC（成本比）</pre>
 <tr><td>外部变更驱动</td><td>情境</td><td>C</td><td>★★</td></tr>
 <tr><td>可持续性与社会影响</td><td>概念</td><td>B</td><td>★ ✂️ 不看</td></tr>
 </tbody></table></div>
-    <p id="emptyPts" class="hidden text-center text-mut text-sm py-16">没有匹配的考点</p>
-  </section>
+        <p id="emptyPts" class="hidden text-center text-mut text-sm py-16">没有匹配的考点</p>
+      </section>
 
-  <footer class="mt-24 pt-8 border-t border-line text-center text-xs font-light text-mut">
-    数据源 lark-ws/pmp/（git 私有仓库）· 学习站自动同步
-  </footer>
-</main>
+      <footer class="mt-24 pt-8 border-t border-line text-center text-xs font-light text-mut">
+        数据源 lark-ws/pmp/（git 私有仓库）· 学习站自动同步
+      </footer>
+    </main>
+  </div>
+</div>
 
 <button id="topbtn" title="回到顶部"
   class="fixed right-6 bottom-7 w-11 h-11 rounded-full border border-line bg-paper text-mut text-base
          opacity-0 pointer-events-none transition-all duration-300 hover:border-ink hover:text-ink">↑</button>
 
 <script>
-// ---- tabs（控制条 nav）----
+// ---- 通用：模块定位（展开并滚动）----
+function gotoModule(h) {
+  var mbody = h.nextElementSibling;
+  if (mbody && mbody.classList.contains('mbody') && !mbody.classList.contains('show')) {
+    mbody.classList.add('show'); h.classList.add('open');
+    var ar = h.querySelector('.arrow'); if (ar) ar.style.transform = 'rotate(180deg)';
+  }
+  h.scrollIntoView({ behavior:'smooth', block:'start' });
+}
+
+// ---- 左侧导航：构建 + 收缩 + 滚动高亮 + 移动端 ----
+(function buildSidebar(){
+  var sbNav = document.getElementById('sbNav');
+  var hs = document.querySelectorAll('#kb h2.module');
+  var items = [];
+
+  function add(short, idx, target, activeSection) {
+    var a = document.createElement('a');
+    a.href = '#' + target.id;
+    a.innerHTML = '<span class="sb-idx">' + idx + '</span><span class="sb-label">' + short + '</span>';
+    a.onclick = function(e){
+      e.preventDefault();
+      if (target.tagName === 'H2') gotoModule(target);
+      else target.scrollIntoView({ behavior:'smooth', block:'start' });
+      closeMobile();
+    };
+    a.dataset.section = activeSection;
+    sbNav.appendChild(a);
+    items.push(a);
+  }
+
+  // 知识库 / 考点清单入口
+  add('知识库', '01', document.getElementById('kb'), 'kb');
+  add('考点清单', '02', document.getElementById('pts'), 'pts');
+  // 12 模块
+  hs.forEach(function(h, i){
+    var short = h.textContent.replace(/^[^ ]+\s*/, '').trim();
+    if (!short) short = h.textContent.trim();
+    add(short, 'M' + i, h, 'module');
+  });
+
+  // 收缩（桌面）
+  var layout = document.getElementById('layout');
+  var collapseBtn = document.getElementById('sbCollapse');
+  function applyCollapsed(c) {
+    layout.classList.toggle('collapsed', c);
+    collapseBtn.textContent = c ? '»' : '«';
+    try { localStorage.setItem('pmp-sb', c ? '1' : '0'); } catch (e) {}
+  }
+  collapseBtn.onclick = function(){
+    applyCollapsed(!layout.classList.contains('collapsed'));
+  };
+  try { applyCollapsed(localStorage.getItem('pmp-sb') === '1'); } catch (e) {}
+
+  // 移动端开合
+  var sidebar = document.getElementById('sidebar');
+  var mask = document.getElementById('mask');
+  document.getElementById('sbOpen').onclick = function(){ sidebar.classList.add('open'); mask.classList.add('show'); };
+  mask.onclick = closeMobile;
+  function closeMobile(){ sidebar.classList.remove('open'); mask.classList.remove('show'); }
+
+  // 滚动高亮（scroll spy）
+  var sections = [
+    { id:'kb', el:document.getElementById('kb') },
+    { id:'pts', el:document.getElementById('pts') }
+  ];
+  hs.forEach(function(h){ sections.push({ id:'module', el:h }); });
+
+  function spy() {
+    var current = 'kb';
+    var y = window.scrollY + 120;
+    sections.forEach(function(s){
+      if (s.el.offsetTop <= y) current = (s.id === 'module') ? 'module' : s.id;
+    });
+    items.forEach(function(a){
+      var on = (a.dataset.section === current) || (current === 'module' && a.dataset.section === 'module');
+      a.classList.toggle('active', on);
+    });
+  }
+  window.addEventListener('scroll', spy, { passive:true });
+  window.addEventListener('resize', spy);
+  spy();
+})();
+
+// ---- 模块索引（12 列网格）----
+(function buildIndex(){
+  var idx = document.getElementById('idx');
+  if (!idx) return;
+  var hs = document.querySelectorAll('#kb h2.module');
+  hs.forEach(function(h){
+    var short = h.textContent.replace(/^[^ ]+\s*/, '').trim();
+    if (!short) short = h.textContent.trim();
+    var item = document.createElement('a');
+    item.href = '#' + h.id;
+    item.className = 'col-span-4 md:col-span-3 pb-2 border-b border-line text-sm text-sub hover:text-ink hover:border-ink transition-colors duration-300 truncate';
+    item.textContent = short;
+    item.onclick = function(e){ e.preventDefault(); gotoModule(h); };
+    idx.appendChild(item);
+  });
+})();
+
+// ---- tabs ----
 var tabBtns = document.querySelectorAll('.ctrl nav button');
 function showTab(name) {
   tabBtns.forEach(function(x){
@@ -480,7 +619,7 @@ function showTab(name) {
 }
 tabBtns.forEach(function(b){ b.onclick = function(){ showTab(b.dataset.tab); }; });
 
-// ---- accordion：模块标题 + 内容折叠 ----
+// ---- accordion ----
 function initAccordion(root) {
   var hs = root.querySelectorAll('h2.module');
   hs.forEach(function(h, i) {
@@ -500,31 +639,6 @@ function initAccordion(root) {
   });
 }
 initAccordion(document.getElementById('kb'));
-
-// ---- 模块索引（12 列网格）：点击跳转并展开 ----
-(function buildIndex(){
-  var idx = document.getElementById('idx');
-  if (!idx) return;
-  var hs = document.querySelectorAll('#kb h2.module');
-  hs.forEach(function(h){
-    var short = h.textContent.replace(/^[^ ]+\s*/, '').trim();
-    if (!short) short = h.textContent.trim();
-    var item = document.createElement('a');
-    item.href = '#' + h.id;
-    item.className = 'col-span-4 md:col-span-3 pb-2 border-b border-line text-sm text-sub hover:text-ink hover:border-ink transition-colors duration-300 truncate';
-    item.textContent = short;
-    item.onclick = function(e){
-      e.preventDefault();
-      var mbody = h.nextElementSibling;
-      if (mbody && mbody.classList.contains('mbody') && !mbody.classList.contains('show')) {
-        mbody.classList.add('show'); h.classList.add('open');
-        var ar = h.querySelector('.arrow'); if (ar) ar.style.transform = 'rotate(180deg)';
-      }
-      h.scrollIntoView({ behavior:'smooth', block:'start' });
-    };
-    idx.appendChild(item);
-  });
-})();
 
 // ---- 类型标记 ----
 var TYPE_MAP = { '🖼':'fig','🎵':'rhyme','🧠':'trick','📝':'mem' };
@@ -592,7 +706,7 @@ function applyFilters() {
   document.getElementById('emptyPts').classList.toggle('hidden', any);
 }
 
-// ---- 深色模式（class 策略）----
+// ---- 深色模式 ----
 var themeBtn = document.getElementById('theme');
 function setTheme(d) {
   document.documentElement.classList.toggle('dark', d === 'dark');
@@ -601,9 +715,9 @@ function setTheme(d) {
 themeBtn.onclick = function(){
   var next = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
   setTheme(next);
-  try { localStorage.setItem('pmp-theme-v4', next); } catch (e) {}
+  try { localStorage.setItem('pmp-theme-v5', next); } catch (e) {}
 };
-try { setTheme(localStorage.getItem('pmp-theme-v4') || 'light'); } catch (e) { setTheme('light'); }
+try { setTheme(localStorage.getItem('pmp-theme-v5') || 'light'); } catch (e) { setTheme('light'); }
 
 // ---- 返回顶部 ----
 var topBtn = document.getElementById('topbtn');
