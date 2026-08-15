@@ -42,6 +42,12 @@ main pre.ascii { background:var(--soft); border:1px solid var(--line); border-ra
   overflow-x:auto; font-size:13.5px; line-height:1.6; font-family:ui-monospace,Menlo,monospace; white-space:pre; }
 main blockquote { margin:1rem 0; padding:.2rem 0 .2rem 1.1rem; border-left:3px solid var(--line); color:var(--sub); font-size:15.5px; line-height:1.7; }
 main blockquote p { margin:.35rem 0; }
+/* 💡 讲解块：学习区块，突出"为什么/怎么用/例子/坑" */
+main .explain { margin:1rem 0 1.2rem; padding: .9rem 1.1rem .9rem 1.2rem; background:#f0f6ff;
+  border-left:4px solid #0066ff; border-radius:6px; font-size:15px; line-height:1.75; color:var(--ink); }
+.dark main .explain { background:#122033; }
+main .explain strong { color:#0044cc; font-weight:600; }
+.dark main .explain strong { color:#7ab0ff; }
 main .twrap table { font-size:14.5px; line-height:1.6; }
 main .twrap th { font-weight:600; color:var(--ink); background:var(--soft); }
 main .twrap td { color:var(--ink); }
@@ -122,7 +128,7 @@ main .twrap td { color:var(--ink); }
           <span class="chip px-4 py-1.5 text-[14px] border border-line text-sub cursor-pointer hover:border-ink hover:text-ink transition-all duration-200" data-type="mem">📝 死记</span>
         </div>
         <h2>PMP 知识库（记忆设计版 · 2026-08-15）</h2>
-<blockquote><p>职责：12 模块保留考点的知识内容 + <strong>记忆设计</strong>。配套 04-考点清单.md（考什么/等级）。</p><p>记忆类型标注：🖼 图（画出来记）· 🎵 口诀（顺口溜）· 🧠 技巧（判断捷径/触发词）· 📝 死记（列表硬背）。</p><p>学习流程：按类型记忆 → 模块测试检验 → 错题进队列。</p><p>术语约定：所有英文缩写首次出现处都标注中文全称（如 EVM=挣值管理），先懂词、再背题。PMI=项目管理协会（Project Management Institute），PMP=项目管理专业人士认证。</p></blockquote>
+<blockquote><p>职责：12 模块保留考点的知识内容 + <strong>记忆设计</strong>。配套 04-考点清单.md（考什么/等级）。</p><p>记忆类型标注：🖼 图（画出来记）· 🎵 口诀（顺口溜）· 🧠 技巧（判断捷径/触发词）· 📝 死记（列表硬背）。</p><p>💡 讲解：核心考点附"为什么/怎么用/例子/坑"四段讲解（网页中蓝色区块），先懂原理再背结论。</p><p>学习流程：看讲解懂原理 → 按类型记忆 → 模块测试检验 → 错题进队列。</p><p>术语约定：所有英文缩写首次出现处都标注中文全称（如 EVM=挣值管理），先懂词、再背题。PMI=项目管理协会（Project Management Institute），PMP=项目管理专业人士认证。</p></blockquote>
 <p>---</p>
 <h2 class="module" id="M0-框架与五大过程组">M0 框架与五大过程组</h2>
 <h4>五大过程组 🖼 🎵 A级默写</h4>
@@ -130,6 +136,7 @@ main .twrap td { color:var(--ink); }
 （立项）（定路线）（干活）（纠偏）（结算）</pre>
 <p>🎵 口诀：<strong>"启规执监收"</strong>——启动立项、规划路线、执行干活、监控纠偏、收尾结算。</p>
 <p>🧠 技巧：判断题问"第一步做什么"，先想是哪个过程组：没立项→启动；没计划→规划；干到一半→执行/监控；干完了→收尾。</p>
+<div class="explain"><strong>讲解</strong>：过程组不是"阶段"而是"动作分类"——每个阶段里都会反复出现启动→规划→执行→监控→收尾的小循环。为什么启动必须最先？没有章程授权就不能动用资源；为什么监控贯穿全程？计划赶不上变化，PM 的职责就是盯偏差。<strong>例子</strong>：项目做到一半发现成本超支——这是"监控"动作，先分析偏差再决定要不要变更，而不是直接改计划。<strong>坑</strong>：选项说"立即赶工/立即调整"=跳过监控直接执行，PMI 必错。</div>
 <h4>项目 vs 项目集 vs 项目组合 📝</h4>
 <div class="twrap"><table><thead><tr><th></th><th>定义</th><th>关键词</th></tr></thead><tbody>
 <tr><td>项目</td><td>临时性努力创造独特可交付物</td><td>临时+独特</td></tr>
@@ -144,14 +151,17 @@ PM权力小 ──────────────────────�
 <ul><li>PM=对项目成败负责（日常）；职能经理=给资源（领域）；发起人=出钱+授权+章程。</li></ul>
 <h4>EEF vs OPA 🎵</h4>
 <p>🎵 口诀：<strong>"外 EEF 管不着，内 OPA 随便抄"</strong>——EEF=事业环境因素（Enterprise Environmental Factors，外部不可控：法规/文化/市场）；OPA=组织过程资产（Organizational Process Assets，内部可复用：流程/模板/经验教训）。</p>
+<div class="explain"><strong>讲解</strong>：区分两者的意义在"能不能改"。EEF 是组织外部的规则，<strong>只能适应不能改变</strong>；OPA 是组织内部的沉淀，<strong>直接拿来用</strong>。<strong>例子</strong>：政府出台新法规→EEF，项目只能调整适应；公司有现成 WBS 模板→OPA，直接复用。<strong>坑</strong>：选项把"公司政策/流程"说成外部因素，或把"法规"说成可修改，都错。</div>
 <h4>章程 vs 计划 🧠</h4>
 <p>🧠 技巧：<strong>章程=授权证（能干什么），计划=施工图（怎么干）</strong>。授权问题永远先查章程。</p>
+<div class="explain"><strong>讲解</strong>：章程是项目的"出生证明"：它证明项目存在、给出目标与预算、<strong>授权 PM 动用资源</strong>。项目管理计划是"怎么执行"的详细方案。为什么先有章程才有计划？没授权就做计划=纸上谈兵，做不了决策。<strong>例子</strong>：PM 发现权限不足→翻章程看授权范围→找发起人补授权，而不是硬干或辞职。<strong>坑</strong>：选项让 PM"先做计划再要章程"（顺序反了）或"自己扩大权限"（越权）。</div>
 <p>---</p>
 <h2 class="module" id="M1-整合管理">M1 整合管理</h2>
 <h4>变更管理流程五步 🖼 🎵 A级默写</h4>
 <pre class="ascii">①记录 → ②评估影响 → ③变更控制委员会（CCB，Change Control Board）审批 → ④批准/拒绝 → ⑤实施+更新基准</pre>
 <p>🎵 口诀：<strong>"变更三连：记录→评估→审批"</strong>（后两步：批了才实施）。</p>
 <p>🧠 技巧（最高频考点）：看到"范围/需求变化、干系人要求加功能"→<strong>先走变更流程</strong>；选项出现"直接做/直接拒绝/立即实现"=跳步，错。</p>
+<div class="explain"><strong>讲解</strong>：PMI 对变更的核心信仰：<strong>范围基准一旦批准，任何变化都必须走受控流程</strong>。因为"直接做"会引发范围蔓延、成本失控，绕过评估等于拍脑袋；流程的意义：记录=留痕、评估=算清影响、CCB=集体决策防个人拍板。<strong>例子</strong>：客户要加功能→记录变更请求→评估影响→提交 CCB→批准后更新基准再实施。<strong>坑</strong>：干扰项常把"立即实现/直接拒绝/口头同意"包装成高效，全部跳步必错。</div>
 <h4>变更请求 4 类 📝</h4>
 <p>纠正措施（纠偏差）/ 预防措施（防未来）/ 缺陷补救（修缺陷）/ 计划更新（改文档）。</p>
 <p>🎵 助记：<strong>"纠偏、防患、补漏、改文档"</strong>。</p>
@@ -160,6 +170,7 @@ PM权力小 ──────────────────────�
 <h4>收尾三件事 🎵 A级默写</h4>
 <p>🎵 口诀：<strong>"验收早做、经验教训、资产更新"</strong>（验收在收尾前已做完；收尾核心=经验教训+组织过程资产）。</p>
 <p>🧠 技巧：收尾题选"收集经验教训/更新资产"，不选庆功会/最终风险审计。</p>
+<div class="explain"><strong>讲解</strong>：收尾的本质是"<strong>把项目价值沉淀回组织</strong>"。为什么经验教训最重要？项目结束了，但组织的项目能力要积累，下次项目靠它少踩坑。为什么验收在收尾前？收尾是行政性结束，验收是交付确认，逻辑上先验收后收尾。<strong>例子</strong>：客户已验收，项目经理最重要=收集经验教训、更新组织过程资产、释放团队。<strong>坑</strong>：选"庆功会/最终风险审计"是把仪式或监控期动作误当收尾核心。</div>
 <h4>项目收尾 vs 阶段收尾 🧠</h4>
 <p>🧠 技巧：<strong>阶段=中场检查</strong>（过了这阶段还有下阶段）；<strong>项目=终场结算</strong>（彻底结束）。</p>
 <h4>章程内容 📝 A级默写</h4>
@@ -170,9 +181,11 @@ PM权力小 ──────────────────────�
 <h4>范围确认 vs 范围控制 🧠 🎵</h4>
 <p>🎵 口诀：<strong>"确认验收对不对，控制变化怎么管"</strong>。</p>
 <p>🧠 技巧：问"验收/签字"→确认；问"范围变了怎么办"→控制（走变更）。</p>
+<div class="explain"><strong>讲解</strong>：这是两件<strong>时间不同、目的不同</strong>的事。确认（Validate Scope）在交付时发生——干系人对照范围基准<strong>验收</strong>"做的东西对不对"；控制（Control Scope）在执行中——监控<strong>变化</strong>"范围要不要改"。<strong>例子</strong>：里程碑评审会签字验收→确认；执行中发现需求要变→控制（走变更）。<strong>坑</strong>：选项把"验收签字"归为控制、把"变更审批"归为确认，都是混淆时序。</div>
 <h4>蔓延 vs 镀金 🎵</h4>
 <p>🎵 口诀：<strong>"蔓延是别人加，镀金是自己加"</strong>——蔓延=客户/干系人加需求不走流程；镀金=PM/团队主动加功能。都是错。</p>
 <p>🧠 技巧：看到"客户要求加功能但没走流程"→蔓延；"团队主动多做"→镀金。</p>
+<div class="explain"><strong>讲解</strong>：两者都是范围失控，但<strong>责任主体不同</strong>——蔓延是"别人（客户/干系人）加需求不走流程"，镀金是"自己（PM/团队）主动加功能"。为什么镀金是 PM 的锅？PM 应严格执行范围基准，擅自加功能看似讨好客户，实则破坏基准、放大风险。<strong>例子</strong>：客户随口说"能加个导出功能就好了"→蔓延苗头；团队觉得"顺手多做更专业"→镀金。<strong>坑</strong>：客户加=蔓延、团队加=镀金，选反必错。</div>
 <h4>WBS（工作分解结构，Work Breakdown Structure）与 100% 规则 🧠</h4>
 <p>下层 = 上层的<strong>完全分解</strong>，不重不漏；最低层=工作包。</p>
 <p>🧠 技巧：WBS 是<strong>范围</strong>工具（不是进度），按可交付物分解，不是按活动/部门。</p>
@@ -190,6 +203,7 @@ PM权力小 ──────────────────────�
 <pre class="ascii">A(3) ──→ C(4) ──→ E(2)     路径 A-C-E = 9天 ← 关键路径（最长）
   ↘ B(2) ─→ D(5) ─→ E(2)   路径 B-D-E = 9天 ← 也关键（两条）</pre>
 <p>🧠 技巧：<strong>最长路径=最短工期</strong>；关键路径上<strong>浮动=0</strong>；多条关键路径=风险更高。先找最长，标出浮动 0 的链。</p>
+<div class="explain"><strong>讲解</strong>：为什么最长路径决定工期？项目靠<strong>串行依赖</strong>——关键路径上任何活动延误，整个项目就延误，没有缓冲可借；浮动=0 意味着"没有余量"，管理重点全在关键路径。<strong>例子</strong>：A(3)→C(4)→E(2)=9 天，另一条 B(2)→D(5)=7 天，项目最短 9 天，A/C/E 就是命脉。<strong>坑</strong>：选"最短/平均路径"当关键路径，或忽略"浮动=0"判断标准，必错。</div>
 <h4>总浮动 vs 自由浮动 🎵</h4>
 <p>🎵 口诀：<strong>"总浮动看项目（不误总工期），自由浮动看后活（不误后续最早开始）"</strong>。</p>
 <h4>正推/反推 🧠 D级计算</h4>
@@ -197,11 +211,13 @@ PM权力小 ──────────────────────�
 <h4>赶工 vs 快速跟进 🎵</h4>
 <p>🎵 口诀：<strong>"赶工加钱（成本↑），跟进冒险（风险↑）"</strong>。</p>
 <p>🧠 技巧：题目给"有预算"→赶工；"有并行空间"→快速跟进；都要<strong>先评估影响再选</strong>。</p>
+<div class="explain"><strong>讲解</strong>：压缩进度只有两条路：<strong>加资源</strong>（赶工）或<strong>改逻辑</strong>（快速跟进）。赶工=给关键路径活动加人加班，成本↑、逻辑不变；快速跟进=把串行活动并行，逻辑变了、返工风险↑。<strong>例子</strong>：工期紧且预算充足→赶工；设计未完全确定就提前开工后续→快速跟进（风险大）。<strong>坑</strong>：题目说"成本已超支"还选赶工，或"依赖关系不能并行"还选快速跟进，都是不顾约束。</div>
 <h4>资源平衡 vs 平滑 🎵</h4>
 <p>🎵 口诀：<strong>"平衡延工期，平滑不延"</strong>——平衡受资源硬约束（可能拖期）；平滑只在浮动内调（不拖期）。</p>
 <h4>PERT 三点估算 🎵 D级计算</h4>
 <p>🎵 口诀：<strong>"(O+4M+P)÷6"</strong>；标准差=(P−O)÷6。</p>
 <p>🧠 技巧：看到"最乐观/最可能/最悲观"→PERT；把三个数套公式。</p>
+<div class="explain"><strong>讲解</strong>：三点估算把"最乐观 O、最可能 M、最悲观 P"加权平均：(O+4M+P)/6。为什么最可能给权重 4？经验表明真实工期<strong>大概率接近最可能值</strong>，两端极端情况少，所以加权而不是简单平均。<strong>例子</strong>：O=6 天、M=9 天、P=18 天 → (6+36+18)/6=10 天；标准差=(18−6)/6=2 天，即 68% 概率在 8~12 天。<strong>坑</strong>：直接取 (O+M+P)/3（简单平均），忘了 4M 权重；或把 (P−O)/6 当工期。</div>
 <h4>应急储备 vs 管理储备 🎵</h4>
 <p>🎵 口诀：<strong>"应急备已知（基准内），管理留未知（基准外）"</strong>——管理储备动用需批准。</p>
 <p>---</p>
@@ -213,9 +229,11 @@ SV = EV − PV（进度差）        SPI = EV / PV（进度比）
 CV = EV − AC（成本差）        CPI = EV / AC（成本比）</pre>
 <p>🎵 口诀：<strong>"EV 在上，好于 1 就好"</strong>——SPI/CPI 分子都是 EV；>1 超前/节约，<1 落后/超支。</p>
 <p>🧠 技巧：SV/CV 是<strong>减法</strong>（正=好），SPI/CPI 是<strong>除法</strong>（>1=好）；题目给指标先判断是"差"还是"比"。</p>
+<div class="explain"><strong>讲解</strong>：EVM 的核心是<strong>把进度和成本翻译成同一个货币单位</strong>。EV（干完的活值多少）是真实绩效的尺子：跟 PV 比看进度（SV/SPI），跟 AC 比看成本（CV/CPI）。为什么分两个维度？"花得少"不等于"干得好"——可能只是没干活。<strong>例子</strong>：计划 100 万（PV），实际干 80 万（EV），花了 70 万（AC）→ SPI=0.8 落后、CPI≈1.14 节约：干得慢但省钱。<strong>坑</strong>：把 EV 和 AC 搞反（拿 AC/PV 当 SPI），或记不住">1 好"。</div>
 <h4>EAC（完工估算）/ETC（完工尚需估算）/TCPI（完工尚需绩效指数）🎵 D级计算</h4>
 <p>🎵 口诀：<strong>"典型除 CPI，非典型加缺口"</strong>——</p>
 <ul><li>典型（偏差继续）：EAC = BAC ÷ CPI（BAC=完工预算 Budget at Completion）</li><li>非典型（偏差结束）：EAC = AC + (BAC − EV)</li><li>ETC = EAC − AC；TCPI = (BAC − EV) ÷ (BAC − AC)</li></ul>
+<div class="explain"><strong>讲解</strong>：EAC 回答"按现在的情况，最后要花多少"。<strong>典型偏差</strong>（现状持续，如团队一直低效）→ EAC=BAC/CPI；<strong>非典型</strong>（偏差是暂时的，会回归计划）→ EAC=AC+(BAC−EV)，把缺口补上。TCPI 回答"剩下的钱还够不够"——剩余工作要跑多快才能不超预算，>1 说明得更高效。<strong>例子</strong>：BAC=100，已花 60 干了 40 的活，CPI≈0.67；偏差持续则 EAC≈149，严重超支。<strong>坑</strong>：题目给"偏差将纠正"还套典型公式，必错。</div>
 <h4>估算方法 4 种 📝</h4>
 <p>类比（快粗）< 参数（统计模型）< 自下而上（最准最贵）< 三点 PERT（含不确定）。</p>
 <p>🧠 技巧：问"最准确"→自下而上；问"最快"→类比。</p>
@@ -228,12 +246,14 @@ CV = EV − AC（成本差）        CPI = EV / AC（成本比）</pre>
 <h4>QA（质量保证 Quality Assurance）vs QC（质量控制 Quality Control）🎵</h4>
 <p>🎵 口诀：<strong>"QA 管过程（保证），QC 查结果（控制）"</strong>。</p>
 <p>🧠 技巧：问"审计流程/确保按计划"→QA；问"检查交付物/发现缺陷"→QC。</p>
+<div class="explain"><strong>讲解</strong>：QA 和 QC 一个管"过程"一个管"结果"。QA（保证）=在<strong>做事之前/过程中</strong>审计流程对不对、资源够不够——保证"按正确的方法做"；QC（控制）=在<strong>交付后</strong>检查结果——发现"做出来的对不对"。<strong>例子</strong>：每周审计团队是否按质量计划开发→QA；发布前测试发现缺陷→QC。<strong>坑</strong>：题目说"确保不会出错"（事前）却选 QC、说"发现已有缺陷"（事后）却选 QA，方向反了。</div>
 <h4>预防 vs 检查 🎵</h4>
 <p>🎵 口诀：<strong>"预防在前省，检查在后贵"</strong>。</p>
 <h4>7 大工具 🎵 C级应用</h4>
 <p>🎵 口诀：<strong>"帕重、鱼因、控受、直布、散关、流步、核数"</strong>——</p>
 <ul><li><strong>帕累托</strong>=抓重点（80/20 优先解决）</li><li><strong>鱼骨图</strong>=找根因（RCA=根本原因分析 Root Cause Analysis）</li><li><strong>控制图</strong>=看受控（连续 7 点同侧=失控）</li><li><strong>直方图</strong>=看分布 · <strong>散点图</strong>=看相关 · <strong>流程图</strong>=看步骤 · <strong>核查表</strong>=收集数据</li></ul>
 <p>🧠 技巧：题问"缺陷集中在少数原因"→帕累托；"找根本原因"→鱼骨；"过程是否稳定"→控制图。</p>
+<div class="explain"><strong>讲解</strong>：7 大工具是"<strong>问题→工具</strong>"的映射：帕累托=按发生次数排序，先解决贡献 80% 的那 20% 原因（ABC 分析）；鱼骨图=从人机料法环几个方向追根因（配合 5Why）；控制图=看过程是否稳定受控，连续 7 点在一侧=有特殊原因需干预。<strong>例子</strong>：70% 缺陷来自两个模块→帕累托优先修这两个；缺陷忽好忽坏→控制图找波动源。<strong>坑</strong>：题目要"优先解决哪些"却选鱼骨（那是找原因不是排序）。</div>
 <h4>质量成本（CoQ，Cost of Quality）🎵</h4>
 <p>🎵 口诀：<strong>"预防评估是一致，内外失败不一致"</strong>（一致性=预防+评估；非一致性=内部失败+外部失败）。</p>
 <p>---</p>
@@ -242,15 +262,19 @@ CV = EV − AC（成本差）        CPI = EV / AC（成本比）</pre>
 <pre class="ascii">识别 → 定性 → 定量 → 规划应对 → 实施应对 → 监控</pre>
 <p>🎵 口诀：<strong>"识定定应实监"</strong>（识别、定性、定量、应对、实施、监控）。</p>
 <p>🧠 技巧：识别后<strong>先记风险登记册</strong>；"直接实施应对/直接上报"=跳步，错。</p>
+<div class="explain"><strong>讲解</strong>：风险流程的每一步都有不可跳过的理由：识别（先知道有什么）→定性（快速排序谁重要）→定量（重要的算清楚数值）→规划应对（定策略）→实施（执行策略）→监控（看新风险）。为什么不能跳？没分析就应对=瞎打；没登记就上报=信息丢失。<strong>例子</strong>：团队发现新风险→先记入风险登记册→做定性（概率×影响）→判断要不要定量→再定应对。<strong>坑</strong>：选项"立即实施应对措施/直接上报等指示"都跳过了分析步骤，必错。</div>
 <h4>应对策略 🎵 A级默写</h4>
 <p>威胁：<strong>规避</strong>（消除）/ <strong>转移</strong>（保险/外包）/ <strong>减轻</strong>（降概率影响）/ <strong>接受</strong>。</p>
 <p>机会：<strong>开拓</strong>（确保）/ <strong>提高</strong>（加大）/ <strong>分享</strong>（合作）/ 接受。</p>
 <p>🎵 口诀：<strong>"威胁规转移减受，机会开提分接"</strong>。</p>
 <p>🧠 技巧：题给"买保险/外包"→转移；"取消风险活动"→规避；"预留预算"→接受。</p>
+<div class="explain"><strong>讲解</strong>：威胁应对四策略按"处理方式"分：<strong>规避</strong>=从根上消除（换方案、砍活动）；<strong>转移</strong>=把风险甩给第三方（保险、外包、固定价合同）；<strong>减轻</strong>=降低概率或影响（加测试、双备份）；<strong>接受</strong>=认了，预留应急预算（被动）或风险金（主动）。机会反之：开拓=确保实现，提高=加大收益，分享=找伙伴一起。<strong>例子</strong>：供应商可能延误→签违约金条款=转移；核心模块用成熟方案=减轻。<strong>坑</strong>："买保险"选规避、"取消活动"选转移，都是记混。</div>
 <h4>定性 vs 定量 🧠</h4>
 <p>定性=概率×影响矩阵<strong>排序</strong>（快、主观）；定量=EMV/蒙特卡洛<strong>数值</strong>（慢、客观）。问"优先级"→定性；问"数值/概率分布"→定量。</p>
+<div class="explain"><strong>讲解</strong>：定性是<strong>先筛一遍</strong>：用概率×影响矩阵把几十个风险快速排优先级，花几分钟，主观打分即可；定量是<strong>对关键少数算细账</strong>：EMV、蒙特卡洛、敏感性分析给数值，费时但客观。为什么先定性后定量？资源有限，不能对每个风险都做数值模拟——先排序，只对高优先级的做定量。<strong>例子</strong>：20 个风险先矩阵打分→前 3 个高风险做蒙特卡洛模拟。<strong>坑</strong>：题目问"排序/优先级"却选定量，问"概率分布数值"却选定性。</div>
 <h4>EMV（期望货币价值 Expected Monetary Value）决策树 🧠 D级计算</h4>
 <p><strong>EMV = 概率 × 影响</strong>；决策树逐分支算期望值，<strong>取收益最大/损失最小</strong>的分支。</p>
+<div class="explain"><strong>讲解</strong>：EMV 解决"选项多、不确定"的决策：每个分支把"可能赚多少×概率"加权，得到<strong>长期平均期望</strong>。为什么取最大 EMV？因为单次结果看运气，多次重复按期望最优。<strong>例子</strong>：方案 A 有 60% 概率赚 100 万、40% 概率亏 50 万 → EMV=60−20=40 万；方案 B 稳赚 30 万 → 选 A（40>30）。<strong>坑</strong>：直接把"最大收益"当答案，忽略概率加权；或把损失当正数算。</div>
 <h4>风险 vs 问题 🎵</h4>
 <p>🎵 口诀：<strong>"风险未来事，问题已发生"</strong>——已发生走问题/变更，未发生走风险管理。</p>
 <h4>残余 vs 次生 🎵</h4>
@@ -268,6 +292,7 @@ CV = EV − AC（成本差）        CPI = EV / AC（成本比）</pre>
 <p>🎵 口诀：<strong>"固定总价卖方担，成本补偿买方担，工料混合两头沾"</strong>。</p>
 <p>英文全称：FFP=Firm Fixed Price（固定总价）· FPIF=Fixed Price Incentive Fee（总价+激励）· CPFF=Cost Plus Fixed Fee（成本+固定费）· CPIF=Cost Plus Incentive Fee（成本+激励）· T&M=Time & Material（工料）。</p>
 <p>🧠 技巧：题目问"哪个风险最小给卖方/范围清楚"→FFP；"范围不确定"→T&M。</p>
+<div class="explain"><strong>讲解</strong>：合同类型 = <strong>风险在买卖双方之间怎么分</strong>。固定总价（FFP）：价格锁定，成本超支风险全在<strong>卖方</strong>，所以范围必须清楚，卖方报价已含风险金；成本补偿（CPFF/CPIF）：实报实销+费用，风险在<strong>买方</strong>，用于研发/范围模糊的项目；工料（T&M）：按人天计费，混合，短工期/临时支援用。<strong>例子</strong>：办公楼施工（范围明确）→FFP；开发新技术（需求不清）→成本补偿。<strong>坑</strong>：题目说"买方风险最小"选成本补偿（反了，应选 FFP 因为价格锁定买方没风险）。</div>
 <h4>采购流程 📝 A级默写</h4>
 <p><strong>规划采购 → 实施采购（询价/评标/签约）→ 控制采购（管理/索赔）→ 结束采购</strong>。</p>
 <h4>索赔 vs 争议 🧠</h4>
@@ -279,12 +304,15 @@ CV = EV − AC（成本差）        CPI = EV / AC（成本比）</pre>
 （客气）（冲突）（磨合）（高效）（散伙）</pre>
 <p>🎵 口诀：<strong>"建风规熟散"</strong>。</p>
 <p>🧠 技巧：题说"团队刚成立/彼此客气"→组建；"激烈冲突/争论"→风暴；"已高效自转"→成熟。</p>
+<div class="explain"><strong>讲解</strong>：Tuckman 模型描述团队<strong>必经</strong>的成长曲线：组建（客气试探）→风暴（理念冲突，<strong>必经不可跳过</strong>）→规范（磨合出规则）→成熟（默契高效）→解散。为什么风暴必然？成员背景不同，协作方式必须碰撞出来；PM 在风暴期的价值=化解冲突、建立规范，而不是压制。<strong>例子</strong>：新团队开会没人敢提意见→组建期，需要明确目标与角色。<strong>坑</strong>：选项说"跳过风暴直接高效"不可能，PMI 认为冲突正常且必要。</div>
 <h4>冲突五法 🎵 A级默写 + C级应用</h4>
 <p><strong>撤退</strong>（回避）/ <strong>缓和</strong>（求同）/ <strong>妥协</strong>（各让一步）/ <strong>强迫</strong>（赢输）/ <strong>合作</strong>（双赢，最优）。</p>
 <p>🎵 口诀：<strong>"退缓妥强合，合作最优先"</strong>。</p>
 <p>🧠 技巧：PMI 偏好=<strong>先私下沟通再正式</strong>，目标=合作双赢；直接替团队决定/强制=错。</p>
+<div class="explain"><strong>讲解</strong>：冲突五法按"坚持度与合作度"排：撤退（回避，暂时搁置）、缓和（求同存异，重关系轻问题）、妥协（各让一步，都不满意但可接受）、强迫（赢输，快但伤关系）、合作（双赢，最理想但最费时）。PMI 的标准套路：<strong>先私下沟通</strong>（保护对方面子）→ 争取合作解决 → 实在不行才升级。<strong>例子</strong>：两位资深成员争论技术方案→分别私下会谈、促成合作，而不是开会当众裁决。<strong>坑</strong>：选"直接替团队决定/当众裁定/上报"都是跳过沟通，必错。</div>
 <h4>仆人式领导 🧠 C级应用</h4>
 <p>移除障碍 · 授权赋能 · 教练辅导 · 服务团队。题给"团队求助/障碍/士气低"→仆人式领导（不微管理、不责备）。</p>
+<div class="explain"><strong>讲解</strong>：仆人式领导（Servant Leadership）把 PM 的角色从"发号施令"翻转为"<strong>服务团队</strong>"：团队是专家，PM 负责清障（资源、决策、政治）、授权（信任与放手）、教练（帮人成长）。为什么？敏捷与 PMI 都认为<strong>自组织团队战斗力最强</strong>，微管理会摧毁主动性。<strong>例子</strong>：团队说"卡在第三方接口上"→PM 去协调外部资源，而不是自己上手写代码。<strong>坑</strong>：选项"亲自解决技术问题/严格监督进度/直接指派方案"都是传统命令式，错。</div>
 <h4>激励理论 📝</h4>
 <p>马斯洛=需求层次（生理→安全→社交→尊重→自我实现）；赫茨伯格=保健（不满源）+激励（满意源）；麦克利兰=成就/权力/亲和。</p>
 <h4>RAM/RACI（责任分配矩阵 Responsibility Assignment Matrix）🧠</h4>
@@ -296,6 +324,7 @@ CV = EV − AC（成本差）        CPI = EV / AC（成本比）</pre>
 <h4>沟通渠道公式 🧠 D级计算</h4>
 <p><strong>n(n−1) ÷ 2</strong>（n=人数）。</p>
 <p>🧠 技巧：5 人=10，6 人=15，7 人=21——<strong>加 1 人就加 n 条</strong>。先算人数，套公式。</p>
+<div class="explain"><strong>讲解</strong>：公式 n(n−1)/2 的由来：n 个人两两连线就是组合数 C(n,2)。为什么沟通渠道重要？人越多，信息传递路径爆炸式增长，误解概率上升——这就是"大团队容易乱"的数学解释。<strong>例子</strong>：团队从 5 人加到 6 人，渠道从 10 变 15（+5=n），沟通成本跳涨。<strong>坑</strong>：直接把人数当渠道数（不除以 2），或忘记"加 1 人=加 n 条"的快算。</div>
 <h4>沟通方式 🎵</h4>
 <p>🎵 口诀：<strong>"交互双向最有效（会议），推发拉取是单向"</strong>（推式=邮件/报告发出去；拉式=知识库/门户自己取）。</p>
 <h4>权力/利益方格 🖼 C级应用</h4>
@@ -306,26 +335,33 @@ CV = EV − AC（成本差）        CPI = EV / AC（成本比）</pre>
            权力低
    利益低   │  利益高</pre>
 <p>🎵 口诀：<strong>"高高重管，高利低满，低高告知，低低监督"</strong>（高权高利=重点管理；高权低利=令其满意；低权高利=随时告知；低权低利=监督）。</p>
+<div class="explain"><strong>讲解</strong>：权力/利益方格回答"<strong>每个干系人投入多少精力</strong>"：权力高+利益高=关键人物，重点管理（定期汇报、深度参与）；权力高+利益低=有决定权但不在乎，只需让他满意不使绊子；权力低+利益高=热心但没权力，随时告知即可；权力低+利益低=路过群众，最小监督。<strong>例子</strong>：出资的副总裁（高权）对细节没兴趣（低利）→定期简报"令其满意"，别拿琐事烦他。<strong>坑</strong>：把"高权低利"的人当重点管理（浪费精力），或冷落高权者（危险）。</div>
 <h4>干系人参与度矩阵 🖼 🎵 A级默写</h4>
 <pre class="ascii">不知晓 → 抵制 → 中立 → 支持 → 引导
 （完全不知道）（反对）（不表态）（配合）（主动推动）</pre>
 <p>🎵 口诀：<strong>"不知抵制中立支持引导"</strong>；目标=把差距推向"支持/引导"。</p>
+<div class="explain"><strong>讲解</strong>：参与度矩阵衡量"<strong>干系人当前态度 vs 期望态度</strong>"的差距：不知晓（不知道项目）→抵制（反对）→中立（无感）→支持（配合）→引导（主动推动）。PM 的工作=识别差距最大的干系人，逐个管理期望把态度拉向目标档。<strong>例子</strong>：某部门主管对项目"抵制"（怕分走资源）→私下沟通讲清收益，先拉到"中立"再奔"支持"。<strong>坑</strong>：只记录现状不设目标，或对抵制者"上报了事"而不沟通，都违背管理期望原则。</div>
 <h4>期望管理 🧠 C级应用</h4>
 <p><strong>先沟通后行动</strong>；管理期望≠承诺做不到。干系人反对→先私下会面了解关切（摸底 P9）。</p>
 <p>---</p>
 <h2 class="module" id="M10-敏捷与混合">M10 敏捷与混合</h2>
 <h4>Scrum（敏捷开发框架）三角色 🎵 A级默写</h4>
 <p>🎵 口诀：<strong>"PO 管价值，SM 护流程，团队自交付"</strong>——PO=产品负责人（Product Owner）定优先级；SM=Scrum Master（敏捷教练/流程守护者）移除障碍；开发团队自组织。</p>
+<div class="explain"><strong>讲解</strong>：三角色=<strong>职责三权分立</strong>：PO 只回答"做什么、先做什么"（对价值负责，不对进度负责）；SM 只回答"流程顺不顺"（对 Scrum 规则负责，不指挥技术）；开发团队回答"怎么做、做多快"（自组织，没人替它排活）。为什么分开？防止一人既管价值又管执行——价值决策会被执行便利绑架。<strong>例子</strong>：客户要插队需求→找 PO 排优先级，SM 无权批准，团队不接 Sprint 内变更。<strong>坑</strong>：选项让 SM 定优先级或让 PO 分任务，都是角色错位。</div>
 <h4>Scrum 四事件 🖼 🎵 A级默写 + C级应用</h4>
 <pre class="ascii">Sprint 规划（定目标选任务）→ 每日站会（15min 同步）→ 评审（看产品）→ 回顾（改过程）→ 下一轮</pre>
 <p>🎵 口诀：<strong>"规站评回"；"评审看产品，回顾改过程"</strong>（摸底 A2 就是它）。</p>
 <p>🧠 技巧：题问"展示增量"→评审；"改进协作/过程"→回顾；"15 分钟同步"→站会。</p>
+<div class="explain"><strong>讲解</strong>：四事件是<strong>检查与调整的节奏器</strong>：规划（定目标选任务）→ 每天站会（15 分钟同步进度、暴露障碍，<strong>不解决问题</strong>）→ 评审（Sprint 末向干系人<strong>演示增量</strong>，收反馈、看产品）→ 回顾（内部复盘<strong>过程</strong>怎么改进）。评审对"产品"、回顾对"过程"——这是最高频混淆点。<strong>例子</strong>：干系人来看演示→评审会；团队吐槽"我们沟通太差"→回顾会。<strong>坑</strong>：把"改进团队协作"答成评审、"演示功能"答成回顾，选反必错。</div>
 <h4>Scrum 三工件 🎵 A级默写</h4>
 <p>🎵 口诀：<strong>"PO 管产品池（Backlog），团队领冲刺池（Sprint Backlog），增量按 DoD 交付"</strong>——DoD=完成的定义（Definition of Done）。</p>
+<div class="explain"><strong>讲解</strong>：三工件=<strong>需求从"想法"到"可用"的三级载体</strong>：产品 Backlog 是 PO 维护的<strong>全量需求池</strong>（按价值排序，谁都能往里加）；Sprint Backlog 是团队本 Sprint <strong>认领的任务子集</strong>（只有团队能改）；增量=符合 DoD 的<strong>可交付成果</strong>。DoD 为什么必须定义？没有它"完成"就各说各话——编码完算完？测过算完？DoD 把标准写死，防止半成品当成品。<strong>例子</strong>：PO 把新需求扔进产品池 → 下个 Sprint 规划时团队再认领。<strong>坑</strong>：让团队直接改产品池排序（那是 PO 的活），或把"代码写完"当 Done（缺测试标准）。</div>
 <h4>Sprint（冲刺：1~4 周的固定迭代周期）内不中途加需求 🧠 C级应用</h4>
 <p>新需求<strong>进产品 Backlog，下个 Sprint 排期</strong>（摸底 A1）。"立即做/延长 Sprint"都错。</p>
+<div class="explain"><strong>讲解</strong>：Sprint 的本质是<strong>承诺</strong>：团队在规划时承诺了本 Sprint 目标，中途插入需求=撕毁承诺、破坏节奏。所以新需求一律进产品 Backlog，由 PO 排优先级，下个 Sprint 再规划。为什么不能延长 Sprint？延长会让团队失去节奏感，且永远有"再延一周"的诱惑。<strong>例子</strong>：Sprint 第 5 天客户要加功能→PO 记入 Backlog 排期，团队继续干承诺的活。<strong>坑</strong>：选项"立即实现/延长 Sprint/让团队加班塞进去"都是破坏 Sprint 承诺。</div>
 <h4>看板 🧠 C级应用</h4>
 <p><strong>WIP（在制品 Work In Progress）限制</strong>暴露瓶颈、提升流动效率；拉动式、连续流。题问"WIP 目的"→暴露瓶颈不是减量/禁并行。</p>
+<div class="explain"><strong>讲解</strong>：看板的核心机制是<strong>限制在制品</strong>：同一时刻每列最多 X 个任务。为什么有效？人的注意力是稀缺资源——任务切得越碎，切换成本越高，每件完成越慢；WIP 限制逼团队"做完一件再拿下一件"，瓶颈（塞满的列）立刻现形。<strong>例子</strong>：测试列 WIP=2，开发列堆了 8 个→测试是瓶颈，优先清测试而不是继续开发。<strong>坑</strong>：把 WIP 目的答成"减少工作量/禁止并行/加快速度"，本质是暴露瓶颈、提升流动。</div>
 <h4>看板 vs Scrum 🖼</h4>
 <div class="twrap"><table><thead><tr><th></th><th>Scrum</th><th>看板</th></tr></thead><tbody>
 <tr><td>迭代</td><td>固定 Sprint</td><td>连续流</td></tr>
@@ -335,6 +371,7 @@ CV = EV − AC（成本差）        CPI = EV / AC（成本比）</pre>
 </tbody></table></div>
 <h4>混合方法 🧠 C级应用</h4>
 <p><strong>稳定部分用预测，不稳定部分用迭代</strong>（摸底 A4）；"先预测后敏捷"=Agile-fall 反面教材。</p>
+<div class="explain"><strong>讲解</strong>：混合方法=<strong>按需求的确定性分流</strong>：稳定、明确的部分（如合同要求的固定交付）用预测（瀑布，先计划后执行）；不确定、会变的部分（如新功能探索）用敏捷（迭代、快速反馈）。为什么不能"先瀑布后敏捷"？需求分析做完了才发现要变，等于白做——敏捷的价值就在"边做边明确"。<strong>例子</strong>：合规模块（需求固定）瀑布做，用户体验模块（需求多变）Sprint 做。<strong>坑</strong>：选"全部瀑布"或"全部敏捷"忽略题目里"部分稳定部分多变"的关键信息。</div>
 <h4>迭代 vs 增量 🎵</h4>
 <p>🎵 口诀：<strong>"迭代反复磨，增量每段加"</strong>。</p>
 <h4>DoD vs DoR 🧠</h4>
@@ -350,6 +387,7 @@ CV = EV − AC（成本差）        CPI = EV / AC（成本比）</pre>
 <h2 class="module" id="M11-业务环境与合规">M11 业务环境与合规</h2>
 <h4>法规/合规影响 🧠 C级应用</h4>
 <p>外部法规变化→<strong>先评估合规影响，必要时走变更流程</strong>（摸底 B1）；"暂停项目/继续原计划"都错。</p>
+<div class="explain"><strong>讲解</strong>：业务环境领域的核心逻辑和变更一样：<strong>外部因素变了 → 先评估再行动</strong>。法规是硬约束，但"立即暂停项目"是过度反应、"无视法规继续"是违规——正确路径=评估影响→判断是否需要变更→必要时走变更流程。<strong>例子</strong>：数据合规新规出台→评估现有方案差在哪→调整方案走变更→继续执行。<strong>坑</strong>：选"暂停项目等法务处理"（甩锅）或"按原计划继续"（无视合规）。</div>
 <h4>战略对齐 🧠</h4>
 <p>项目支撑组织战略；组合管理按战略优先级排资源。</p>
       </section>
