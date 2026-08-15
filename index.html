@@ -5,6 +5,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#ffffff" id="themeColor">
 <title>PMP 备考学习站</title>
+<script>
+// ---- 深色切换：独立脚本 + 事件委托，与主逻辑解耦，任何情况下都可用 ----
+(function(){
+  function apply(d) {
+    document.documentElement.classList.toggle('dark', d === 'dark');
+    var b = document.getElementById('theme');
+    if (b) b.textContent = d === 'dark' ? '浅色' : '深色';
+    var m = document.getElementById('themeColor');
+    if (m) m.setAttribute('content', d === 'dark' ? '#111111' : '#ffffff');
+  }
+  function init() {
+    var b = document.getElementById('theme');
+    if (!b) return;
+    b.addEventListener('click', function(){
+      var next = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+      apply(next);
+      try { localStorage.setItem('pmp-theme', next); } catch(e) {}
+    });
+    try { apply(localStorage.getItem('pmp-theme') || 'light'); } catch(e) { apply('light'); }
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
 <style>
 /* ===== 可读性优先 · 纯 CSS · 零依赖 ===== */
 :root {
@@ -805,21 +829,6 @@ function applyFilters() {
   });
   document.getElementById('emptyPts').style.display = any ? 'none' : 'block';
 }
-
-// ---- 深色模式（.dark class + CSS 变量，纯本地生效）----
-var themeBtn = document.getElementById('theme');
-var themeColor = document.getElementById('themeColor');
-function setTheme(d) {
-  document.documentElement.classList.toggle('dark', d === 'dark');
-  themeBtn.textContent = d === 'dark' ? '浅色' : '深色';
-  if (themeColor) themeColor.setAttribute('content', d === 'dark' ? '#111111' : '#ffffff');
-}
-themeBtn.onclick = function(){
-  var next = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
-  setTheme(next);
-  try { localStorage.setItem('pmp-theme', next); } catch (e) {}
-};
-try { setTheme(localStorage.getItem('pmp-theme') || 'light'); } catch (e) { setTheme('light'); }
 
 // ---- 返回顶部 ----
 var topBtn = document.getElementById('topbtn');
