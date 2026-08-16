@@ -139,6 +139,9 @@ main { max-width:840px; margin:0 auto; padding:36px 20px 60px; }
 /* 模块 */
 h2.module { cursor:pointer; font-size:20px; font-weight:700; color:var(--ink); padding:26px 0 14px;
   margin:0; border-bottom:1px solid var(--line); display:flex; align-items:center; gap:10px; }
+h2.master { font-size:21px; font-weight:700; color:var(--ink); padding:26px 0 14px; margin:0;
+  border-bottom:2px solid var(--ink); }
+h2.master::before { content:'纲领 · '; color:var(--accent); font-weight:600; }
 h2.module .arrow { margin-left:auto; color:var(--mut); font-size:11px; transition:transform .25s; }
 h2.module.open .arrow { transform:rotate(180deg); }
 .mbody { display:none; padding:4px 0 30px; }
@@ -249,6 +252,45 @@ main .explain strong { color:#0044cc; font-weight:600; }
         </div>
         <h2>PMP 知识库（记忆设计版 · 2026-08-16）</h2>
 <blockquote><p>职责：12 模块保留考点的知识内容 + <strong>记忆设计</strong>。配套 04-考点清单.md（考什么/等级）。</p><p>内容依据：乐凯PMP讲义第七版 v1.6（2026-08-16 基于讲义逐页重构，讲义与旧版冲突处以讲义为准）。</p><p>记忆类型标注：🖼 图（画出来记）· 🎵 口诀（顺口溜）· 🧠 技巧（判断捷径/触发词）· 📝 死记（列表硬背）。</p><p>💡 讲解：核心考点附"为什么/怎么用/例子/坑"四段讲解（网页中蓝色区块），先懂原理再背结论。</p><p>学习流程：看讲解懂原理 → 按类型记忆 → 模块测试检验 → 错题进队列。</p><p>术语约定：所有英文缩写首次出现处都标注中文全称（如 EVM=挣值管理），先懂词、再背题。PMI=项目管理协会（Project Management Institute），PMP=项目管理专业人士认证。</p></blockquote>
+<p>---</p>
+<h2 class="master" id="总纲（PMP-纲领：以简驭繁，几条纲推出全部考点）">总纲（PMP 纲领：以简驭繁，几条纲推出全部考点）</h2>
+<h4>一个总纲</h4>
+<p><strong>项目管理 = 在约束下受控地创造价值</strong>。约束=范围/进度/成本/质量；受控=基准+变更；价值=干系人满意+组织收益。所有考点都是"约束、受控、价值"三者的具体化。</p>
+<h4>七条纲（每条推出一批考点）</h4>
+<p><strong>纲1 · 过程组是"动作循环"，不是阶段</strong></p>
+<p>启动（授权）→ 规划（定基准）→ 执行（干活）→ 监控（纠偏）→ 收尾（沉淀）。</p>
+<p>推出：五大过程组题、章程（启动）、计划与基准（规划）、EVM 监控、收尾三件事、阶段 vs 项目收尾。</p>
+<p><strong>做题第一步：先问这题发生在哪个动作？</strong> 没立项→启动；没计划→规划；干到一半→执行/监控；干完→收尾。</p>
+<p><strong>纲2 · 基准批准后，一切变化走变更</strong></p>
+<p>范围/进度/成本基准 + 变更流程（记录→评估→CCB→批准→实施）。</p>
+<p>推出：变更管理、CCB 职责、蔓延 vs 镀金、基准概念、变更请求 4 类、配置管理、收尾对照基准。</p>
+<p><strong>触发词：任何"变化/新需求/干系人要求"→ 先走变更流程</strong>，不直接做、不直接拒。</p>
+<p><strong>纲3 · PMI 决策反射（"先字诀"）</strong></p>
+<p>先分析后行动 · 先沟通后动手 · 先记录后处理 · 先流程后特例 · 先查章程后越权 · 预防>检查。</p>
+<p>推出：90% 情境题"第一步做什么"。</p>
+<p><strong>口诀：看到"立即/直接/马上/现在"开头的选项，先怀疑</strong>——大概率跳步。</p>
+<p><strong>纲4 · 数据驱动绩效（EVM 是核心尺子）</strong></p>
+<p>EV=干完的活值多少，跟 PV 比看进度（SV/SPI）、跟 AC 比看成本（CV/CPI）。</p>
+<p>推出：EVM 全套公式、EAC/ETC/TCPI、绩效判读、控制图/帕累托等工具、估算方法、储备分析。</p>
+<p><strong>原则："花得少≠干得好"——绩效一律用 EV 衡量。</strong></p>
+<p><strong>纲5 · 风险与不确定性思维贯穿全程</strong></p>
+<p>识别→定性→定量→应对→监控；未知用储备；机会与威胁分开管理。</p>
+<p>推出：风险流程、应对策略（规避/转移/减轻/接受 + 开拓/提高/分享）、EMV、风险登记册、残余 vs 次生、应急/管理储备。</p>
+<p><strong>原则：先识别登记，再分析，再应对——顺序不可跳。</strong></p>
+<p><strong>纲6 · 人本管理（人比工具重要）</strong></p>
+<p>仆人式领导 · 团队阶段 · 冲突合作优先 · 干系人参与管理 · 激励。</p>
+<p>推出：冲突五法、仆人式领导题、团队五阶段、权力/利益方格、干系人参与度矩阵、沟通渠道、激励理论。</p>
+<p><strong>原则：人出问题先沟通、先理解动机，不指责、不微管理。</strong></p>
+<p><strong>纲7 · 两种工作方式（预测 vs 敏捷）</strong></p>
+<p>预测=先计划后执行（需求稳定）；敏捷=迭代+反馈（需求多变）。</p>
+<p>推出：Scrum 三角色/三工件/四事件、看板 WIP、混合方法、迭代 vs 增量、DoD、Sprint 内不中途加需求、敏捷宣言。</p>
+<p><strong>判断：题目需求"稳定还是多变"→ 决定用预测/敏捷/混合。</strong></p>
+<h4>怎么用纲领解题（三问定位法）</h4>
+<p>看到题目，依次问：</p>
+<p>1. 发生在哪个过程组？（纲1）</p>
+<p>2. 涉及变化/基准/干系人要求吗？（纲2）</p>
+<p>3. 关键词触发哪条纲？（纲3-7）</p>
+<p>→ 定位到考点 → 用本库具体内容作答。</p>
 <p>---</p>
 <h2 class="module" id="M0-框架与五大过程组">M0 框架与五大过程组</h2>
 <h4>五大过程组 🖼 🎵 A级默写</h4>
