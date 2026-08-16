@@ -136,18 +136,23 @@ main { max-width:840px; margin:0 auto; padding:36px 20px 60px; }
 .chip:hover { border-color:var(--ink); color:var(--ink); }
 .chip.on { background:var(--ink); border-color:var(--ink); color:var(--paper); }
 
-/* 学习日卡片 */
+/* 学习日历 */
 .days-title { font-size:20px; font-weight:700; margin:0 0 6px; }
 .days-sub { font-size:13.5px; color:var(--mut); margin:0 0 18px; }
-.day-card { border:1px solid var(--line); border-radius:8px; padding:14px 18px; margin:14px 0;
-  background:var(--paper); }
-.day-card:first-of-type { border-left:3px solid var(--accent); }
-.day-head { display:flex; justify-content:space-between; align-items:baseline; gap:14px; margin-bottom:8px; }
-.day-date { font-weight:700; font-size:15.5px; }
-.day-target { font-size:13px; color:var(--sub); text-align:right; }
-.day-task { font-size:15px; line-height:1.75; }
-.day-task .mod-ref { color:var(--accent); text-decoration:underline; cursor:pointer; }
-@media (max-width:767px) { .day-head { flex-direction:column; gap:4px; } .day-target { text-align:left; } }
+.cal-grid { display:grid; grid-template-columns:repeat(7,1fr); gap:12px; }
+.cal-cell { border:1px solid var(--line); border-radius:8px; padding:12px 14px; cursor:pointer;
+  background:var(--paper); transition:border-color .2s; }
+.cal-cell:hover { border-color:var(--ink); }
+.cal-cell.today { border-color:var(--accent); border-width:2px; }
+.cal-date { font-weight:700; font-size:15px; margin-bottom:7px; display:flex; align-items:baseline; gap:6px; }
+.cal-tag { font-size:11px; color:var(--mut); font-weight:400; }
+.cal-mods { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:8px; }
+.cal-mod { font-size:12px; padding:2px 9px; border:1px solid var(--line); border-radius:999px;
+  color:var(--accent); text-decoration:none; transition:all .15s; }
+.cal-mod:hover { background:var(--ink); color:var(--paper); border-color:var(--ink); }
+.cal-target { font-size:12px; color:var(--sub); line-height:1.55; }
+@media (max-width:900px) { .cal-grid { grid-template-columns:repeat(3,1fr); } }
+@media (max-width:640px) { .cal-grid { grid-template-columns:1fr; } }
 
 /* 模块 */
 h2.module { cursor:pointer; font-size:20px; font-weight:700; color:var(--ink); padding:26px 0 14px;
@@ -245,7 +250,7 @@ main .explain strong { color:#0044cc; font-weight:600; }
       <div class="cd-inline" title="距 9.12 考试">距考试 <span id="cd-days2">—</span>天 <span id="cd-hms2">--:--:--</span></div>
       <div class="tabbar">
         <button data-tab="kb" class="on">知识库</button>
-        <button data-tab="days">学习日</button>
+        <button data-tab="days">学习日历</button>
         <button data-tab="pts">考点清单</button>
       </div>
       <div class="btns">
@@ -1134,16 +1139,16 @@ Forming  Storming  Norming  Performing  Adjourning
       </section>
 
       <section id="days" class="hidden">
-        <h2 class="days-title">暴力输入冲刺 · 学习日</h2>
-        <p class="days-sub">8.16-8.22 每日任务（来源 05-学习路线.md）。点击任务里的模块名（如 M5）直达知识库对应模块。</p>
-        <div id="dayList"><div class="day-card"><div class="day-head"><span class="day-date">**8.16 今天**（16:00-24:00）</span><span class="day-target">骨架/受控/计算吃透</span></div><div class="day-task">①三条脉络通读：总纲/项目管理计划/本路线 ②知识库 <a href="#M0" class="mod-ref">M0</a>-<a href="#M4" class="mod-ref">M4</a> 精读（配合已看课时）</div></div>
-<div class="day-card"><div class="day-head"><span class="day-date">8.17（一）</span><span class="day-target">7 工具场景、应对策略</span></div><div class="day-task"><a href="#M5" class="mod-ref">M5</a> 质量 + <a href="#M6" class="mod-ref">M6</a> 风险 输入</div></div>
-<div class="day-card"><div class="day-head"><span class="day-date">8.18（二）</span><span class="day-target">合同类型、冲突五法</span></div><div class="day-task"><a href="#M7" class="mod-ref">M7</a> 采购 + <a href="#M8" class="mod-ref">M8</a> 资源团队 输入</div></div>
-<div class="day-card"><div class="day-head"><span class="day-date">8.19（三）</span><span class="day-target">渠道公式、三角色/四事件/三工件</span></div><div class="day-task"><a href="#M9" class="mod-ref">M9</a> 沟通干系人 + <a href="#M10" class="mod-ref">M10</a> 敏捷上（Scrum 三件套）</div></div>
-<div class="day-card"><div class="day-head"><span class="day-date">8.20（四）</span><span class="day-target"><strong>12 模块全部输入完成 ✅</strong></span></div><div class="day-task"><a href="#M10" class="mod-ref">M10</a> 敏捷下（看板/混合/DoD/估算）+ <a href="#M11" class="mod-ref">M11</a> 业务</div></div>
-<div class="day-card"><div class="day-head"><span class="day-date">8.21（五）</span><span class="day-target">必考全复述</span></div><div class="day-task">核心掌握：31 个 ★★★ + 8 项计算 集中过一遍</div></div>
-<div class="day-card"><div class="day-head"><span class="day-date">8.22（六·路上）</span><span class="day-target">巩固</span></div><div class="day-task">音频/口诀/纲领回顾（坐车听，不强制）</div></div>
-<div class="day-card"><div class="day-head"><span class="day-date">**8.23（日）**</span><span class="day-target">—</span></div><div class="day-task">外婆生日：<strong>放空日</strong>（红线，不安排）</div></div></div>
+        <h2 class="days-title">暴力输入冲刺 · 学习日历</h2>
+        <p class="days-sub">点任意一天的格子，直达当日第一个模块；格内模块徽章可单独点（数据源 05-学习路线.md）。</p>
+        <div id="dayList"><div class="cal-grid"><div class="cal-cell" data-date="" data-first="M0"><div class="cal-date"><span class="cal-tag">今天</span></div><div class="cal-mods"><a href="#M0" class="cal-mod" data-mod="M0">M0</a><a href="#M4" class="cal-mod" data-mod="M4">M4</a></div><div class="cal-target">骨架/受控/计算吃透</div></div>
+<div class="cal-cell" data-date="8.17" data-first="M5"><div class="cal-date">8.17<span class="cal-tag">一</span></div><div class="cal-mods"><a href="#M5" class="cal-mod" data-mod="M5">M5</a><a href="#M6" class="cal-mod" data-mod="M6">M6</a></div><div class="cal-target">7 工具场景、应对策略</div></div>
+<div class="cal-cell" data-date="8.18" data-first="M7"><div class="cal-date">8.18<span class="cal-tag">二</span></div><div class="cal-mods"><a href="#M7" class="cal-mod" data-mod="M7">M7</a><a href="#M8" class="cal-mod" data-mod="M8">M8</a></div><div class="cal-target">合同类型、冲突五法</div></div>
+<div class="cal-cell" data-date="8.19" data-first="M9"><div class="cal-date">8.19<span class="cal-tag">三</span></div><div class="cal-mods"><a href="#M9" class="cal-mod" data-mod="M9">M9</a><a href="#M10" class="cal-mod" data-mod="M10">M10</a></div><div class="cal-target">渠道公式、三角色/四事件/三工件</div></div>
+<div class="cal-cell" data-date="8.20" data-first="M10"><div class="cal-date">8.20<span class="cal-tag">四</span></div><div class="cal-mods"><a href="#M10" class="cal-mod" data-mod="M10">M10</a><a href="#M11" class="cal-mod" data-mod="M11">M11</a></div><div class="cal-target"><strong>12 模块全部输入完成 ✅</strong></div></div>
+<div class="cal-cell" data-date="8.21" data-first=""><div class="cal-date">8.21<span class="cal-tag">五</span></div><div class="cal-target">必考全复述</div></div>
+<div class="cal-cell" data-date="8.22" data-first=""><div class="cal-date">8.22<span class="cal-tag">六·路上</span></div><div class="cal-target">巩固</div></div>
+<div class="cal-cell" data-date="" data-first=""><div class="cal-date"><span class="cal-tag">日</span></div><div class="cal-target">—</div></div></div></div>
       </section>
 
       <footer class="foot">数据源 lark-ws/pmp/（git 私有仓库）· 学习站自动同步</footer>
@@ -1261,19 +1266,30 @@ function showTab(name) {
 }
 tabBtns.forEach(function(b){ b.onclick = function(){ showTab(b.dataset.tab); }; });
 
-// 学习日卡片：点击模块名 → 切知识库并展开该模块
-document.querySelectorAll('#days .mod-ref').forEach(function(a){
-  a.onclick = function(e){
-    e.preventDefault();
-    showTab('kb');
-    var target = a.textContent.trim();
-    var h = null;
-    document.querySelectorAll('#kb h2.module').forEach(function(x){
-      if (!h && x.textContent.indexOf(target) === 0) h = x;
-    });
-    if (h) gotoModule(h);
-  };
+// 学习日历：点格子/模块徽章 → 切知识库并展开对应模块
+function jumpToModule(mod) {
+  if (!mod) return;
+  showTab('kb');
+  var h = null;
+  document.querySelectorAll('#kb h2.module').forEach(function(x){
+    if (!h && x.textContent.indexOf(mod) === 0) h = x;
+  });
+  if (h) gotoModule(h);
+}
+document.querySelectorAll('#days .cal-cell').forEach(function(cell){
+  cell.onclick = function(){ jumpToModule(cell.dataset.first); };
 });
+document.querySelectorAll('#days .cal-mod').forEach(function(a){
+  a.onclick = function(e){ e.stopPropagation(); jumpToModule(a.dataset.mod); };
+});
+// 当天高亮（按当前日期匹配 data-date）
+(function(){
+  var now = new Date();
+  var today = (now.getMonth() + 1) + '.' + now.getDate();
+  document.querySelectorAll('#days .cal-cell').forEach(function(cell){
+    if (cell.dataset.date === today) cell.classList.add('today');
+  });
+})();
 
 // ---- accordion（默认全展开）----
 (function initAccordion(){
