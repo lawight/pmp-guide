@@ -114,6 +114,12 @@ a { color:var(--accent); }
 .btn:hover { border-color:var(--ink); color:var(--ink); }
 #sbOpen { display:none; }
 
+/* 控制条内紧凑倒计时：滚动时始终在视野内 */
+.cd-inline { font-size:12.5px; color:var(--sub); white-space:nowrap; }
+.cd-inline #cd-days2 { color:var(--accent); font-weight:600; font-variant-numeric:tabular-nums; }
+.cd-inline #cd-hms2 { font-variant-numeric:tabular-nums; }
+@media (max-width:767px) { .cd-inline { font-size:12px; } }
+
 /* ---- 主内容 ---- */
 main { max-width:840px; margin:0 auto; padding:36px 20px 60px; }
 .idx { display:grid; grid-template-columns:repeat(12,1fr); gap:16px 24px; margin-bottom:36px; }
@@ -219,6 +225,7 @@ main .explain strong { color:#0044cc; font-weight:600; }
     <div class="ctrl">
       <button id="sbOpen" class="btn">☰ 目录</button>
       <input id="q" type="search" placeholder="搜索考点 / 关键词，如 EVM、冲突、WIP…">
+      <div class="cd-inline" title="距 9.12 考试">距考试 <span id="cd-days2">—</span>天 <span id="cd-hms2">--:--:--</span></div>
       <div class="tabbar">
         <button data-tab="kb" class="on">知识库</button>
         <button data-tab="pts">考点清单</button>
@@ -1248,9 +1255,13 @@ function applyFilters() {
   function pad(n) { return (n < 10 ? '0' : '') + n; }
   function tick() {
     var diff = target - new Date();
+    var d2 = document.getElementById('cd-days2');
+    var t2 = document.getElementById('cd-hms2');
     if (diff <= 0) {
       dEl.textContent = '0';
       tEl.textContent = '考试日 · 加油';
+      if (d2) d2.textContent = '0';
+      if (t2) t2.textContent = '考试日';
       return;
     }
     var d = Math.floor(diff / 86400000);
@@ -1259,6 +1270,8 @@ function applyFilters() {
     var s = Math.floor(diff % 60000 / 1000);
     dEl.textContent = d;
     tEl.textContent = pad(h) + ':' + pad(m) + ':' + pad(s);
+    if (d2) d2.textContent = d;
+    if (t2) t2.textContent = pad(h) + ':' + pad(m) + ':' + pad(s);
   }
   tick();
   setInterval(tick, 1000);
