@@ -83,6 +83,8 @@ a { color:var(--accent); }
 .hero { text-align:center; padding:40px 16px 28px; }
 .hero h1 { margin:0 0 12px; font-size:32px; font-weight:700; letter-spacing:0; }
 .hero .sub { font-size:16.5px; color:var(--sub); margin:0 0 14px; }
+.hero .countdown { font-size:19px; font-weight:600; color:var(--ink); margin:0 0 10px; letter-spacing:.02em; }
+.hero .countdown .num { color:var(--accent); font-variant-numeric:tabular-nums; }
 .hero .meta { font-size:13px; color:var(--mut); }
 
 /* ---- 控制条 ---- */
@@ -197,6 +199,7 @@ main .explain strong { color:#0044cc; font-weight:600; }
     <header class="hero">
       <h1>PMP 备考学习站</h1>
       <p class="sub">考试 9.12 · 模块掌握度制 · 考纲：人员 42% / 过程 50% / 业务 8%</p>
+      <p class="countdown">距 9.12 考试还有 <span class="num" id="cd-days">—</span> 天 <span class="num" id="cd-hms">--:--:--</span></p>
       <p class="meta">12 模块 · A 默写 / B 辨析 / C 应用 / D 计算 · 🖼 图 / 🎵 口诀 / 🧠 技巧 / 📝 死记</p>
     </header>
 
@@ -1223,6 +1226,30 @@ function applyFilters() {
   });
   document.getElementById('emptyPts').style.display = any ? 'none' : 'block';
 }
+
+// ---- 考试倒计时：截止 2026-09-11 23:59:59（9.12 考试当天不计入）----
+(function(){
+  var target = new Date(2026, 8, 11, 23, 59, 59); // 本地时区
+  var dEl = document.getElementById('cd-days');
+  var tEl = document.getElementById('cd-hms');
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function tick() {
+    var diff = target - new Date();
+    if (diff <= 0) {
+      dEl.textContent = '0';
+      tEl.textContent = '考试日 · 加油';
+      return;
+    }
+    var d = Math.floor(diff / 86400000);
+    var h = Math.floor(diff % 86400000 / 3600000);
+    var m = Math.floor(diff % 3600000 / 60000);
+    var s = Math.floor(diff % 60000 / 1000);
+    dEl.textContent = d;
+    tEl.textContent = pad(h) + ':' + pad(m) + ':' + pad(s);
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
 
 // ---- 返回顶部 ----
 var topBtn = document.getElementById('topbtn');
