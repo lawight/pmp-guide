@@ -83,9 +83,19 @@ a { color:var(--accent); }
 .hero { text-align:center; padding:40px 16px 28px; }
 .hero h1 { margin:0 0 12px; font-size:32px; font-weight:700; letter-spacing:0; }
 .hero .sub { font-size:16.5px; color:var(--sub); margin:0 0 14px; }
-.hero .countdown { font-size:19px; font-weight:600; color:var(--ink); margin:0 0 10px; letter-spacing:.02em; }
-.hero .countdown .num { color:var(--accent); font-variant-numeric:tabular-nums; }
 .hero .meta { font-size:13px; color:var(--mut); }
+
+/* 侧栏倒计时：常驻可见，折叠只显天数 */
+.sb-countdown { padding:12px 16px 14px; border-bottom:1px solid var(--line); }
+.sb-countdown .cd-label { font-size:11px; color:var(--mut); letter-spacing:.05em; margin-bottom:3px; }
+.sb-countdown .cd-main { font-size:16px; font-weight:600; color:var(--ink); white-space:nowrap; }
+.sb-countdown #cd-days { color:var(--accent); font-variant-numeric:tabular-nums; }
+.sb-countdown #cd-hms { font-variant-numeric:tabular-nums; }
+#layout.collapsed .sb-countdown { padding:12px 0; text-align:center; }
+#layout.collapsed .cd-label, #layout.collapsed #cd-hms { display:none; }
+#layout.collapsed .cd-main { font-size:15px; }
+#layout.collapsed .cd-unit { display:none; }
+#layout.collapsed .sb-countdown #cd-days::after { content:'天'; font-size:11px; color:var(--mut); margin-left:2px; }
 
 /* ---- 控制条 ---- */
 .ctrl { position:sticky; top:0; z-index:20; background:var(--paper); border-bottom:1px solid var(--line);
@@ -190,6 +200,10 @@ main .explain strong { color:#0044cc; font-weight:600; }
       <span id="sbTitle">目录</span>
       <button id="sbCollapse" title="收缩/展开">«</button>
     </div>
+    <div class="sb-countdown" id="sbCd">
+      <div class="cd-label">距 9.12 考试</div>
+      <div class="cd-main"><span id="cd-days">—</span><span class="cd-unit"> 天 </span><span id="cd-hms">--:--:--</span></div>
+    </div>
     <nav id="sbNav"></nav>
   </aside>
   <div id="mask"></div>
@@ -199,7 +213,6 @@ main .explain strong { color:#0044cc; font-weight:600; }
     <header class="hero">
       <h1>PMP 备考学习站</h1>
       <p class="sub">考试 9.12 · 模块掌握度制 · 考纲：人员 42% / 过程 50% / 业务 8%</p>
-      <p class="countdown">距 9.12 考试还有 <span class="num" id="cd-days">—</span> 天 <span class="num" id="cd-hms">--:--:--</span></p>
       <p class="meta">12 模块 · A 默写 / B 辨析 / C 应用 / D 计算 · 🖼 图 / 🎵 口诀 / 🧠 技巧 / 📝 死记</p>
     </header>
 
