@@ -136,6 +136,19 @@ main { max-width:840px; margin:0 auto; padding:36px 20px 60px; }
 .chip:hover { border-color:var(--ink); color:var(--ink); }
 .chip.on { background:var(--ink); border-color:var(--ink); color:var(--paper); }
 
+/* 学习日卡片 */
+.days-title { font-size:20px; font-weight:700; margin:0 0 6px; }
+.days-sub { font-size:13.5px; color:var(--mut); margin:0 0 18px; }
+.day-card { border:1px solid var(--line); border-radius:8px; padding:14px 18px; margin:14px 0;
+  background:var(--paper); }
+.day-card:first-of-type { border-left:3px solid var(--accent); }
+.day-head { display:flex; justify-content:space-between; align-items:baseline; gap:14px; margin-bottom:8px; }
+.day-date { font-weight:700; font-size:15.5px; }
+.day-target { font-size:13px; color:var(--sub); text-align:right; }
+.day-task { font-size:15px; line-height:1.75; }
+.day-task .mod-ref { color:var(--accent); text-decoration:underline; cursor:pointer; }
+@media (max-width:767px) { .day-head { flex-direction:column; gap:4px; } .day-target { text-align:left; } }
+
 /* 模块 */
 h2.module { cursor:pointer; font-size:20px; font-weight:700; color:var(--ink); padding:26px 0 14px;
   margin:0; border-bottom:1px solid var(--line); display:flex; align-items:center; gap:10px; }
@@ -232,6 +245,7 @@ main .explain strong { color:#0044cc; font-weight:600; }
       <div class="cd-inline" title="距 9.12 考试">距考试 <span id="cd-days2">—</span>天 <span id="cd-hms2">--:--:--</span></div>
       <div class="tabbar">
         <button data-tab="kb" class="on">知识库</button>
+        <button data-tab="days">学习日</button>
         <button data-tab="pts">考点清单</button>
       </div>
       <div class="btns">
@@ -1119,6 +1133,19 @@ Forming  Storming  Norming  Performing  Adjourning
         <p id="emptyPts" class="hidden" style="text-align:center;color:var(--mut);padding:40px 0">没有匹配的考点</p>
       </section>
 
+      <section id="days" class="hidden">
+        <h2 class="days-title">暴力输入冲刺 · 学习日</h2>
+        <p class="days-sub">8.16-8.22 每日任务（来源 05-学习路线.md）。点击任务里的模块名（如 M5）直达知识库对应模块。</p>
+        <div id="dayList"><div class="day-card"><div class="day-head"><span class="day-date">**8.16 今天**（16:00-24:00）</span><span class="day-target">骨架/受控/计算吃透</span></div><div class="day-task">①三条脉络通读：总纲/项目管理计划/本路线 ②知识库 <a href="#M0" class="mod-ref">M0</a>-<a href="#M4" class="mod-ref">M4</a> 精读（配合已看课时）</div></div>
+<div class="day-card"><div class="day-head"><span class="day-date">8.17（一）</span><span class="day-target">7 工具场景、应对策略</span></div><div class="day-task"><a href="#M5" class="mod-ref">M5</a> 质量 + <a href="#M6" class="mod-ref">M6</a> 风险 输入</div></div>
+<div class="day-card"><div class="day-head"><span class="day-date">8.18（二）</span><span class="day-target">合同类型、冲突五法</span></div><div class="day-task"><a href="#M7" class="mod-ref">M7</a> 采购 + <a href="#M8" class="mod-ref">M8</a> 资源团队 输入</div></div>
+<div class="day-card"><div class="day-head"><span class="day-date">8.19（三）</span><span class="day-target">渠道公式、三角色/四事件/三工件</span></div><div class="day-task"><a href="#M9" class="mod-ref">M9</a> 沟通干系人 + <a href="#M10" class="mod-ref">M10</a> 敏捷上（Scrum 三件套）</div></div>
+<div class="day-card"><div class="day-head"><span class="day-date">8.20（四）</span><span class="day-target"><strong>12 模块全部输入完成 ✅</strong></span></div><div class="day-task"><a href="#M10" class="mod-ref">M10</a> 敏捷下（看板/混合/DoD/估算）+ <a href="#M11" class="mod-ref">M11</a> 业务</div></div>
+<div class="day-card"><div class="day-head"><span class="day-date">8.21（五）</span><span class="day-target">必考全复述</span></div><div class="day-task">核心掌握：31 个 ★★★ + 8 项计算 集中过一遍</div></div>
+<div class="day-card"><div class="day-head"><span class="day-date">8.22（六·路上）</span><span class="day-target">巩固</span></div><div class="day-task">音频/口诀/纲领回顾（坐车听，不强制）</div></div>
+<div class="day-card"><div class="day-head"><span class="day-date">**8.23（日）**</span><span class="day-target">—</span></div><div class="day-task">外婆生日：<strong>放空日</strong>（红线，不安排）</div></div></div>
+      </section>
+
       <footer class="foot">数据源 lark-ws/pmp/（git 私有仓库）· 学习站自动同步</footer>
     </main>
   </div>
@@ -1230,8 +1257,23 @@ function showTab(name) {
   tabBtns.forEach(function(x){ x.classList.toggle('on', x.dataset.tab === name); });
   document.getElementById('kb').classList.toggle('hidden', name !== 'kb');
   document.getElementById('pts').classList.toggle('hidden', name !== 'pts');
+  document.getElementById('days').classList.toggle('hidden', name !== 'days');
 }
 tabBtns.forEach(function(b){ b.onclick = function(){ showTab(b.dataset.tab); }; });
+
+// 学习日卡片：点击模块名 → 切知识库并展开该模块
+document.querySelectorAll('#days .mod-ref').forEach(function(a){
+  a.onclick = function(e){
+    e.preventDefault();
+    showTab('kb');
+    var target = a.textContent.trim();
+    var h = null;
+    document.querySelectorAll('#kb h2.module').forEach(function(x){
+      if (!h && x.textContent.indexOf(target) === 0) h = x;
+    });
+    if (h) gotoModule(h);
+  };
+});
 
 // ---- accordion（默认全展开）----
 (function initAccordion(){
