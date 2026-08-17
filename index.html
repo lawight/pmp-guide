@@ -250,6 +250,7 @@ main .explain strong { color:#0044cc; font-weight:600; }
       <div class="cd-inline" title="距 9.12 考试">距考试 <span id="cd-days2">—</span>天 <span id="cd-hms2">--:--:--</span></div>
       <div class="tabbar">
         <button data-tab="kb" class="on">知识库</button>
+        <button data-tab="recap">串讲速记</button>
         <button data-tab="days">学习日历</button>
         <button data-tab="pts">考点清单</button>
       </div>
@@ -1172,7 +1173,36 @@ Forming  Storming  Norming  Performing  Adjourning
 <div class="cal-cell" data-date="" data-first=""><div class="cal-date"><span class="cal-tag">日</span></div><div class="cal-target">—</div></div></div></div>
       </section>
 
-      <footer class="foot">数据源 lark-ws/pmp/（git 私有仓库）· 学习站自动同步 · 更新于 2026-08-16 22:41 · author: shifan</footer>
+      <section id="recap" class="hidden">
+        <h2>PMP 串讲速记（按考纲四大块 · 2026-08-16）</h2>
+<blockquote><p>用途：把零散考点串成体系，一遍过完一个领域。每块=主线脉络 + 必考串联 + 口诀集中营 + 高频坑。</p><p>配合：总纲（纲领 7 纲）→ 04 考点清单（考什么）→ 知识速查（细节）。</p></blockquote>
+<h2 class="module" id="一、过程篇（占-50%）">一、过程篇（占 50%）</h2>
+<p><strong>主线</strong>：纲1 骨架 → 纲2 受控 → 纲4 EVM → 纲5 风险（"先立骨架、再管变化、用数字说话、防不确定性"）</p>
+<p><strong>必考串联</strong>（★★★ 逐个过）：</p>
+<ul><li>章程 → 项目管理计划 → 基准：授权 → 路线 → 承诺（M0/M1）</li><li><strong>变更</strong>：记录→评估→CCB→批准→实施；批准后更新计划/基准（M1）</li><li>范围基准 = 范围说明书 + WBS + WBS词典；确认(验收) vs 控制(变更)；蔓延 vs 镀金（M2）</li><li>进度：关键路径=最长路径+浮动0；赶工加钱、跟进冒险；PERT=(O+4M+P)/6（M3）</li><li>成本：EVM 六指标（SV/CV/SPI/CPI）；EAC 典型除 CPI、非典型加缺口；TCPI（M4）</li><li>质量：QA 管过程、QC 查结果；7 工具场景（帕累托抓重点/鱼骨找根因/控制图看受控）（M5）</li><li>风险：识→定→定→应→实→监；威胁规转移减受、机会开提分接；EMV=概率×影响（M6）</li><li>采购：固定总价卖方担、成本补偿买方担；FFP/CPFF/T&M 场景（M7）</li></ul>
+<p><strong>口诀集中营</strong>：启规执监收 ｜ 变更三连（记录→评估→审批）｜ 确认验收对不对、控制变化怎么管 ｜ EVM 在上，好于 1 就好 ｜ 赶工加钱、跟进冒险 ｜ 帕重、鱼因、控受 ｜ 威胁规转移减受 ｜ 固定总价卖方担</p>
+<p><strong>高频坑</strong>：① 选项"立即/直接/马上"=跳步必错；② 收尾题选经验教训+资产更新，不选庆功会；③ 蔓延=别人加、镀金=自己加；④ 变更批准后才更新基准，不能先斩后奏。</p>
+<h2 class="module" id="二、人员篇（占-42%）">二、人员篇（占 42%）</h2>
+<p><strong>主线</strong>：纲6 人本——先沟通 → 理解动机 → 不指责、不微管理（人出问题先谈人）</p>
+<p><strong>必考串联</strong>：</p>
+<ul><li>团队五阶段：组建→风暴→规范→成熟→解散（冲突必然，风暴期化解）（M8）</li><li>冲突五法：撤退/缓和/妥协/强迫/<strong>合作（最优）</strong>；先私下沟通再正式（M8）</li><li>仆人式领导：移除障碍/授权/教练，不微管理（M8）</li><li>激励：马斯洛需求层次；赫茨伯格保健+激励；麦克利兰成就/权力/亲和（M8）</li><li>干系人链路：识别（含感知型）→ 登记册 → 权力/利益方格 → 参与度矩阵 → 期望管理（M9）</li><li>沟通：渠道 n(n−1)/2；交互式最有效、推式发/拉式取（M9）</li></ul>
+<p><strong>口诀集中营</strong>：建风规熟散 ｜ 退缓妥强合、合作最优先 ｜ 高高重管、高利低满、低高告知、低低监督 ｜ 不知抵制中立支持引导 ｜ 加 1 人就加 n 条</p>
+<p><strong>高频坑</strong>：① 直接替团队决定/当众裁决/上报=跳过沟通；② 强制、微管理、责备=错；③ 方格投入错配（冷落高权者、纠缠低权者）；④ 只记录参与度现状不设目标。</p>
+<h2 class="module" id="三、业务篇（占-8%，考前扫尾）">三、业务篇（占 8%，考前扫尾）</h2>
+<p><strong>主线</strong>：外部变化 → 先评估影响 → 必要时走变更（不暂停、不无视）</p>
+<p><strong>必考串联</strong>：</p>
+<ul><li>法规/合规：新法规出台→评估影响→必要时变更流程（M11）</li><li>治理与政策：遵循组织规则，不越权（M11）</li><li>战略对齐：项目支撑组织战略，组合管理按优先级排资源（M11）</li></ul>
+<p><strong>口诀</strong>：先评估、再变更；暂停是过度反应、无视是违规。</p>
+<p><strong>高频坑</strong>：① "暂停项目等法务"=甩锅；② "按原计划继续"=无视合规；③ 把合规问题当技术问题直接改。</p>
+<h2 class="module" id="四、敏捷篇（渗透约-50%-题，最大分数缺口）">四、敏捷篇（渗透约 50% 题，最大分数缺口）</h2>
+<p><strong>主线</strong>：纲7 两种工作方式——需求稳定用预测、多变用敏捷；敏捷=小步快跑+快速反馈</p>
+<p><strong>必考串联</strong>：</p>
+<ul><li>Scrum 三角色：PO 管价值（优先级）、SM 护流程（清障）、开发团队自交付（M10）</li><li>四事件：Sprint 规划 → 每日站会(15min) → 评审(看产品) → 回顾(改过程)（M10）</li><li>三工件：产品 Backlog(PO 排) → Sprint Backlog(团队领) → 增量(按 DoD)；DoD=完成的定义（M10）</li><li>Sprint 内不中途加需求→进 Backlog 下个 Sprint（M10）</li><li>看板：WIP 限制=暴露瓶颈、提升流动（M10）</li><li>混合：稳定用预测、不稳定用迭代（M10）</li><li>估算：故事点相对估算、计划扑克共识（M10）</li><li>敏捷宣言 4 值：人、软、客、变（个体互动/可用软件/客户合作/响应变化）（M10）</li></ul>
+<p><strong>口诀集中营</strong>：PO 管价值、SM 护流程、团队自交付 ｜ 规站评回 ｜ 评审看产品、回顾改过程 ｜ 人软客变</p>
+<p><strong>高频坑</strong>：① 让 SM 定优先级、让 PO 分任务=角色错位；② "改进协作"答评审、"演示功能"答回顾=选反；③ WIP 目的答"减量/禁并行"；④ "立即做/延长 Sprint"塞新需求=破坏承诺。</p>
+      </section>
+
+      <footer class="foot">数据源 lark-ws/pmp/（git 私有仓库）· 学习站自动同步 · 更新于 2026-08-17 12:04 · author: shifan</footer>
     </main>
   </div>
 </div>
@@ -1282,8 +1312,9 @@ var tabBtns = document.querySelectorAll('.tabbar button');
 function showTab(name) {
   tabBtns.forEach(function(x){ x.classList.toggle('on', x.dataset.tab === name); });
   document.getElementById('kb').classList.toggle('hidden', name !== 'kb');
-  document.getElementById('pts').classList.toggle('hidden', name !== 'pts');
   document.getElementById('days').classList.toggle('hidden', name !== 'days');
+  document.getElementById('pts').classList.toggle('hidden', name !== 'pts');
+  document.getElementById('recap').classList.toggle('hidden', name !== 'recap');
 }
 tabBtns.forEach(function(b){ b.onclick = function(){ showTab(b.dataset.tab); }; });
 
