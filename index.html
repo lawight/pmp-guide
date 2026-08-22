@@ -253,6 +253,7 @@ main .explain strong { color:#0044cc; font-weight:600; }
         <button data-tab="kb" class="on">知识库</button>
         <button data-tab="recap">串讲速记</button>
         <button data-tab="dia">核心图解</button>
+        <button data-tab="manual">必背手册</button>
         <button data-tab="days">学习日历</button>
         <button data-tab="pts">考点清单</button>
       </div>
@@ -309,9 +310,7 @@ main .explain strong { color:#0044cc; font-weight:600; }
 <p><strong>判断：题目需求"稳定还是多变"→ 决定用预测/敏捷/混合。</strong></p>
 <h4>怎么用纲领解题（三问定位法）</h4>
 <p>看到题目，依次问：</p>
-<p>1. 发生在哪个过程组？（纲1）</p>
-<p>2. 涉及变化/基准/干系人要求吗？（纲2）</p>
-<p>3. 关键词触发哪条纲？（纲3-7）</p>
+<ol><li>发生在哪个过程组？（纲1）</li><li>涉及变化/基准/干系人要求吗？（纲2）</li><li>关键词触发哪条纲？（纲3-7）</li></ol>
 <p>→ 定位到考点 → 用本库具体内容作答。</p>
 <p>---</p>
 <h2 class="module" id="M0-框架与五大过程组">M0 框架与五大过程组</h2>
@@ -875,13 +874,7 @@ Forming  Storming  Norming  Performing  Adjourning
 <p>📝 死记：<strong>"尽管右项有其价值，我们更重视左项的价值"</strong>——右项不是不要。对文档的要求可记入 DoD，但<strong>不用专门的 Sprint 写文档</strong>（"切蛋糕"原则：每个增量都是完整可用的纵切）。</p>
 <h4>敏捷十二原则 🎵 B级（高频 6 条）</h4>
 <p>🎵 助记：<strong>"早交付、拥抱变、面对面、可持续、自组织、常反思"</strong></p>
-<p>1. 最重要的目标：<strong>及早、持续不断地交付有价值的软件</strong>使客户满意（价值驱动→优先做价值高的待办事项）；</p>
-<p>2. <strong>欣然面对需求变化</strong>，即使开发后期（→新需求入 PB 排优先级，当前 Sprint 理论上无变更）；</p>
-<p>3. 经常交付可工作的软件，<strong>周期越短越好</strong>（→干系人频繁参与、及时反馈）；</p>
-<p>6. 传递信息效率最高的方式是<strong>面对面交谈</strong>（提倡集中办公，也可用鱼缸窗口、远程结对等虚拟协作）；</p>
-<p>7. <strong>可工作的软件是进度的首要度量标准</strong>；</p>
-<p>8. 倡导<strong>可持续开发</strong>，步调稳定延续（评审发现缺陷/新需求→入 PB 排优先级，不加班；也不随意加人，否则速率不稳）；</p>
-<p>9. 坚持不懈追求<strong>技术卓越</strong>（→技术债务与重构）；11. 最好的架构、需求和设计出自<strong>自组织团队</strong>；12. 团队<strong>定期反思</strong>并调整行为（→回顾会）。</p>
+<ol><li>最重要的目标：<strong>及早、持续不断地交付有价值的软件</strong>使客户满意（价值驱动→优先做价值高的待办事项）；</li><li><strong>欣然面对需求变化</strong>，即使开发后期（→新需求入 PB 排优先级，当前 Sprint 理论上无变更）；</li><li>经常交付可工作的软件，<strong>周期越短越好</strong>（→干系人频繁参与、及时反馈）；</li><li>传递信息效率最高的方式是<strong>面对面交谈</strong>（提倡集中办公，也可用鱼缸窗口、远程结对等虚拟协作）；</li><li><strong>可工作的软件是进度的首要度量标准</strong>；</li><li>倡导<strong>可持续开发</strong>，步调稳定延续（评审发现缺陷/新需求→入 PB 排优先级，不加班；也不随意加人，否则速率不稳）；</li><li>坚持不懈追求<strong>技术卓越</strong>（→技术债务与重构）；11. 最好的架构、需求和设计出自<strong>自组织团队</strong>；12. 团队<strong>定期反思</strong>并调整行为（→回顾会）。</li></ol>
 <h4>Scrum 框架总览：3-3-5-5 🖼 📝 A级默写 ★★★</h4>
 <pre class="ascii">三角色：产品负责人 PO、敏捷教练 Scrum Master、开发团队 Dev Team
 三工件：产品待办事项列表 PB、冲刺待办事项列表 SB、产品增量
@@ -1403,7 +1396,257 @@ CPFF：总价 = 实际成本 + 初始估算 × 固定百分比（费用不随实
 <p>📖 图例：<strong>目标成本</strong>=签约时双方估算的成本基准；<strong>目标利润</strong>=按目标成本履约时卖方应得的费用；<strong>分摊比例</strong>=成本节约/超支由买卖双方按比分担（80/20=买方担 80%、卖方担 20%，公式里乘的是<strong>卖方</strong>那份）；<strong>最高限价</strong>（天花板）=FPIF 特有的总价封顶，超出部分卖方自己吃；<strong>FPIF/CPIF/CPFF</strong> 含义见图 17 图例；<strong>CPFF 固定费</strong>按签约时的<strong>初始</strong>成本估算算，实际成本超了也不多加。</p>
       </section>
 
-      <footer class="foot">数据源 lark-ws/pmp/（git 私有仓库）· 学习站自动同步 · 更新于 2026-08-22 19:04 · author: shifan</footer>
+      <section id="manual" class="hidden">
+        <h2>PMP 每日必背考点手册（2026-09-12 考试 · 现行 ECO 版）</h2>
+<blockquote><p><strong>使用方法</strong>：每晚 30–40 分钟过一轮。考前 21 天内至少过 6 轮。每轮只看「一句话记忆 + 考场判断标准」，卡壳处回到精讲或串讲对应段落。</p><p><strong>来源层级标注</strong>（全册统一，绝不混写）：</p><p>- <strong>【官方】</strong>＝PMI 官方原文：现行《考试内容大纲（ECO）》、《PMBOK 指南》第 7 版、《敏捷实践指南》</p><p>- <strong>【推论】</strong>＝由官方指南内容直接推导的结论</p><p>- <strong>【机构】</strong>＝培训机构经验总结（乐凯等应试技巧），非官方表述</p><p><strong>考试版本确认</strong>：本手册基于中国大陆 2026 年 9 月批次适用的现行 ECO（人员 42% / 过程 50% / 商业环境 8%）；2026 年 12 月起大陆才切换新版 ECO。</p></blockquote>
+<p>---</p>
+<h2 class="module" id="第-1-章-ECO-全景：35-个任务清单【官方】">第 1 章 ECO 全景：35 个任务清单【官方】</h2>
+<h4>领域一：人员 People（42%，14 个任务）</h4>
+<ol><li>管理冲突（Manage conflict）</li><li>领导团队（Lead a team）</li><li>支持团队绩效（Support team performance）</li><li>赋能团队成员和干系人（Empower team members and stakeholders）</li><li>确保团队成员/干系人得到充分培训（Ensure team members/stakeholders are adequately trained）</li><li>建设团队（Build a team）</li><li>处理和消除团队障碍/阻碍（Address and remove impediments, obstacles, and blockers）</li><li>谈判项目协议（Negotiate project agreements）</li><li>与干系人协作（Collaborate with stakeholders）</li><li>建立共同理解（Build shared understanding）</li><li>参与和支持虚拟团队（Engage and support virtual teams）</li><li>定义团队基本规则（Define team ground rules）</li><li>指导相关干系人（Mentor relevant stakeholders）</li><li>应用情商促进团队绩效（Promote team performance through emotional intelligence）</li></ol>
+<h4>领域二：过程 Process（50%，17 个任务）</h4>
+<ol><li>以所需紧迫度执行项目以交付商业价值</li><li>管理沟通（Manage communications）</li><li>评估和管理风险（Assess and manage risks）</li><li>让干系人参与进来（Engage stakeholders）</li><li>规划和管理预算与资源（Plan and manage budget and resources）</li><li>规划和管理进度（Plan and manage schedule）</li><li>规划和管理产品/可交付成果质量（Plan and manage quality of products/deliverables）</li><li>规划和管理范围（Plan and manage scope）</li><li>整合项目规划活动（Integrate project planning activities）</li><li>管理项目变更（Manage project changes）</li><li>规划和管理采购（Plan and manage procurement）</li><li>管理项目工件（Manage project artifacts）</li><li>确定合适的项目方法论/方法和实践（Determine appropriate project methodology/methods and practices）</li><li>建立项目治理结构（Establish project governance structure）</li><li>管理项目问题（Manage project issues）</li><li>确保知识转移以实现项目连续性（Ensure knowledge transfer for project continuity）</li><li>规划和管理项目/阶段收尾或移交（Plan and manage project/phase closure or transitions）</li></ol>
+<h4>领域三：商业环境 Business Environment（8%，4 个任务）</h4>
+<ol><li>规划和管理项目合规性（Plan and manage project compliance）</li><li>评估和交付项目收益与价值（Evaluate and deliver project benefits and value）</li><li>评估和应对外部商业环境变化对范围的影响（Evaluate and address external business environment changes for impact on scope）</li><li>支持组织变革（Support organizational change）</li></ol>
+<p><strong>一句话记忆</strong>：人员管「人」、过程管「事」、商业环境管「组织为什么做这个项目」。</p>
+<p><strong>考场判断标准</strong>：题干问领导力/团队/冲突→人员；问计划/执行/监控的技术动作→过程；问合规/收益/战略/组织变革→商业环境。商业环境只有约 14 题，不要恋战。【推论】</p>
+<p>---</p>
+<h2 class="module" id="第-2-章-【PMI-思维纠偏专栏】工作直觉-vs-PMI-官方立场">第 2 章 【PMI 思维纠偏专栏】工作直觉 vs PMI 官方立场</h2>
+<blockquote><p>这是你最大的风险区。每条都按「我工作中会怎么做 vs PMI 要求怎么选」对照记忆。<strong>考试中先问自己：PMI 希望一个"教科书项目经理"此刻做什么？</strong>【机构】</p></blockquote>
+<div class="twrap"><table><thead><tr><th>#</th><th>工作直觉（实施顾问视角）</th><th>PMI 官方立场</th><th>考场判断标准</th></tr></thead><tbody>
+<tr><td>1</td><td>客户现场出问题，先上手解决稳住局面</td><td>先<strong>分析根本原因、评估影响</strong>，再行动【推论】</td><td>题干出现「发现问题/出了问题」，选项中「直接解决/立即修复」多为干扰项；选含「评估影响/分析原因/查看日志」的选项</td></tr>
+<tr><td>2</td><td>我是技术出身，关键活儿自己干最放心</td><td>项目经理<strong>不亲自做执行性工作</strong>，职责是管理和赋能【推论】</td><td>「PM 亲自修改/亲自实施/亲自编写」类选项基本必错</td></tr>
+<tr><td>3</td><td>小变更客户打个招呼就改了，走流程太慢</td><td><strong>任何变更必须走整体变更控制流程</strong>：记录→评估影响→提交审批→更新计划【官方】</td><td>题干出现「客户/发起人直接要求改」，正确动作永远是「提交变更请求/评估影响」，而非「先做了再说」或「直接拒绝」</td></tr>
+<tr><td>4</td><td>发起人是甲方爸爸，他说什么就是什么</td><td>PM 对<strong>项目和组织负责</strong>，不盲从任何个人；发起人要求违反章程/伦理时要沟通劝导、必要时升级【推论】</td><td>「照发起人说的做」通常为干扰项；选「与发起人沟通影响/说明后果」</td></tr>
+<tr><td>5</td><td>团队成员表现差，直接找他领导换人</td><td>先<strong>私下沟通、辅导、提供培训</strong>；冲突解决先由当事人自行解决【官方】</td><td>处理人的问题，第一选永远是「私下、面对面、先了解情况」；「上报职能经理/开除/警告」是最后手段</td></tr>
+<tr><td>6</td><td>进度落后了，加班赶工是第一反应</td><td>先<strong>评估对基准的影响</strong>，赶工/快速跟进是选项之一，且要走变更流程改基准【推论】</td><td>「立即加班/加人」不先评估影响＝错；注意「加人可能更慢」（布鲁克斯定律）【机构】</td></tr>
+<tr><td>7</td><td>客户提新需求，为满意度先答应下来</td><td>范围外需求＝<strong>变更</strong>，先评估对范围/进度/成本/质量的影响再答复【官方】</td><td>「客户是上帝，先答应」必错；选「提交变更请求并分析影响」</td></tr>
+<tr><td>8</td><td>风险来了再说，先把眼前事做完</td><td><strong>主动式风险管理</strong>：提前识别、定性定量分析、规划应对；问题发生前的是风险，发生后的是问题【官方】</td><td>题干「可能发生/担心/可能」→ 走风险流程（登记册）；「已经发生」→ 走问题流程（问题日志）</td></tr>
+<tr><td>9</td><td>文档能省就省，口头对齐效率高</td><td>PMI 强调<strong>文档化与正式沟通</strong>：会议纪要、变更记录、经验教训都要书面留痕【推论】</td><td>选项出现「更新经验教训登记册/更新文件/书面确认」优先于「口头同步」</td></tr>
+<tr><td>10</td><td>验收过了项目就完了，团队直接解散</td><td>收尾有<strong>正式流程</strong>：获得正式验收→移交→总结经验教训→释放资源；经验教训在<strong>整个项目期间</strong>持续记录【官方】</td><td>「立即解散团队」必错；「项目结束时才开始记录经验教训」必错</td></tr>
+<tr><td>11</td><td>敏捷就是快，文档计划都不要</td><td>敏捷是<strong>价值驱动+拥抱变化</strong>，不是无纪律；Scrum 仍有仪式、工件、角色与 Done 定义【官方】</td><td>「敏捷不需要文档/计划/管理」类绝对化表述必错</td></tr>
+<tr><td>12</td><td>混合模式下客户要签合同，全部按瀑布走</td><td>混合（Hybrid）是<strong>按工作性质裁剪</strong>：确定性高的部分预测型、不确定性高的部分迭代型【官方】</td><td>题干描述「部分需求明确、部分需探索」→ 选混合方法</td></tr>
+<tr><td>13</td><td>团队成员归我管，绩效我打分</td><td>敏捷中团队<strong>自组织/自管理</strong>，PM（仆人式领导）负责清除障碍而非指挥【官方】</td><td>敏捷题干中出现「PM 分配任务/指挥团队」必错；选「让团队自行决定/促进（facilitate）」</td></tr>
+<tr><td>14</td><td>出了事要向发起人报喜不报忧</td><td>PMI 职业道德：<strong>诚实、透明、及时报告坏消息</strong>【官方】</td><td>「等有了好消息再汇报/隐瞒问题」必错</td></tr>
+<tr><td>15</td><td>干系人反对项目，绕开他推进</td><td><strong>识别→分析→制定参与策略→主动管理</strong>，对抵制者要沟通、了解诉求、争取参与【官方】</td><td>「绕过/忽略反对的干系人」必错；选「分析其期望与影响，制定参与策略」</td></tr>
+<tr><td>16</td><td>两个成员吵架，我直接裁决谁对谁错</td><td>先<strong>让双方自行解决</strong>；升级后 PM 促进合作，首选「合作/解决问题」【官方】</td><td>冲突题首选「让他们自己谈/面对面合作解决」；直接裁决＝强迫，是下策</td></tr>
+<tr><td>17</td><td>镀金让客户惊喜一下</td><td><strong>禁止镀金（No Gold Plating）</strong>：只做范围内的活，超出部分走变更【推论】</td><td>「额外赠送功能/超出需求多做一点」必错</td></tr>
+<tr><td>18</td><td>项目是我拉的，功劳和责任都是我的</td><td>PM 是<strong>赋能者和服务者</strong>；成功归团队，问题 PM 担责【机构】</td><td>题干问「项目成功归功于」→ 团队；问「项目失败责任」→ 项目经理</td></tr>
+</tbody></table></div>
+<p>---</p>
+<h2 class="module" id="第-3-章-领域一：人员（42%）考点级提炼">第 3 章 领域一：人员（42%）考点级提炼</h2>
+<h4>3.1 冲突管理【官方】</h4>
+<ul><li><strong>一句话记忆</strong>：冲突首选「合作/解决问题」，且先让当事人自己解决。</li><li><strong>考场判断标准</strong>：题干问「最好的冲突解决方式」→ 合作/解决问题（Collaborate/Problem Solve）；问「最差的」→ 撤退/回避（Withdraw/Avoid）；时间紧且方案明确→强迫（Force/Direct，下策）；双方各让一步→妥协（Compromise）；求同存异保关系→缓和/包容（Smooth/Accommodate）。</li></ul>
+<h4>3.2 团队发展阶段（塔克曼阶梯）【官方】</h4>
+<ul><li><strong>一句话记忆</strong>：形成 Forming → 震荡 Storming → 规范 Norming → 成熟 Performing → 解散 Adjourning。</li><li><strong>考场判断标准</strong>：新组建互相客气＝形成；开始争吵＝震荡（此时 PM 要促成基本规则）；开始协作＝规范；高效自治＝成熟。<strong>中途加人→回到形成期</strong>【推论】。</li></ul>
+<h4>3.3 仆人式领导（Servant Leadership）【官方】</h4>
+<ul><li><strong>一句话记忆</strong>：服务型领导＝清除障碍、赋能团队、促进协作，而不是下命令。</li><li><strong>考场判断标准</strong>：敏捷题干中问 PM 角色 → 选「清除障碍/促进/教练/服务团队」；「指挥、分配、审批一切」必错。</li></ul>
+<h4>3.4 激励与情商【官方】</h4>
+<ul><li><strong>一句话记忆</strong>：情商＝自我认知、自我调节、动机、同理心、社交技能；处理人的问题永远先私下沟通。</li><li><strong>考场判断标准</strong>：成员情绪低落/绩效下降 → 第一选「私下与成员交谈了解情况」；理论题：马斯洛需求层次、赫茨伯格双因素（保健因素不产生激励，激励因素才产生）、麦格雷戈 X/Y 理论（PMI 默认 Y 型：人愿意承担责任）【推论】。</li></ul>
+<h4>3.5 虚拟团队与谈判【官方】</h4>
+<ul><li><strong>一句话记忆</strong>：虚拟团队更需要明确的沟通计划、基本规则和可视化协作工具。</li><li><strong>考场判断标准</strong>：跨地域团队沟通不畅 → 选「建立沟通管理计划/基本规则/定期视频会议」，而非「要求集中办公」。</li></ul>
+<p>---</p>
+<h2 class="module" id="第-4-章-领域二：过程（50%）考点级提炼">第 4 章 领域二：过程（50%）考点级提炼</h2>
+<h4>4.1 变更管理（最高频）【官方】</h4>
+<ul><li><strong>一句话记忆</strong>：变更八步＝① 记录变更请求 → ② 评估影响（范围/进度/成本/质量/风险）→ ③ 提交 CCB 审批 → ④ 批准后更新计划与基准 → ⑤ 通知干系人 → ⑥ 实施 → ⑦ 验证 → ⑧ 记录经验教训。</li><li><strong>考场判断标准</strong>：任何「要求改东西」的题干，先看选项有没有「提交变更请求/评估影响」；已批准的变更才能实施；<strong>基准变更必须经 CCB</strong>；PM 职权内的小变更可不升级，但<strong>涉及基准的必须走 CCB</strong>【推论】。</li></ul>
+<h4>4.2 风险管理【官方】</h4>
+<ul><li><strong>一句话记忆</strong>：风险流程＝规划→识别→定性→定量→规划应对→实施应对→监控；风险登记册是核心工件。</li><li><strong>考场判断标准</strong>：</li></ul>
+<p>  - 应对策略——威胁：<strong>规避 Avoid</strong>（消除威胁）、<strong>转移 Transfer</strong>（保险/外包，花点钱）、<strong>减轻 Mitigate</strong>（降概率或影响）、<strong>接受 Accept</strong>（主动接受＝留应急储备；被动接受＝什么都不做）；机会：开拓 Exploit、分享 Share、提高 Enhance、接受 Accept。</p>
+<p>  - 「上报 Escalate」用于超出项目职权的风险。</p>
+<p>  - 应急储备（Contingency Reserve）应对<strong>已识别风险</strong>，PM 可用；管理储备（Management Reserve）应对<strong>未知未知</strong>，需管理层批准【官方】。</p>
+<h4>4.3 质量管理【官方】</h4>
+<ul><li><strong>一句话记忆</strong>：质量是<strong>规划进去</strong>的，不是检查出来的；预防胜于检查。</li><li><strong>考场判断标准</strong>：成本效益分析用于规划质量；控制质量＝核可交付成果<strong>是否符合要求</strong>（QC 针对产品）；管理质量＝<strong>过程审计与改进</strong>（QA 针对过程）；<strong>根本原因分析</strong>（鱼骨图/5Why）用于已发生的缺陷；帕累托图＝找主要少数（80/20）；控制图＝判断过程是否稳定（七点规则：连续 7 点在均值同侧＝失控）【官方】。</li></ul>
+<h4>4.4 沟通管理【官方】</h4>
+<ul><li><strong>一句话记忆</strong>：沟通渠道数＝n(n−1)/2；PM 大部分时间用于沟通【机构：约 90%】。</li><li><strong>考场判断标准</strong>：信息没传达到 → 先查<strong>沟通管理计划</strong>而非责怪个人；推式（信件/邮件，不确定收到）、拉式（门户/知识库，受众自取）、交互式（会议/电话，最有效）【官方】。</li></ul>
+<h4>4.5 采购管理【官方】</h4>
+<ul><li><strong>一句话记忆</strong>：合同类型风险——卖方风险从大到小：固定总价 FFP ＞ FPIF ＞ FPEPA ＞ CPFF/CPAF/CPIF ＞ 工料合同 T&M；买方风险正好相反。</li><li><strong>考场判断标准</strong>：范围明确→固定总价；范围不清、急开工→成本补偿；短期/小额/无法快速出 SOW→T&M；<strong>T&M 兼具成本补偿与固定单价特征</strong>。采购争议首选谈判，其次 ADR（调解/仲裁），诉讼是最后手段【官方】。</li></ul>
+<h4>4.6 收尾与知识转移【官方】</h4>
+<ul><li><strong>一句话记忆</strong>：收尾顺序＝确认范围获得正式验收 → 移交成果 → 总结经验教训 → 释放资源；<strong>未获正式验收不得收尾</strong>。</li><li><strong>考场判断标准</strong>：客户不验收/拖延验收 → 先查验收标准与合同，正式发起验收流程；项目提前终止也要走收尾流程并记录原因【推论】。</li></ul>
+<h4>4.7 敏捷与预测的整合（过程域高频）【官方】</h4>
+<ul><li><strong>一句话记忆</strong>：过程领域一半题目是敏捷语境——迭代规划、每日站会、评审、回顾，分别对应预测型的规划、监控、确认范围、经验教训。</li><li><strong>考场判断标准</strong>：题干出现「迭代/sprint/产品负责人/站会」→ 用敏捷逻辑答题；出现「基准/CCB/甘特图」→ 用预测型逻辑；出现「部分明确部分探索」→ 混合。</li></ul>
+<p>---</p>
+<h2 class="module" id="第-5-章-领域三：商业环境（8%）考点级提炼">第 5 章 领域三：商业环境（8%）考点级提炼</h2>
+<ul><li><strong>合规 Compliance</strong>【官方】：一句话＝合规要求（法律/法规/行业/ESG）是<strong>约束条件</strong>，优先于范围进度成本。判断标准：题干出现「法规/许可证/审计要求」→ 选「纳入规划、咨询法务/合规部门」，不可为赶进度绕过。</li><li><strong>收益与价值 Benefits & Value</strong>【官方】：一句话＝项目成功＝<strong>交付商业价值</strong>，不只是按时按预算。判断标准：题干问「项目成功的最终衡量」→ 选「实现商业论证中的收益/价值」；商业论证（Business Case）回答「为什么做」，效益管理计划回答「收益如何落地」。</li><li><strong>外部环境变化</strong>【官方】：一句话＝外部变化（政策/市场/技术）可能影响项目范围，要持续扫描。判断标准：出现「新法规出台/市场变化」→ 选「评估对项目范围和目标的影响，必要时发起变更」。</li><li><strong>组织变革 Organizational Change</strong>【官方】：一句话＝项目成果要被组织用起来，需要变革管理（培训、沟通、过渡支持）。判断标准：出现「用户抵触新系统上线」→ 选「制定组织变革/过渡计划、加强沟通与培训」，而非「强制上线」。</li></ul>
+<p>---</p>
+<h2 class="module" id="第-6-章-高频易混概念对比表（中英对照）">第 6 章 高频易混概念对比表（中英对照）</h2>
+<h4>6.1 变更四兄弟【官方】</h4>
+<div class="twrap"><table><thead><tr><th>概念</th><th>英文</th><th>一句话记忆</th><th>考场判断标准</th></tr></thead><tbody>
+<tr><td>变更请求</td><td>Change Request</td><td>改「计划/基准/文件」的正式申请</td><td>走 CCB 审批流程</td></tr>
+<tr><td>纠正措施</td><td>Corrective Action</td><td>让绩效<strong>回到基准</strong></td><td>绩效偏离但未出缺陷</td></tr>
+<tr><td>缺陷补救</td><td>Defect Repair</td><td>修<strong>有缺陷的产品</strong></td><td>题干出现「缺陷/不符合要求的产品」</td></tr>
+<tr><td>预防措施</td><td>Preventive Action</td><td>防止未来偏离</td><td>题干出现「可能偏离/风险预警」</td></tr>
+<tr><td>更新</td><td>Updates</td><td>对计划/文件的常规修订</td><td>不涉基准的一般性维护</td></tr>
+</tbody></table></div>
+<h4>6.2 RACI 责任分配矩阵【官方】</h4>
+<div class="twrap"><table><thead><tr><th>字母</th><th>英文</th><th>含义</th><th>判断要点</th></tr></thead><tbody>
+<tr><td>R</td><td>Responsible</td><td>执行（干活的）</td><td>每项任务至少 1 个 R</td></tr>
+<tr><td>A</td><td>Accountable</td><td>问责（拍板的）</td><td><strong>每项任务只能有 1 个 A</strong></td></tr>
+<tr><td>C</td><td>Consulted</td><td>咨询（事前问）</td><td>双向沟通</td></tr>
+<tr><td>I</td><td>Informed</td><td>知情（事后告）</td><td>单向沟通</td></tr>
+</tbody></table></div>
+<h4>6.3 五种冲突解决方式【官方】</h4>
+<div class="twrap"><table><thead><tr><th>方式</th><th>英文</th><th>特征</th><th>排名</th></tr></thead><tbody>
+<tr><td>合作/解决问题</td><td>Collaborate / Problem Solve</td><td>双赢，正视根因</td><td>最佳</td></tr>
+<tr><td>妥协/调解</td><td>Compromise / Reconcile</td><td>各让一步</td><td>次选</td></tr>
+<tr><td>缓和/包容</td><td>Smooth / Accommodate</td><td>求同存异，重关系</td><td>临时</td></tr>
+<tr><td>强迫/命令</td><td>Force / Direct</td><td>输-赢，紧急时用</td><td>下策</td></tr>
+<tr><td>撤退/回避</td><td>Withdraw / Avoid</td><td>双输，问题没解决</td><td>最差</td></tr>
+</tbody></table></div>
+<h4>6.4 生命周期选择【官方＋推论】</h4>
+<div class="twrap"><table><thead><tr><th>类型</th><th>英文</th><th>一句话</th><th>题干特征</th></tr></thead><tbody>
+<tr><td>预测型</td><td>Predictive</td><td>范围先定，计划驱动</td><td>「需求明确且稳定/合同固定/合规要求高」</td></tr>
+<tr><td>敏捷/适应型</td><td>Agile / Adaptive</td><td>价值驱动，拥抱变化</td><td>「需求不清/变化快/客户深度参与/快速交付价值」</td></tr>
+<tr><td>迭代型</td><td>Iterative</td><td>范围早期定，逐步求精</td><td>「通过反复迭代完善」</td></tr>
+<tr><td>增量型</td><td>Incremental</td><td>分批交付可用成果</td><td>「每次交付一部分完整功能」</td></tr>
+<tr><td>混合型</td><td>Hybrid</td><td>部分预测+部分敏捷</td><td>「硬件瀑布+软件敏捷/部分需求明确部分探索」</td></tr>
+</tbody></table></div>
+<h4>6.5 仆人式领导 vs 传统管理【官方】</h4>
+<div class="twrap"><table><thead><tr><th>维度</th><th>仆人式领导（敏捷）</th><th>传统指令型管理</th></tr></thead><tbody>
+<tr><td>权力来源</td><td>服务与信任</td><td>职位</td></tr>
+<tr><td>任务分配</td><td>团队自组织、自领取</td><td>PM 分配</td></tr>
+<tr><td>PM 角色</td><td>清除障碍、教练、促进</td><td>计划、指挥、控制</td></tr>
+<tr><td>绩效责任</td><td>团队共同承担</td><td>PM 对下考核</td></tr>
+<tr><td>题干信号</td><td>「自组织团队/站会/迭代」</td><td>「层级组织/严格审批链」</td></tr>
+</tbody></table></div>
+<h4>6.6 其他高频易混对【官方】</h4>
+<div class="twrap"><table><thead><tr><th>易混对</th><th>一句话区分</th></tr></thead><tbody>
+<tr><td>质量 Quality vs 等级 Grade</td><td>质量＝满足要求的程度；等级＝功能档次。低等级可接受，低质量不可接受</td></tr>
+<tr><td>确认范围 Validate Scope vs 控制质量 Control Quality</td><td>确认范围＝<strong>客户验收</strong>（外部、对成果）；控制质量＝<strong>内部检查</strong>（先 QC 后确认范围）</td></tr>
+<tr><td>风险 Risk vs 问题 Issue</td><td>未发生＝风险（登记册）；已发生＝问题（问题日志）</td></tr>
+<tr><td>应急储备 vs 管理储备</td><td>已知风险＝应急（PM 支配，在成本基准内）；未知＝管理储备（管理层批，不在基准内）</td></tr>
+<tr><td>赶工 Crashing vs 快速跟进 Fast Tracking</td><td>赶工＝加资源、增成本；快速跟进＝并行活动、增返工风险</td></tr>
+<tr><td>项目章程 vs 项目管理计划</td><td>章程＝授权 PM、立项（发起人签发）；计划＝如何执行（团队制定）</td></tr>
+<tr><td>经验教训登记册 vs 组织过程资产</td><td>登记册＝项目内持续记录；结项时归入组织过程资产供未来项目使用</td></tr>
+</tbody></table></div>
+<p>---</p>
+<h2 class="module" id="第-7-章-计算题专题（公式-+-题干特征-+-解题套路）">第 7 章 计算题专题（公式 + 题干特征 + 解题套路）</h2>
+<blockquote><p>机构经验：现行考试计算题占比不高（约 5–10 题），但<strong>全是送分题</strong>，必须全对。【机构】</p></blockquote>
+<h4>7.1 挣值管理 EVM【官方】</h4>
+<p><strong>基础量</strong>：PV 计划价值、EV 挣值、AC 实际成本、BAC 完工预算。</p>
+<div class="twrap"><table><thead><tr><th>公式</th><th>含义</th><th>判断口诀</th></tr></thead><tbody>
+<tr><td>CV = EV − AC</td><td>成本偏差</td><td>正＝省钱，负＝超支</td></tr>
+<tr><td>SV = EV − PV</td><td>进度偏差</td><td>正＝提前，负＝落后</td></tr>
+<tr><td>CPI = EV ÷ AC</td><td>成本绩效指数</td><td>＞1 省钱，＜1 超支</td></tr>
+<tr><td>SPI = EV ÷ PV</td><td>进度绩效指数</td><td>＞1 提前，＜1 落后</td></tr>
+<tr><td>EAC = BAC ÷ CPI</td><td>完工估算（典型偏差继续）</td><td>最常用默认公式</td></tr>
+<tr><td>EAC = AC + (BAC − EV)</td><td>完工估算（偏差不再发生）</td><td>题干「一次性偏差/后续按原计划」</td></tr>
+<tr><td>EAC = AC + (BAC−EV) ÷ (CPI×SPI)</td><td>完工估算（进度成本双影响）</td><td>题干「进度也影响成本」</td></tr>
+<tr><td>ETC = EAC − AC</td><td>完工尚需估算</td><td>—</td></tr>
+<tr><td>VAC = BAC − EAC</td><td>完工偏差</td><td>正＝省，负＝超</td></tr>
+<tr><td>TCPI = (BAC − EV) ÷ (BAC − AC)</td><td>完工尚需绩效指数</td><td>「要按原预算完成需多高效率」</td></tr>
+</tbody></table></div>
+<ul><li><strong>题干特征</strong>：「截至第 X 周，计划完成…，实际完成…，花费…」→ 先找 PV/EV/AC 三个数。</li><li><strong>解题套路</strong>：① 先默写公式再代数；② 区分「完成的是计划的百分之几」（PV 的百分比求 EV 时用 BAC×实际完成%）；③ 问 EAC 先看偏差是「典型」还是「非典型」。</li></ul>
+<h4>7.2 三点估算（PERT）【官方】</h4>
+<ul><li>期望工期 te = (乐观 O + 4×最可能 M + 悲观 P) ÷ 6</li><li>标准差 σ = (P − O) ÷ 6；方差 = σ²（多活动求总标准差：先加方差再开方）</li><li><strong>题干特征</strong>：「乐观/最可能/悲观」三个数 → PERT；问「概率」→ 用 ±1σ＝68.3%、±2σ＝95.5%、±3σ＝99.7%。</li></ul>
+<h4>7.3 沟通渠道【官方】</h4>
+<ul><li>渠道数 = n(n−1) ÷ 2</li><li><strong>题干特征</strong>：「团队新增 X 人，沟通渠道增加多少」→ 用新 n 算一遍减旧 n 算一遍。<strong>注意数清楚 n 是否包含项目经理本人</strong>【机构】。</li></ul>
+<h4>7.4 关键路径法 CPM【官方】</h4>
+<ul><li><strong>一句话记忆</strong>：关键路径＝总工期最长的路径，其总浮动时间为 0（或最小）。</li><li><strong>解题套路</strong>：正推取大（ES 取前置最大值）→ 逆推取小（LF 取后续最小值）→ 总浮动 = LS − ES = LF − EF；压缩工期优先压关键路径上<strong>单位成本最低</strong>的活动；路径变短后注意<strong>次关键路径可能变成新的关键路径</strong>【机构】。</li></ul>
+<h4>7.5 合同计算（FPIF 等）【官方】</h4>
+<ul><li>FPIF 卖方利润 = 目标利润 + (目标成本 − 实际成本) × 卖方分担比例；实际价格 = 实际成本 + 利润，且<strong>不超过最高限价（Ceiling Price）</strong>。</li><li><strong>题干特征</strong>：「目标成本/目标利润/分担比例 80/20/最高限价」→ FPIF；分担比例前一个数字是<strong>买方</strong>的。</li></ul>
+<p>---</p>
+<h2 class="module" id="第-8-章-敏捷核心（与乐凯《敏捷重点串讲》对齐版，术语中英对照）">第 8 章 敏捷核心（与乐凯《敏捷重点串讲》对齐版，术语中英对照）</h2>
+<blockquote><p>本章结构、用词与白天听的敏捷串讲音频完全一致，形成「听—背」闭环。标注【机构】的判断标准出自乐凯串讲的「常见考点/常见题型」。</p></blockquote>
+<h4>8.1 开发生命周期类型【官方＋机构】</h4>
+<ul><li><strong>一句话记忆</strong>：预测型（瀑布型）＝范围明确、行业基础厚实、计划驱动；敏捷/适应型＝快速应对变化、小增量快速迭代、每次增量注重价值交付；混合型＝一个项目中存在多种生命周期类型。</li><li><strong>考场判断标准</strong>：混合型适用于<strong>风险不大、中低不确定性</strong>的项目，可实现预测向敏捷的渐进过渡；<strong>混合背景的题目，除了生命周期选型本身，其他大多按敏捷方向作答</strong>【机构】。</li></ul>
+<h4>8.2 MVP 最小可行产品【机构】</h4>
+<ul><li><strong>一句话记忆</strong>：符合产品预期的<strong>最小功能集合</strong>，在 MVP 基础上继续快速迭代直至产品稳定。「最小」＝只具备必备的基本功能（<strong>必备不代表价值最高</strong>）；「可行」＝可正常运行，用以验证产品理念和商业模式。作用：试错、快速推向市场、快速获得验证。</li><li><strong>考场判断标准</strong>：题干出现「不知道市场是否欢迎/不知道是不是客户想要的/客户自己也说不清楚要什么/时间紧或预算有限需立即发布/有限条件下无法做大而全的产品」→ 选 MVP。</li></ul>
+<h4>8.3 敏捷宣言：四大价值观【官方】</h4>
+<ol><li><strong>个体和互动</strong> Individuals and Interactions 胜过 过程和工具 Processes and Tools</li><li><strong>可用的软件</strong> Working Software 胜过 完整的文档 Comprehensive Documentation</li><li><strong>客户合作</strong> Customer Collaboration 胜过 合同谈判 Contract Negotiation</li><li><strong>应对变更</strong> Responding to Change 胜过 遵循计划 Following a Plan</li></ol>
+<ul><li><strong>一句话记忆</strong>：左边更重要，但右边<strong>并非没有价值</strong>。</li><li><strong>考场判断标准</strong>：「右边完全不需要」类绝对化表述必错；对文档的要求可以记录在 <strong>DoD</strong> 里；<strong>不可用专门的 Sprint 写文档</strong>（注意「切蛋糕」原则——每个迭代都交付完整可用的垂直切片）【机构】。</li></ul>
+<h4>8.4 十二原则考点级提炼【官方＋机构】</h4>
+<div class="twrap"><table><thead><tr><th>#</th><th>原则一句话</th><th>题干信号 / 乐凯判断标准</th></tr></thead><tbody>
+<tr><td>1</td><td>最重要目标：<strong>及早、持续不断交付</strong>有价值软件使客户满意</td><td>价值驱动、增量交付；敏捷中优先完成价值较高的待办事项【机构】</td></tr>
+<tr><td>2</td><td><strong>欣然面对需求变化</strong>，即使开发后期</td><td>新需求→放入 PB 排优先级，<strong>当前 Sprint 理论上无变更</strong>【机构】</td></tr>
+<tr><td>3</td><td><strong>经常交付</strong>可工作软件，几周一两个月，周期越短越好</td><td>强调干系人频繁参与、及时获取反馈；题型：「经过四次迭代 PO 对成果不满意」【机构】</td></tr>
+<tr><td>4</td><td>业务人员与开发人员<strong>每天</strong>合作</td><td>PO 必须可联系、每日参与</td></tr>
+<tr><td>5</td><td>激发个体，提供环境与支援，<strong>辅以信任</strong></td><td>仆人式领导、授权、支持协助【机构】</td></tr>
+<tr><td>6</td><td><strong>面对面交谈</strong>效率最高</td><td>提倡集中办公；也可用虚拟协作工具：<strong>鱼缸窗口、远程结对</strong>【机构】</td></tr>
+<tr><td>7</td><td><strong>可工作的软件是进度的首要度量</strong></td><td>燃尽图/完成功能数，不看文档</td></tr>
+<tr><td>8</td><td><strong>可持续开发</strong>，步调稳定延续</td><td>评审会发现缺陷/新需求/功能未完成→<strong>一律放入 PB 排优先级，不提倡加班</strong>；敏捷不随意增加资源，团队人数一般固定，否则速率不稳【机构】</td></tr>
+<tr><td>9</td><td>坚持不懈追求<strong>技术卓越</strong>与良好设计</td><td>考点：<strong>技术债务和重构</strong>【机构】</td></tr>
+<tr><td>10</td><td><strong>以简洁为本</strong>，极力减少不必要工作量</td><td>专注于目标【机构】</td></tr>
+<tr><td>11</td><td>最好的架构/需求/设计出自<strong>自组织团队</strong></td><td>自组织的含义</td></tr>
+<tr><td>12</td><td>团队<strong>定期反思</strong>并调整行为</td><td>定期回顾、持续改进【机构】</td></tr>
+</tbody></table></div>
+<h4>8.5 Scrum 三个角色【官方＋机构】</h4>
+<div class="twrap"><table><thead><tr><th>角色</th><th>一句话</th><th>考场判断标准</th></tr></thead><tbody>
+<tr><td>产品负责人 Product Owner（PO，业务专家）</td><td>PB（产品待办事项列表）的<strong>唯一责任人</strong>：清晰描述、排序优先级、确保透明、确保团队理解；团队可参与，但责任人仍是 PO</td><td>团队对<strong>需求或优先级有疑问→找 PO 澄清</strong>（没有 PO 可考虑让干系人澄清）；评审会上<strong>最终由 PO 决定是否接受增量</strong>【机构】</td></tr>
+<tr><td>开发团队 Developers</td><td><strong>自组织</strong>：自主决定每个 Sprint 做什么、做多少，负责估算、自主分配任务、自行决定执行；<strong>跨职能</strong>：拥有创建产品的全部技能，<strong>T 型人才一专多能</strong>；<strong>去中心化</strong>：不认可头衔和子团队（测试、架构等），统称开发人员；<strong>相对稳定</strong>：3~9 人、建议全职</td><td><strong>执行层面的工作都交给团队自组织</strong>——PM/教练分配任务必错【机构】</td></tr>
+<tr><td>Scrum Master（敏捷教练，服务型领导）</td><td>服务于 PO（帮其管好 PB）、服务于团队（指导自组织与跨职能、<strong>移除障碍</strong>）、服务于组织（帮干系人理解实施 Scrum）</td><td><strong>敏捷题中的项目经理、敏捷教练、敏捷主管、团队促进者等说法，均指服务型（仆人式）领导</strong>；考试中最常见障碍＝<strong>团队外部的干扰</strong>，仆人式领导要发挥「牧羊犬」的作用【机构】</td></tr>
+</tbody></table></div>
+<h4>8.6 Scrum 三个工件【官方＋机构】</h4>
+<div class="twrap"><table><thead><tr><th>工件</th><th>一句话</th><th>判断标准</th></tr></thead><tbody>
+<tr><td>产品待办事项列表 Product Backlog（PB）</td><td>涵盖产品<strong>全部已知需求</strong>（特性、功能、需求、增强、修复），按优先级排序，<strong>优先级越高越详细</strong></td><td>优先级较高、可交团队开发的用户故事应符合 <strong>DoR（就绪定义 Definition of Ready）</strong></td></tr>
+<tr><td>Sprint 待办事项列表 Sprint Backlog</td><td>当前 Sprint 选出的 PB 项</td><td><strong>至少包含一项前次回顾会议确定的高优先级改进</strong>【机构】</td></tr>
+<tr><td>增量 Increment</td><td>本 Sprint 完成的所有待办事项＋之前所有 Sprint 增量的价值总和；必须达到 <strong>DoD（完成定义）</strong>；无论 PO 是否发布，<strong>增量必须可用</strong></td><td><strong>团队认为增量完成、但 PO 或干系人认为没完成→最可能原因：大家对 DoD 的理解不一致</strong>【机构】</td></tr>
+</tbody></table></div>
+<h4>8.7 Scrum 五个事件（时间盒要记数字）【官方＋机构】</h4>
+<div class="twrap"><table><thead><tr><th>事件</th><th>一句话</th><th>时间盒与要点</th></tr></thead><tbody>
+<tr><td>Sprint</td><td>长度固定，包含计划会、站会、评审会、回顾会和日常开发</td><td>一般 <strong>2~4 周</strong>；Sprint 期间<strong>不能做出有害于 Sprint 目标的改变</strong></td></tr>
+<tr><td>Sprint 计划会议</td><td>整个 Scrum 团队共同完成；确定 <strong>Sprint 目标</strong>；PO 帮助解释所选待办事项，<strong>团队自己决定选多少、怎么做</strong></td><td>2 周 Sprint 约 <strong>4 小时</strong>；1 个月 Sprint 最长 <strong>8 小时</strong></td></tr>
+<tr><td>每日站会 Daily Scrum</td><td>同步信息，<strong>开发团队自行负责</strong>，只说三问题：昨天做了什么/今天准备做什么/遇到什么障碍</td><td><strong>15 分钟</strong>；会上不讨论其他问题，会后另行讨论；团队之外的人出席，SM 须确保其不干扰；<strong>多个敏捷团队→召开 SoS（Scrum of Scrums）会议</strong>【机构】</td></tr>
+<tr><td>Sprint 评审会议</td><td>快结束时举行，检视增量、按需调整 PB；<strong>团队和干系人参加</strong>，团队演示，PO 说明哪些完成哪些没完成</td><td>2 周 Sprint 约 <strong>2 小时</strong>；1 个月最长 <strong>4 小时</strong>；产出＝一份修订后的 PB（≈预测型的确认范围）</td></tr>
+<tr><td>Sprint 回顾会议</td><td>团队检视自身，创建下一个 Sprint 的改进计划（≈经验教训）</td><td>2 周 Sprint 约 <strong>1~2 小时</strong>；1 个月最长 <strong>3 小时</strong>；可多次回顾，一般特指 Sprint 结束时那次</td></tr>
+<tr><td>待办事项梳理会（了解即可）</td><td>澄清/细化用户故事、审查优先级、估算故事点</td><td>一般不超过<strong>团队产能的 10%</strong>【机构】</td></tr>
+</tbody></table></div>
+<h4>8.8 Scrum 五大价值观【官方】</h4>
+<ul><li><strong>一句话记忆</strong>：勇气（敢承诺、履行承诺）、承诺、专注（心思用在承诺的工作上）、开放（项目中的一切开放给每个人）、尊重。</li></ul>
+<h4>8.9 看板与 XP【官方＋机构】</h4>
+<ul><li><strong>看板 Kanban</strong>：可视化管控、<strong>拉动式生产</strong>、消除瓶颈、限制在制品（WIP）。「工作堆积在某环节」→ 设 WIP 限制；支持/运维类持续流入的工作 → 看板优于 Scrum。</li><li><strong>XP 极限编程</strong>：测试驱动开发 <strong>TDD</strong>、验收测试驱动开发 <strong>ATDD</strong>、行为驱动开发 <strong>BDD</strong>；<strong>重构解决技术债务</strong>；<strong>结对编程</strong>；<strong>代码集体所有</strong>；<strong>持续集成</strong>。</li><li><strong>判断标准</strong>：「先写测试再写代码」→ TDD；「两人一台电脑」→ 结对编程；「代码越改越乱」→ 重构还技术债务。</li></ul>
+<h4>8.10 敏捷中的各知识领域（乐凯高频映射）【机构】</h4>
+<div class="twrap"><table><thead><tr><th>知识领域</th><th>敏捷做法一句话</th></tr></thead><tbody>
+<tr><td>整合</td><td>团队自组织决定计划整合方式，PM 营造合作型决策氛围；T 型人才解决知识孤岛；<strong>敏捷一样有项目章程、有产品愿景</strong></td></tr>
+<tr><td>范围</td><td>先定高层级愿景；每次迭代开始才定义详细范围；有目的地构建和审查原型；<strong>每次迭代都会确认范围和控制范围</strong></td></tr>
+<tr><td>进度</td><td>未完项的进度计划（Scrum）/按需进度计划（看板）；敏捷发布规划＝产品愿景→发布计划→迭代计划；控制进度用<strong>燃尽图、燃起图、累积流图</strong></td></tr>
+<tr><td>成本</td><td>轻量级方法生成高层级预测；详细估算采用<strong>准时制（JIT）</strong>规划</td></tr>
+<tr><td>质量</td><td>DoD；TDD/BDD/ATDD；持续集成；回顾会议；代码集体所有；<strong>全员对质量负责</strong></td></tr>
+<tr><td>资源</td><td>提倡集中办公；T 型人才；自组织；交叉培训；<strong>团队章程（基本规则、工作协议）</strong></td></tr>
+<tr><td>沟通</td><td><strong>信息扩散器</strong>：看板、燃尽图、燃起图、累积流图、障碍板；面对面沟通；虚拟协作（鱼缸窗口、远程结对）；多团队 SoS 会议；<strong>追逐太阳</strong>（跨时区接力开发）</td></tr>
+<tr><td>风险</td><td>迭代规划时考虑风险，迭代期间识别、分析、管理；随风险敞口理解加深<strong>重新排列优先级</strong></td></tr>
+<tr><td>采购</td><td>客户协作高于合同谈判；<strong>多层结构协议</strong>（主协议＋补充协议）；关注用户故事而非整个项目预算；<strong>动态范围方案；提前取消方案；资助团队而非资助范围</strong></td></tr>
+<tr><td>干系人</td><td>频繁参与；高效透明的沟通</td></tr>
+</tbody></table></div>
+<p>---</p>
+<h2 class="module" id="第-9-章-PMBOK-第-7-版：十二原则-+-八大绩效域">第 9 章 PMBOK 第 7 版：十二原则 + 八大绩效域</h2>
+<h4>9.1 项目管理十二原则（考点级）【官方】</h4>
+<ol><li><strong>管家式管理</strong> Stewardship：负责任、诚信、合规地管理</li><li><strong>团队</strong> Team：营造协作的项目团队环境</li><li><strong>干系人</strong> Stakeholders：有效参与</li><li><strong>价值</strong> Value：聚焦价值——<strong>项目存在的理由是创造价值</strong></li><li><strong>系统思维</strong> Systems Thinking：整体大于局部之和</li><li><strong>领导力</strong> Leadership：展现并调整领导行为</li><li><strong>裁剪</strong> Tailoring：根据环境<strong>裁剪</strong>方法——<strong>没有最好的方法，只有最合适的方法</strong></li><li><strong>质量</strong> Quality：将质量融入过程和成果</li><li><strong>复杂性</strong> Complexity：驾驭复杂性</li><li><strong>风险</strong> Risk：优化风险应对</li><li><strong>适应性与韧性</strong> Adaptability and Resiliency：拥抱变化、快速恢复</li><li><strong>变革</strong> Change：为实现预期未来状态而驱动变革</li></ol>
+<ul><li><strong>考场判断标准</strong>：原则题问「首先考虑什么」→ 价值；问「选方法论的依据」→ 裁剪；「某做法在所有项目都适用」→ 必错（违背裁剪原则）【推论】。</li></ul>
+<h4>9.2 八大绩效域（考点级）【官方】</h4>
+<div class="twrap"><table><thead><tr><th>绩效域</th><th>英文</th><th>一句话</th></tr></thead><tbody>
+<tr><td>干系人</td><td>Stakeholders</td><td>让干系人有效参与</td></tr>
+<tr><td>团队</td><td>Team</td><td>高绩效团队文化与领导力</td></tr>
+<tr><td>开发方法和生命周期</td><td>Development Approach and Life Cycle</td><td>选预测/迭代/敏捷/混合</td></tr>
+<tr><td>规划</td><td>Planning</td><td>为交付成果而组织规划</td></tr>
+<tr><td>项目工作</td><td>Project Work</td><td>建立过程、管理资源、促进学习</td></tr>
+<tr><td>交付</td><td>Delivery</td><td>满足范围与质量要求，<strong>交付价值</strong></td></tr>
+<tr><td>测量</td><td>Measurement</td><td>度量绩效，支撑决策</td></tr>
+<tr><td>不确定性</td><td>Uncertainty</td><td>处理风险、模糊性、复杂性</td></tr>
+</tbody></table></div>
+<ul><li><strong>考场判断标准</strong>：绩效域不是「过程」，是<strong>相互作用的活动领域</strong>；题干问「某问题属于哪个绩效域」按上表对号入座【推论】。</li></ul>
+<p>---</p>
+<h2 class="module" id="第-10-章-高频-ITTO-精选（只列高频）【官方】">第 10 章 高频 ITTO 精选（只列高频）【官方】</h2>
+<blockquote><p>原则：不背全表，只背「高频输入输出锚点」，考场靠逻辑推导其余。【机构】</p></blockquote>
+<div class="twrap"><table><thead><tr><th>过程</th><th>必记 ITTO</th></tr></thead><tbody>
+<tr><td>制定项目章程</td><td>输入：<strong>商业论证</strong>、协议（合同/SOW）；输出：<strong>项目章程</strong></td></tr>
+<tr><td>制定项目管理计划</td><td>输出：项目管理计划（含三大基准：范围/进度/成本）</td></tr>
+<tr><td>指导与管理项目工作</td><td>输出：<strong>可交付成果</strong>、工作绩效数据、<strong>变更请求</strong></td></tr>
+<tr><td>监控项目工作</td><td>输入：工作绩效<strong>信息</strong>；输出：工作绩效<strong>报告</strong>、变更请求</td></tr>
+<tr><td>实施整体变更控制</td><td>输入：变更请求；输出：<strong>批准的变更请求</strong>、变更日志更新</td></tr>
+<tr><td>确认范围</td><td>输入：<strong>核实的可交付成果</strong>（QC 输出）；输出：<strong>验收的可交付成果</strong>、变更请求</td></tr>
+<tr><td>控制质量</td><td>输入：可交付成果；输出：<strong>核实的可交付成果</strong>、质量控制测量结果</td></tr>
+<tr><td>管理风险（规划应对）</td><td>输出：风险登记册更新（应对策略、责任人）</td></tr>
+<tr><td>实施风险应对</td><td>确保应对<strong>被执行</strong>——常被忽略却高频</td></tr>
+<tr><td>管理干系人参与</td><td>工具：<strong>沟通技能、人际关系技能</strong>；输出：变更请求（常触发计划更新）</td></tr>
+<tr><td>建设团队</td><td>工具：集中办公、培训、<strong>认可与奖励</strong>；基本规则在建设团队建立</td></tr>
+<tr><td>结束项目或阶段</td><td>输出：<strong>经验教训登记册归入组织过程资产</strong>、最终移交</td></tr>
+</tbody></table></div>
+<p><strong>推导口诀</strong>：数据（Data）→ 信息（Information）→ 报告（Report），方向是「执行 → 监控 → 汇报」；凡监控过程几乎都输出变更请求；凡涉及验收，先 QC（核实）后确认范围（验收）。【机构】</p>
+<p>---</p>
+<h2 class="module" id="第-11-章-考前-24-小时清单【机构】">第 11 章 考前 24 小时清单【机构】</h2>
+<ol><li>公式默写 1 遍（EVM / PERT / 沟通渠道 / TCPI）</li><li>纠偏专栏 18 条速览（重点看标星的工作冲突项）</li><li>变更八步、风险应对策略、冲突五方式、RACI 各过 1 遍</li><li>敏捷：四价值观、PO/SM/团队分工、五仪式、DoD、WIP 各过 1 遍</li><li>不再做新题；错题本只看「两卷都错」清单</li><li>证件、准考证、路线确认；22:30 前入睡</li><li>考场节奏：180 题 / 230 分钟 → 每 60 题 ≤ 80 分钟；两次 10 分钟休息必须用；情景题先读最后一问；计算题先写公式再代数；拿不准的标记后跳，不要恋战</li></ol>
+      </section>
+
+      <footer class="foot">数据源 lark-ws/pmp/（git 私有仓库）· 学习站自动同步 · 更新于 2026-08-22 20:36 · author: shifan</footer>
     </main>
   </div>
 </div>
@@ -1517,6 +1760,7 @@ function showTab(name) {
   document.getElementById('pts').classList.toggle('hidden', name !== 'pts');
   document.getElementById('recap').classList.toggle('hidden', name !== 'recap');
   document.getElementById('dia').classList.toggle('hidden', name !== 'dia');
+  document.getElementById('manual').classList.toggle('hidden', name !== 'manual');
 }
 tabBtns.forEach(function(b){ b.onclick = function(){ showTab(b.dataset.tab); }; });
 
