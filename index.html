@@ -1748,8 +1748,9 @@ CPFF：总价 = 实际成本 + 初始估算 × 固定百分比（费用不随实
       </section>
 
       <section id="err" class="hidden">
+        <div class="err-jump">📑 想逐题对照原表？点击书名 → 切换到「错题精析」；看完点「易错精讲」回来。</div>
         <h2>错题知识点精讲（模拟一&二 117 题提炼 · 5 大易错专题）</h2>
-<blockquote><p>来源：模拟一（错58）& 模拟二（错59）逐题归因 → 提炼为 5 个专题的<strong>知识点讲解 + 易错点</strong>。</p><p>用法：每专题先看懂知识点，再过易错清单（✓该选/✗别选）；对应原题见《错题精析-117题.md》。</p></blockquote>
+<blockquote><p>来源：模拟一（错58）& 模拟二（错59）逐题归因 → 提炼为 5 个专题的<strong>知识点讲解 + 易错点</strong>。</p><p>用法：每专题先看懂知识点，再过易错清单（✓该选/✗别选）；对应原题见<a class="jump" href="#errlist" data-goto-errlist>《错题精析-117题.md》</a>。</p></blockquote>
 <h2 class="module" id="专题-1-·-敏捷：角色-/-事件-/-变更（38-题，最大失分区）">专题 1 · 敏捷：角色 / 事件 / 变更（38 题，最大失分区）</h2>
 <p><strong>1.1 三角色边界（错因核心：②角色错）</strong></p>
 <ul><li><strong>PO 产品负责人</strong>：管产品 Backlog、排优先级、对价值负责——<strong>只有 PO 能改序</strong>（Sprint 中团队/SM/干系人不能插队）。</li><li><strong>SM 敏捷教练</strong>：护流程、移除障碍、教练团队——<strong>不</strong>定优先级、<strong>不</strong>替团队指派任务。</li><li><strong>开发团队</strong>：自组织，决定"怎么做、谁做、估多少"——技术分歧团队自决，别上升。</li><li>真题错法：干系人绕开团队找发起人、团队把障碍优先级丢给 PM、董事会要进展就约评审会。</li></ul>
@@ -1793,7 +1794,7 @@ CPFF：总价 = 实际成本 + 初始估算 × 固定百分比（费用不随实
 <h2 class="module" id="专题-5-·-审题与多选（≈10-题）">专题 5 · 审题与多选（≈10 题）</h2>
 <ul><li><strong>先看"你"是谁</strong>（PM/SM/PO/发起人/团队成员）→ 换视角。</li><li><strong>问"首先"</strong> → 收集/了解/记录；<strong>问"避免再发生"</strong> → 答"早识别/先定标准"（1-1、2-17）。</li><li><strong>反向题/EXCEPT</strong>（最不该/除了）→ 找违背 PMI 的那个。</li><li><strong>多选题</strong>：只勾 100% 确定项，漏选优于错选（9 道多选全因漏选丢分）。</li><li>选项全合理时 → 选<strong>解决题干当下问题</strong>的那个（紧扣方向）。</li></ul>
 <h2 class="module" id="总行动（考前-6-天）">总行动（考前 6 天）</h2>
-<ul><li>每天通读本文件一遍（10 分钟）+ 对应《错题精析-117题.md》一类</li><li>五类各做 10 道变体（错题四问闭环），错因归入本表</li><li>9.11 只看：本文件 + 宝典首页 + 手册错题</li></ul>
+<ul><li>每天通读本文件一遍（10 分钟）+ 对应<a class="jump" href="#errlist" data-goto-errlist>《错题精析-117题.md》</a>一类</li><li>五类各做 10 道变体（错题四问闭环），错因归入本表</li><li>9.11 只看：本文件 + 宝典首页 + 手册错题</li></ul>
       </section>
 
       <section id="errlist" class="hidden">
@@ -1940,7 +1941,7 @@ CPFF：总价 = 实际成本 + 初始估算 × 固定百分比（费用不随实
 <blockquote><p>注：# 为卷内错题序号（非原卷题号）；错因为基于题干摘要的推理，个别题如与你的真实场景有出入，以原题批注为准。</p></blockquote>
       </section>
 
-      <footer class="foot">数据源 lark-ws/pmp/（git 私有仓库）· 学习站自动同步 · 更新于 2026-09-06 19:35 · author: shifan</footer>
+      <footer class="foot">数据源 lark-ws/pmp/（git 私有仓库）· 学习站自动同步 · 更新于 2026-09-06 19:36 · author: shifan</footer>
     </main>
   </div>
 </div>
@@ -2197,6 +2198,11 @@ function applyFilters() {
   tick();
   setInterval(tick, 1000);
 })();
+
+// 易错精讲 → 错题精析 跳转（含文中《错题精析-117题.md》引用）
+document.querySelectorAll('#err [data-goto-errlist]').forEach(function(a){
+  a.onclick = function(e){ e.preventDefault(); showTab('errlist'); };
+});
 
 // ---- 返回顶部 ----
 var topBtn = document.getElementById('topbtn');
