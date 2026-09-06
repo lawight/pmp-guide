@@ -261,6 +261,7 @@ main .explain strong { color:#0044cc; font-weight:600; }
       <div class="cd-inline" title="距 9.12 考试">距考试 <span id="cd-days2">—</span>天 <span id="cd-hms2">--:--:--</span></div>
       <div class="tabbar">
         <button data-tab="exam" class="on">📌 考试宝典</button>
+        <button data-tab="err">易错精讲</button>
         <button data-tab="manual">必背手册</button>
         <button data-tab="dia">核心图解</button>
         <button data-tab="recap">串讲速记</button>
@@ -1745,7 +1746,56 @@ CPFF：总价 = 实际成本 + 初始估算 × 固定百分比（费用不随实
 <p>用法：先定 T（答案形态）再定 S（内容流程），交叉即唯一模板。</p>
       </section>
 
-      <footer class="foot">数据源 lark-ws/pmp/（git 私有仓库）· 学习站自动同步 · 更新于 2026-09-04 22:19 · author: shifan</footer>
+      <section id="err" class="hidden">
+        <h2>错题知识点精讲（模拟一&二 117 题提炼 · 5 大易错专题）</h2>
+<blockquote><p>来源：模拟一（错58）& 模拟二（错59）逐题归因 → 提炼为 5 个专题的<strong>知识点讲解 + 易错点</strong>。</p><p>用法：每专题先看懂知识点，再过易错清单（✓该选/✗别选）；对应原题见《错题精析-117题.md》。</p></blockquote>
+<h2 class="module" id="专题-1-·-敏捷：角色-/-事件-/-变更（38-题，最大失分区）">专题 1 · 敏捷：角色 / 事件 / 变更（38 题，最大失分区）</h2>
+<p><strong>1.1 三角色边界（错因核心：②角色错）</strong></p>
+<ul><li><strong>PO 产品负责人</strong>：管产品 Backlog、排优先级、对价值负责——<strong>只有 PO 能改序</strong>（Sprint 中团队/SM/干系人不能插队）。</li><li><strong>SM 敏捷教练</strong>：护流程、移除障碍、教练团队——<strong>不</strong>定优先级、<strong>不</strong>替团队指派任务。</li><li><strong>开发团队</strong>：自组织，决定"怎么做、谁做、估多少"——技术分歧团队自决，别上升。</li><li>真题错法：干系人绕开团队找发起人、团队把障碍优先级丢给 PM、董事会要进展就约评审会。</li></ul>
+<p><strong>1.2 事件与工件（错因：④概念事件混）</strong></p>
+<ul><li>四事件：规划（选任务）→ 站会（15 分钟<strong>同步</strong>，不解决问题）→ <strong>评审</strong>（给干系人演示增量=看产品、收反馈→反馈进 Backlog）→ <strong>回顾</strong>（团队内部改过程）。</li><li>三工件：产品 Backlog（PO 排）· Sprint Backlog（团队领）· 增量（按 <strong>DoD</strong>）。</li><li><strong>DoD</strong>：完成的定义——编码完 ≠ 完成；<strong>DoR</strong>：可开工的定义——需求不明确到"能开工"就退回细化，别硬开工（2-30）。</li><li>真题错法：把"改进工作流"答进评审（应在回顾）、迭代承诺没守却加功能（=镀金，2-19）。</li></ul>
+<p><strong>1.3 敏捷下的变更（错因：④拿预测套敏捷）</strong></p>
+<ul><li>迭代中加需求 → <strong>进 Backlog，下个 Sprint</strong>（不打断、不延长 Sprint）。</li><li>合规/强制要求进来 → 也<strong>先评估影响再受控变更</strong>（1-31：合规也走流程，不直接做）。</li><li>优先级天天被发起人改 → 挡回给 <strong>PO 排序</strong>（2-54），不是照单全收。</li></ul>
+<p><strong>1.4 混合 / 转型（2-16/25/27/39/43）</strong></p>
+<ul><li>预测→敏捷转型：先<strong>培训 + 对齐期望</strong>，别硬切；转型期冲突多用回顾疏导。</li><li>混合项目：稳定段预测、多变段敏捷，<strong>阶段衔接处规则要清楚</strong>。</li><li><strong>固定价合同 + 敏捷可行</strong>：范围用合同锁，执行用迭代（先定义合同如何支持迭代）。</li><li>高不确定性项目：敏捷=短迭代+快速反馈+增量验证来管风险（1-38）。</li></ul>
+<p><strong>1.5 易错点清单</strong></p>
+<ul><li>✗ 让 SM/PM 排优先级 ✗ 评审答"改流程" ✗ 回顾答"演示产品"</li><li>✗ 迭代中插需求还"加班硬塞" ✗ 需求没到 DoR 就开工 ✗ 团队技术分歧 PM 拍板</li><li>✓ 加需求→Backlog 下 Sprint ✓ 受阻→SM 清障 ✓ 展示进展→评审会 ✓ 需求不清→先细化</li></ul>
+<h2 class="module" id="专题-2-·-人本/团队/领导力（20-题）">专题 2 · 人本/团队/领导力（20 题）</h2>
+<p><strong>2.1 冲突与人（5：先人后事）</strong></p>
+<ul><li>冲突/抱怨/行为退化 → <strong>先私下倾听找根因</strong>（可能是个人/家庭问题），再谈方案；不公开裁决、不采信单方告状。</li><li>成员情绪激动（客户怒/干系人抵制）→ 先安抚+了解具体缺口（先人后事），再处理事。</li></ul>
+<p><strong>2.2 仆人式领导边界（2-22/29）</strong></p>
+<ul><li>授权、信任、教练、清障；被投诉微管理 → <strong>停止微管理、给空间</strong>。</li><li>但仆人式 ≠ 放任：进度落后到要误里程碑时，<strong>该出面设方向/对齐就得出面</strong>。</li></ul>
+<p><strong>2.3 虚拟团队三优先（1-41/42、1-57）</strong></p>
+<ul><li>①搭统一协作平台/会议规范 → ②定期同步会议（照顾时区）→ ③一对一辅导/团建。</li><li>跨国/跨时区团队掉队 → 先查会议时间与沟通，不是加压。</li></ul>
+<p><strong>2.4 干系人/沟通对象化（1-13/36/53、2-5/6/45/50）</strong></p>
+<ul><li>报告/信息要<strong>对准受众</strong>：给高管的是"决策所需信息"，别堆原始数据。</li><li>信息发没收到 → 先核实分发问题再补发+更新沟通计划（一次补救不够）。</li><li>上级频繁要更新 → <strong>对齐汇报频率/内容</strong>（期望管理），不是被动应付。</li><li>越级汇报/信息外泄（成本报告发全团队）→ 按沟通管理计划的<strong>权限与敏感度</strong>分发。</li></ul>
+<p><strong>2.5 易错点清单</strong></p>
+<ul><li>✗ 公开批评/当众裁决 ✗ 微管理 ✗ 有人告状就处理被告 ✗ 全员拉会</li><li>✓ 私下沟通 ✓ 授权给空间 ✓ 一对一辅导 ✓ 先问对方要什么信息</li></ul>
+<h2 class="module" id="专题-3-·-流程与顺序：变更-/-风险-/-问题-/-合规（约-25-题）">专题 3 · 流程与顺序：变更 / 风险 / 问题 / 合规（约 25 题）</h2>
+<p><strong>3.1 变更的正确姿势（1-11/15/21/23、2-3/13/21/51）</strong></p>
+<ul><li>口诀：<strong>记录→评估→CCB→批→执行→通知</strong>；"评估"要含<strong>可实施性</strong>（设备/资源到不到位，2-3）。</li><li>批准前不得执行；<strong>承包商私改小规范 = 未批变更（违规）</strong>，要它走流程（2-51）。</li><li>干系人（含新干系人）要求改 → 一律先记录变更请求，不口头承诺。</li></ul>
+<p><strong>3.2 风险 vs 问题（1-12/18/46、2-24/28）</strong></p>
+<ul><li>"可能/预计"=风险：登记册→分析→应对；"已发生/预见要发生"=问题：<strong>先查应对计划</strong>（关键资源离职）、评估影响，再行动。</li><li>供应商/外部违约（牌照过期、交货违约）→ 先<strong>查合同 SLA/索赔条款</strong>再追责。</li></ul>
+<p><strong>3.3 合规与法规（1-18/21、1-55、2-38）</strong></p>
+<ul><li>新法规/新指南 → <strong>先评估对项目的影响 → 必要时走变更流程</strong>；不直接改、不无视、不暂停观望。</li><li>监管/审计场景 → 提供<strong>证据与流程符合</strong>（敏捷同样要合规）。</li></ul>
+<p><strong>3.4 收尾边界（1-25、2-15）</strong></p>
+<ul><li>收尾后客户提缺陷/需求 → 走<strong>合同/保修或新项目</strong>，不是往已收尾项目里塞变更。</li><li>完工预算显著偏高（EAC 变化）→ <strong>找根因 + 走变更</strong>，不直接调预算。</li></ul>
+<p><strong>3.5 易错点清单</strong></p>
+<ul><li>✗ 变更不评估直接批/直接干 ✗ 未批变更当"小事先做" ✗ 风险已发生还写登记册不行动</li><li>✓ 先评估再批准 ✓ 发生先查应对计划 ✓ 合规先评估再变更 ✓ 收尾后按合同处理</li></ul>
+<h2 class="module" id="专题-4-·-概念与工具辨析（约-12-题）">专题 4 · 概念与工具辨析（约 12 题）</h2>
+<p><strong>4.1 文档五问（1-27/50、2-1/17/31）</strong></p>
+<ul><li>问<strong>价值/收益</strong>→商业论证/效益管理计划；问<strong>标准/验收</strong>→质量管理计划；问<strong>授权</strong>→章程；问<strong>流程</strong>→项目管理计划；问<strong>沉淀复用</strong>→OPA。</li></ul>
+<p><strong>4.2 工具场景</strong></p>
+<ul><li>追踪"进行中/完成"的工作流 → <strong>看板</strong>（WIP/泳道）最直观（2-2）。</li><li>找流程/测试瓶颈+技能差距 → 流程图 → 培训（1-39）。</li><li>预测项目未来绩效 → <strong>EVM 趋势</strong>（CPI/SPI）不是经验猜测（1-19、2-1）。</li><li>资金在项目层、分工作包执行 → 预算分配到工作包并监控（1-50）。</li></ul>
+<p><strong>4.3 易错点清单</strong></p>
+<ul><li>✗ 用范围管理计划答"信息需求" ✗ 用沟通计划答"授权" ✗ 把 EEF 当 OPA</li><li>✓ 先看清题干问"哪个文档/哪个工具"，按文档五问套</li></ul>
+<h2 class="module" id="专题-5-·-审题与多选（≈10-题）">专题 5 · 审题与多选（≈10 题）</h2>
+<ul><li><strong>先看"你"是谁</strong>（PM/SM/PO/发起人/团队成员）→ 换视角。</li><li><strong>问"首先"</strong> → 收集/了解/记录；<strong>问"避免再发生"</strong> → 答"早识别/先定标准"（1-1、2-17）。</li><li><strong>反向题/EXCEPT</strong>（最不该/除了）→ 找违背 PMI 的那个。</li><li><strong>多选题</strong>：只勾 100% 确定项，漏选优于错选（9 道多选全因漏选丢分）。</li><li>选项全合理时 → 选<strong>解决题干当下问题</strong>的那个（紧扣方向）。</li></ul>
+<h2 class="module" id="总行动（考前-6-天）">总行动（考前 6 天）</h2>
+<ul><li>每天通读本文件一遍（10 分钟）+ 对应《错题精析-117题.md》一类</li><li>五类各做 10 道变体（错题四问闭环），错因归入本表</li><li>9.11 只看：本文件 + 宝典首页 + 手册错题</li></ul>
+      </section>
+
+      <footer class="foot">数据源 lark-ws/pmp/（git 私有仓库）· 学习站自动同步 · 更新于 2026-09-06 19:31 · author: shifan</footer>
     </main>
   </div>
 </div>
@@ -1855,6 +1905,7 @@ var tabBtns = document.querySelectorAll('.tabbar button');
 function showTab(name) {
   tabBtns.forEach(function(x){ x.classList.toggle('on', x.dataset.tab === name); });
   document.getElementById('exam').classList.toggle('hidden', name !== 'exam');
+  document.getElementById('err').classList.toggle('hidden', name !== 'err');
   document.getElementById('kb').classList.toggle('hidden', name !== 'kb');
   document.getElementById('days').classList.toggle('hidden', name !== 'days');
   document.getElementById('pts').classList.toggle('hidden', name !== 'pts');
