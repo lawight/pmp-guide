@@ -266,6 +266,7 @@ main .explain strong { color:#0044cc; font-weight:600; }
       <input id="q" type="search" placeholder="搜索考点 / 关键词，如 EVM、冲突、WIP…">
       <div class="cd-inline" title="距 9.12 考试">距考试 <span id="cd-days2">—</span>天 <span id="cd-hms2">--:--:--</span></div>
       <div class="tabbar">
+        <button data-tab="rule">⚡ 通用规律卡</button>
         <button data-tab="last">🎯 最后一眼</button>
         <button data-tab="rev">📋 错题总复盘</button>
         <button data-tab="off">🏫 官方解析117题</button>
@@ -378,6 +379,48 @@ sprint/迭代/站会 → 敏捷：加需求→下个Backlog｜遇阻→SM清障�
 <ul><li><strong>节奏</strong>：180 题 / 230 分钟 ≈ 75 秒/题；单题超 2 分钟<strong>标记跳过</strong>；最后留 15 分钟回填标记题</li><li><strong>审题</strong>：看清"首先/最重要/EXCEPT"；多选题别漏项（宁可少选不确定的？——按 PMI：多选通常 2-3 个正确项）</li><li><strong>排除法</strong>：出现"立即/直接/马上/自己决定/口头同意"的选项先怀疑（跳过评估或流程）</li><li><strong>遇不确定</strong>：选"先分析/先沟通/先记录/先评估影响"那一项，正确率最高</li><li><strong>心态</strong>：不会的题标记后继续，不恋战（这是取舍战）</li></ul>
 <h2 class="module" id="五、考前-24-小时清单">五、考前 24 小时清单</h2>
 <ul><li>[ ] 22:30 前睡，不熬夜、不做新题</li><li>[ ] 证件（身份证/准考信息）、提前 1 小时到场</li><li>[ ] 考前只扫本页 + 08-每日必背手册，不碰新知识</li><li>[ ] 进场前深呼吸：你的分数已过线（68%/67%），把错题反射卡用上就是稳过</li></ul></section>
+
+      <section id="rule" class="hidden"><h2>通用解题规律卡（基于 7 套 1260 题官方解析提炼）</h2>
+<blockquote><p>数据基础：模拟一~七共 7 套卷、1262 条官方解析的规律统计（2026-09-11）。</p><p>用法：考前扫一遍；考场每题先想"这题属于哪条规律"。</p></blockquote>
+<h2 class="module" id="官方解析的关注点分布（1262-条解析关键词命中）">官方解析的关注点分布（1262 条解析关键词命中）</h2>
+<ul><li>敏捷/迭代/Backlog：<strong>306 条（24%）</strong> ← 最大</li><li><strong>"仅仅/只是/没有管理/不解决问题"类否定：224 条（18%）</strong> ← 官方最爱批的诱饵</li><li><strong>上报/升级/找发起人：146 条（12%）</strong> ← 高频错误选项</li><li>合作/共识/双方：107 条（8%）</li><li>先沟通/先了解需求：95 条（8%）</li><li>授权/教练/培训：84 条（7%）</li><li>管理干系人参与：83 条（7%）</li><li>走变更流程：66 条（5%）｜预防优于检查：65 条（5%）</li><li>先评估影响：56 条（4%）｜问题vs风险：54 条（4%）</li><li>团队自组织/支持团队：43 条（3%）｜记录/登记：42 条（3%）｜经验教训/收尾移交：44 条（3%）</li></ul>
+<h2 class="module" id="十五条通用规律（考场反射）">十五条通用规律（考场反射）</h2>
+<p><strong>1｜"告知、记录、上报"是万能诱饵</strong>（官方批了 224 条）</p>
+<blockquote><p>官方原话："仅仅是简单地告知……<strong>没有管理干系人</strong>""没有说清楚如何解决""不解决问题"</p></blockquote>
+<p>→ 正解永远是<strong>能推进事情的动作</strong>：管理参与、了解需求、明确期望、促成对话、移交收尾</p>
+<p><strong>2｜上报/升级几乎必错</strong>（146 条）</p>
+<p>→ 除非题目明确"超出 PM 权限/无法推动"，否则先自己处理（评估、沟通、协调）</p>
+<p><strong>3｜敏捷题占 24%，核心就三句</strong></p>
+<p>→ <strong>需求优先级找 PO</strong>｜<strong>技术方案团队定</strong>｜<strong>障碍由 SM 清</strong>；进展看燃尽图，反馈靠评审</p>
+<p>→ "敏捷背景 ≠ 敏捷考点"：很多题只是故事在敏捷环境，问的是通用逻辑（先评估影响、管理干系人）</p>
+<p><strong>4｜遇问题先评估影响</strong>（56 条）</p>
+<blockquote><p>"先评估""先分析""了解影响"——所有"立即行动"类选项先怀疑</p></blockquote>
+<p><strong>5｜冲突 → 合作 / 双方直接对话</strong>（107 条）</p>
+<blockquote><p>官方原话："<strong>冲突管理最好的方法就是合作解决问题</strong>"</p></blockquote>
+<p>→ 只处理一方的选项都错；分歧<strong>未升级</strong>时让团队自行解决（PM 不介入）</p>
+<p><strong>6｜干系人 → 管理参与 + 先了解需求</strong>（95+83 条）</p>
+<p>→ 开会议、共同审查文件、建立沟通渠道；<strong>不选</strong>分发材料/单纯解释</p>
+<p><strong>7｜变更 → 走流程</strong>（66 条）</p>
+<p>→ 记录 → 评估（含整体影响）→ 审批 → 更新；变更<strong>泛滥</strong>则考虑增量交付/敏捷</p>
+<p><strong>8｜质量 → 预防 > 检查</strong>（65 条）</p>
+<p>→ 明确标准/期望（源头）优于检查监控；7 工具场景（帕累托抓重点、鱼骨找根因、控制图看受控）</p>
+<p><strong>9｜问题 vs 风险</strong>（54 条）</p>
+<blockquote><p>"<strong>可能</strong>导致" = 风险（风险登记册）；"<strong>发现/已经</strong>" = 问题（问题日志）</p></blockquote>
+<p>→ 未知风险不记录在登记册，也不动用应急储备</p>
+<p><strong>10｜人员问题 → 授权/教练/培训</strong>（84 条）</p>
+<p>→ 不微管理、不公开处罚、不换人；能培训/结对就不外包</p>
+<p><strong>11｜收尾 → 经验教训 + 移交</strong>（44 条）</p>
+<p>→ 问题解决后总结经验教训（防再发）；收益待运营体现则做移交</p>
+<p><strong>12｜价值交付导向</strong>（16 条）</p>
+<p>→ 敏捷/混合题的正解常是"按业务价值增量交付"</p>
+<p><strong>13｜从源头解决</strong>（29 条）</p>
+<p>→ 报完成未完成 → 明确期望；标准不清 → 定义 DoD/验收标准；不选检查、监控</p>
+<p><strong>14｜团队已有共识 → 支持</strong>（43 条）</p>
+<p>→ 团队自组织范畴的结论，PM 支持执行（不再讨论、不上报）</p>
+<p><strong>15｜计算题必须默熟</strong></p>
+<blockquote><p>EVM（SV/CV/SPI/CPI、EAC 典型÷CPI、非典型加缺口、TCPI）；EMV=概率×影响（含负值）；</p><p>关键路径=最长路径；PERT=(O+4M+P)÷6；沟通渠道=n(n−1)÷2</p></blockquote>
+<h2 class="module" id="你个人的三条高危点（基于-4-套卷-181-错题-+-68-蒙对题）">你个人的三条高危点（基于 4 套卷 181 错题 + 68 蒙对题）</h2>
+<ol><li><strong>人员题靠猜</strong>（模拟四人员类：30 错 + 24 蒙对 ≈ 全卷 30%）→ 规律 1、5、6、10 是你的补丁</li><li><strong>爱选"程序正确但不解决问题"的选项</strong>（告知/登记/上报/检查）→ 规律 1、2 直接纠偏</li><li><strong>"可能 vs 已经"没分清</strong>（风险/问题）→ 规律 9</li></ol></section>
 
       <section id="rev" class="hidden"><h2>错题总复盘 · 117 题全整理（模拟一 122/180 · 模拟二 121/180）</h2>
 <blockquote><p>用法：① 先看五张反射卡（思维纠正）② 再按类别扫逐题（每题只记"下次反射"）③ 考前只看卡。</p><p>错因代码：①顺序错 ②角色错 ③概念/工具混 ④敏捷缺失 ⑤人本/沟通缺 ⑥情境二选一 ⑦流程漏步 ⑧审题(EXCEPT/多选)。</p></blockquote>
@@ -2818,7 +2861,7 @@ CPFF：总价 = 实际成本 + 初始估算 × 固定百分比（费用不随实
 <blockquote><p>注：# 为卷内错题序号（非原卷题号）；错因为基于题干摘要的推理，个别题如与你的真实场景有出入，以原题批注为准。</p></blockquote>
       </section>
 
-      <footer class="foot">数据源 lark-ws/pmp/（git 私有仓库）· 学习站自动同步 · 更新于 2026-09-11 19:17 · author: shifan</footer>
+      <footer class="foot">数据源 lark-ws/pmp/（git 私有仓库）· 学习站自动同步 · 更新于 2026-09-11 20:51 · author: shifan</footer>
     </main>
   </div>
 </div>
@@ -2937,6 +2980,7 @@ function showTab(name) {
   document.getElementById('dia').classList.toggle('hidden', name !== 'dia');
   document.getElementById('manual').classList.toggle('hidden', name !== 'manual');
   document.getElementById('last').classList.toggle('hidden', name !== 'last');
+  document.getElementById('rule').classList.toggle('hidden', name !== 'rule');
   document.getElementById('rev').classList.toggle('hidden', name !== 'rev');
   document.getElementById('off').classList.toggle('hidden', name !== 'off');
   document.getElementById('mk').classList.toggle('hidden', name !== 'mk');
