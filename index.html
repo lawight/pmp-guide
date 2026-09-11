@@ -266,13 +266,13 @@ main .explain strong { color:#0044cc; font-weight:600; }
       <input id="q" type="search" placeholder="搜索考点 / 关键词，如 EVM、冲突、WIP…">
       <div class="cd-inline" title="距 9.12 考试">距考试 <span id="cd-days2">—</span>天 <span id="cd-hms2">--:--:--</span></div>
       <div class="tabbar">
+        <button data-tab="last" class="on">🎯 最后一眼</button>
         <button data-tab="rule">⚡ 通用规律卡</button>
-        <button data-tab="last">🎯 最后一眼</button>
         <button data-tab="rev">📋 错题总复盘</button>
         <button data-tab="off">🏫 官方解析117题</button>
         <button data-tab="mk">⭐ 标记题(蒙对清单)</button>
         <button data-tab="m4w">🆕 模拟四错题(64)</button>
-        <button data-tab="exam" class="on">📌 考试宝典</button>
+        <button data-tab="exam">📌 考试宝典</button>
         <button data-tab="err">易错精讲</button>
         <button data-tab="errlist">错题精析</button>
         <button data-tab="manual">必背手册</button>
@@ -289,7 +289,7 @@ main .explain strong { color:#0044cc; font-weight:600; }
     </div>
 
     <main>
-      <section id="exam">
+      <section id="exam" class="hidden">
         <div class="exam-nav">
           <span class="exam-nav-t">冲刺直达：</span>
           <a data-goto="manual">必背手册</a>
@@ -342,7 +342,7 @@ sprint/迭代/站会 → 敏捷：加需求→下个Backlog｜遇阻→SM清障�
 <p>明细表（文档辨析全表/决策顺序/全题型归类）→ <strong>必背手册第 12 章</strong>。</p>
       </section>
 
-      <section id="last" class="hidden"><h2>考前最后一眼（最终版 · 睡前 + 明早各看一次）</h2>
+      <section id="last"><h2>考前最后一眼（最终版 · 睡前 + 明早各看一次）</h2>
 <blockquote><p>2026-09-11 夜 · 基于 7 套 1260 题官方解析 + 你 4 套作答卷（181 错题 / 68 蒙对）+ 今晚 20 道变体验证</p></blockquote>
 <p>---</p>
 <h2>【第一屏 · 现在看，然后睡】</h2>
