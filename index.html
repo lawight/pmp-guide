@@ -266,6 +266,8 @@ main .explain strong { color:#0044cc; font-weight:600; }
       <input id="q" type="search" placeholder="搜索考点 / 关键词，如 EVM、冲突、WIP…">
       <div class="cd-inline" title="距 9.12 考试">距考试 <span id="cd-days2">—</span>天 <span id="cd-hms2">--:--:--</span></div>
       <div class="tabbar">
+        <button data-tab="last">🎯 最后一眼</button>
+        <button data-tab="rev">📋 错题总复盘</button>
         <button data-tab="exam" class="on">📌 考试宝典</button>
         <button data-tab="err">易错精讲</button>
         <button data-tab="errlist">错题精析</button>
@@ -335,6 +337,201 @@ sprint/迭代/站会 → 敏捷：加需求→下个Backlog｜遇阻→SM清障�
 <p>考前 1 周：只看本页 + 手册轮次 + 错题复盘 + 模拟，不再学新。</p>
 <p>明细表（文档辨析全表/决策顺序/全题型归类）→ <strong>必背手册第 12 章</strong>。</p>
       </section>
+
+      <section id="last" class="hidden"><h2>考前最后一眼（9.11 睡前 / 9.12 进场前扫）</h2>
+<blockquote><p>来源：117 道错题（模拟一 122/180 · 模拟二 121/180）的全部纠正精华。进场前只扫这一页。</p></blockquote>
+<h2 class="module" id="一、五张反射卡（最关键）">一、五张反射卡（最关键）</h2>
+<p><strong>卡1 · 敏捷 6 条</strong></p>
+<p>① 需求变 → 进 Backlog 由 PO 排序（不硬塞、不延 Sprint）</p>
+<p>② 团队能力/承诺 → 团队自评（回顾/规划中定）</p>
+<p>③ 技术分歧 → 团队自决，SM 促共识</p>
+<p>④ 干系人要进展 → 评审会演示增量</p>
+<p>⑤ 需求不明 → 退回细化到 DoR 再开工</p>
+<p>⑥ 范围 vs 日期冲突 → 砍范围保日期</p>
+<p><strong>卡2 · 角色边界</strong></p>
+<p>PO = 做什么、先做什么（排序/价值）｜SM = 顺不顺（清障/促共识）｜团队 = 怎么做、做多少（技术/容量）｜PM = 护转型、对齐期望</p>
+<p><strong>卡3 · 人本优先</strong></p>
+<p>人出状况 → 先私下、先问因、再谈方案（不公开处罚、不微管理、不采信单方）</p>
+<p>仆人式领导 ≠ 放任：授权+清障，但该定方向时出面</p>
+<p><strong>卡4 · 变更闭环</strong></p>
+<p>记录 → 评估（含整体影响）→ 审批 → 更新</p>
+<p>三个坑：口头承诺 ✗ 自己拍板 ✗ 未批先干 ✗</p>
+<p><strong>卡5 · 二选一偏好（两个都对时选它）</strong></p>
+<p>先内部解决 > 外包换人｜先定规则框架 > 直接执行｜先适配组织 > 让敏捷妥协｜先对齐期望 > 硬推</p>
+<h2 class="module" id="二、高频陷阱速览（按类别）">二、高频陷阱速览（按类别）</h2>
+<p><strong>敏捷（38 道中最高频）</strong></p>
+<ul><li>敏捷遇审计 → 敏捷重合规，交证据与流程</li><li>高不确定性 → 短迭代+快速反馈+增量验证</li><li>Backlog 膨胀+固定日期 → 范围换时间</li><li>评审会提意见 → 进 Backlog / 回顾改进，不当场大改</li><li>迭代中多做了功能 → 镀金，移除/归 Backlog</li><li>固定价合同+敏捷 → 先定义"合同如何支持迭代"</li></ul>
+<p><strong>团队/冲突（21 道）</strong></p>
+<ul><li>成员行为退化 → 私下找根因 + 教练</li><li>两人冲突 → 私下分别谈 + 促成合作（不公开裁决）</li><li>虚拟团队 → 先统一平台/会议规范/参与规则</li><li>跨公司组队 → 先定协作规则与冲突解决机制</li><li>干系人绕过团队找发起人 → 重开沟通渠道、角色对齐</li></ul>
+<p><strong>进度（11 道）</strong></p>
+<ul><li>关键路径延迟 → 先评估影响再决策</li><li>有新增资源 → 先评估关键路径影响再加班</li><li>压缩工期 → 守关键路径 + 评估质量风险</li><li>预测绩效 → 用 EVM 趋势（CPI/SPI）</li><li>关键资源离职 → 先查风险应对计划/资源池</li></ul>
+<p><strong>变更（9 道）</strong></p>
+<ul><li>大量变更 → 先评估整体影响，再逐一提 CCB</li><li>流程/HR 变更 → 也走变更管理</li><li>新法规日期未定 → 评估影响+做储备</li><li>新干系人提改 → 一样先记录变更请求</li><li>承包商未批就改 → 违规，要求走流程</li></ul>
+<p><strong>质量（7 道）</strong></p>
+<ul><li>完工后客户要修复 → 合同/保修处理，非新变更</li><li>发现瓶颈 → 先分析（技能差距）→ 培训</li><li>合规要求 → 写进质量计划 + 验证</li><li>预算异常变动 → 根因 + 走变更</li><li>敏感数据误发 → 按沟通计划权限分发</li></ul>
+<h2 class="module" id="三、计算速查（进考场前默一遍）">三、计算速查（进考场前默一遍）</h2>
+<ul><li><strong>EVM</strong>：SV=EV−PV｜CV=EV−AC｜SPI=EV/PV｜CPI=EV/AC（EV 在上，好于 1 就好）</li><li><strong>EAC</strong>：典型=BAC÷CPI｜非典型=AC+(BAC−EV)｜ETC=EAC−AC｜TCPI=(BAC−EV)/(BAC−AC)</li><li><strong>关键路径</strong>：最长路径=最短工期，浮动=0</li><li><strong>PERT</strong>：(O+4M+P)÷6，标准差=(P−O)÷6</li><li><strong>沟通渠道</strong>：n(n−1)÷2</li><li><strong>EMV</strong>：概率×影响，取最大期望</li></ul>
+<h2 class="module" id="四、考场执行">四、考场执行</h2>
+<ul><li><strong>节奏</strong>：180 题 / 230 分钟 ≈ 75 秒/题；单题超 2 分钟<strong>标记跳过</strong>；最后留 15 分钟回填标记题</li><li><strong>审题</strong>：看清"首先/最重要/EXCEPT"；多选题别漏项（宁可少选不确定的？——按 PMI：多选通常 2-3 个正确项）</li><li><strong>排除法</strong>：出现"立即/直接/马上/自己决定/口头同意"的选项先怀疑（跳过评估或流程）</li><li><strong>遇不确定</strong>：选"先分析/先沟通/先记录/先评估影响"那一项，正确率最高</li><li><strong>心态</strong>：不会的题标记后继续，不恋战（这是取舍战）</li></ul>
+<h2 class="module" id="五、考前-24-小时清单">五、考前 24 小时清单</h2>
+<ul><li>[ ] 22:30 前睡，不熬夜、不做新题</li><li>[ ] 证件（身份证/准考信息）、提前 1 小时到场</li><li>[ ] 考前只扫本页 + 08-每日必背手册，不碰新知识</li><li>[ ] 进场前深呼吸：你的分数已过线（68%/67%），把错题反射卡用上就是稳过</li></ul></section>
+
+      <section id="rev" class="hidden"><h2>错题总复盘 · 117 题全整理（模拟一 122/180 · 模拟二 121/180）</h2>
+<blockquote><p>用法：① 先看五张反射卡（思维纠正）② 再按类别扫逐题（每题只记"下次反射"）③ 考前只看卡。</p><p>错因代码：①顺序错 ②角色错 ③概念/工具混 ④敏捷缺失 ⑤人本/沟通缺 ⑥情境二选一 ⑦流程漏步 ⑧审题(EXCEPT/多选)。</p></blockquote>
+<p>---</p>
+<h2 class="module" id="一、五张反射卡（最关键，先背这五条）">一、五张反射卡（最关键，先背这五条）</h2>
+<p><strong>卡1 · 敏捷 6 条</strong></p>
+<p>① 需求变 → 进 Backlog 由 PO 排序（不硬塞、不延 Sprint）② 团队能力/承诺 → 团队自评（回顾/规划中定）③ 技术分歧 → 团队自决，SM 促共识 ④ 干系人要进展 → 评审会演示增量 ⑤ 需求不明 → 退回细化到 DoR 再开工 ⑥ 范围 vs 日期冲突 → 砍范围保日期</p>
+<p><strong>卡2 · 角色边界</strong></p>
+<p>PO = 做什么/先做什么（排序、价值）｜SM = 顺不顺（清障、促共识）｜团队 = 怎么做/做多少（技术、容量）｜PM = 护转型、对齐期望</p>
+<p><strong>卡3 · 人本优先</strong></p>
+<p>人出状况 → 先私下、先问因、再谈方案（不公开处罚、不微管理、不采信单方）；仆人式领导 ≠ 放任（授权+清障，但该定方向时出面）</p>
+<p><strong>卡4 · 变更闭环</strong></p>
+<p>记录 → 评估（含整体影响）→ 审批 → 更新；三个坑：口头承诺 ✗ 自己拍板 ✗ 未批先干 ✗</p>
+<p><strong>卡5 · 二选一偏好（两个都对时选它）</strong></p>
+<p>先内部解决 > 外包换人｜先定规则框架 > 直接执行｜先适配组织 > 让敏捷妥协｜先对齐期望 > 硬推</p>
+<p>---</p>
+<h2 class="module" id="二、逐题复盘（按类别）">二、逐题复盘（按类别）</h2>
+<h4>A. 敏捷/混合（38 道 = 最大失分区）</h4>
+<div class="twrap"><table><thead><tr><th>#</th><th>场景</th><th>我→正</th><th>反射（下次这样想）</th></tr></thead><tbody>
+<tr><td>1-2</td><td>回顾后加班交付：能力 vs 承诺</td><td>B→C</td><td>团队在回顾中自评容量与承诺，不压工期</td></tr>
+<tr><td>1-3</td><td>Backlog 梳理：初始发布缺项</td><td>B→C</td><td>PO 与团队核对发布范围，补进 Backlog</td></tr>
+<tr><td>1-4</td><td>团队对敏捷日常"厌倦"</td><td>A→D</td><td>仆人式/倾听再定仪式；问因不猜</td></tr>
+<tr><td>1-6</td><td>预测→敏捷转型、PM 角色</td><td>B→C</td><td>转型期先对齐干系人期望/培训，不硬切</td></tr>
+<tr><td>1-7</td><td>站会迟到成员</td><td>C→D</td><td>先私下了解原因（人本），不公开处罚</td></tr>
+<tr><td>1-9</td><td>团队 UX 方法分歧</td><td>C→D</td><td>技术性分歧团队自决，勿上升</td></tr>
+<tr><td>1-14</td><td>老 Scrum 团队接新技术项目</td><td>C→D</td><td>老团队可自主组建/用刺探，不强行指派</td></tr>
+<tr><td>1-24</td><td>敏捷项目遇审计</td><td>C→B</td><td>敏捷重合规：审计要证据与流程符合</td></tr>
+<tr><td>1-26</td><td>混合项目无本地敏捷资源</td><td>B→C</td><td>培训现有团队/结对，先内部解决不外包</td></tr>
+<tr><td>1-31</td><td>迭代中合规要求</td><td>D→C</td><td>仍走"评估→提变更→进 Backlog"</td></tr>
+<tr><td>1-35</td><td>预测→敏捷，CFO 关心财务功能</td><td>A→B</td><td>对齐价值/收益，跨职能沟通</td></tr>
+<tr><td>1-38</td><td>高不确定性用敏捷管风险</td><td>A→D</td><td>短迭代+快速反馈+增量验证</td></tr>
+<tr><td>1-40</td><td>迭代依赖数据不可访问</td><td>B→A</td><td>PM/SM 帮团队清障：先明确障碍与选项</td></tr>
+<tr><td>1-44</td><td>固定发布日期+Backlog 膨胀</td><td>A→B</td><td>范围换时间：砍需求保发布</td></tr>
+<tr><td>1-48</td><td>Backlog 梳理时业务干系人缺席</td><td>A→B</td><td>先约业务对齐，不替客户拍</td></tr>
+<tr><td>1-49</td><td>董事会想看进展</td><td>A→D</td><td>评审会=演示增量的正式场合</td></tr>
+<tr><td>1-52</td><td>迭代规划时电脑坏</td><td>C→B</td><td>先清障（修设备/替代）=SM 职责</td></tr>
+<tr><td>1-54</td><td>站会列障碍求排优先级</td><td>B→C</td><td>排优先级=PO 职责，SM 协助清障</td></tr>
+<tr><td>2-7</td><td>增量交付保顺利</td><td>C→A</td><td>固定时间盒+DoD+可演示增量</td></tr>
+<tr><td>2-10</td><td>评审提工作流低效</td><td>A→C</td><td>收反馈→进 Backlog/回顾，不当场大改</td></tr>
+<tr><td>2-14</td><td>需求不明致产品问题</td><td>D→B</td><td>先澄清需求/定义 DoR，再开发</td></tr>
+<tr><td>2-16</td><td>迭代期低承诺/冲突</td><td>B→A</td><td>SM 引导/培训+回顾</td></tr>
+<tr><td>2-19</td><td>迭代交付多做了功能</td><td>B→D</td><td>镀金：移除/归 Backlog，按 DoD 核对</td></tr>
+<tr><td>2-23</td><td>过渡期管理低风险</td><td>D→B</td><td>低风险可接受+持续评估，团队参与评审</td></tr>
+<tr><td>2-25</td><td>供应商引入混合方法</td><td>A→C</td><td>先定混合框架/规则并培训</td></tr>
+<tr><td>2-26</td><td>迭代中技术争论</td><td>C→A</td><td>技术由团队决定，SM 促共识</td></tr>
+<tr><td>2-27</td><td>混合方法能力建设</td><td>D→A</td><td>培训聚焦团队引导/敏捷</td></tr>
+<tr><td>2-28</td><td>迭代中供应商交付违约</td><td>C→D</td><td>影响评估→变更/重排 Backlog</td></tr>
+<tr><td>2-30</td><td>迭代规划需求不明确</td><td>A→C</td><td>退回细化（DoR），不硬开工</td></tr>
+<tr><td>2-36</td><td>PMO 与敏捷</td><td>B→D</td><td>PMO 转型支持团队，不用旧指标压</td></tr>
+<tr><td>2-39</td><td>混合分阶段</td><td>C→D</td><td>阶段间交接/标准明确</td></tr>
+<tr><td>2-40</td><td>敏捷团队孤立缺协作</td><td>C→B</td><td>面对面/结对/共同工作区</td></tr>
+<tr><td>2-41</td><td>报告显示已上市但项目开发中</td><td>B→A</td><td>审题：报告口径要先对齐</td></tr>
+<tr><td>2-43</td><td>固定价合同+敏捷</td><td>C→D</td><td>先定义"合同如何支持迭代"</td></tr>
+<tr><td>2-54</td><td>发起人天天改优先级</td><td>C→D</td><td>变更进 Backlog 由 PO 排序</td></tr>
+<tr><td>2-55</td><td>交付成功但业务干系人不满</td><td>B→A</td><td>期望未管理：验收≠满意</td></tr>
+<tr><td>2-56</td><td>有影响力干系人对抗敏捷</td><td>A→D</td><td>教育/对齐价值，试点+数据说话</td></tr>
+<tr><td>2-59(多)</td><td>固定时空+敏捷核心组件</td><td>A→C</td><td>"固定范围+可变细节"混合解</td></tr>
+</tbody></table></div>
+<h4>B. 团队/冲突/领导（21 道）</h4>
+<div class="twrap"><table><thead><tr><th>#</th><th>场景</th><th>我→正</th><th>反射</th></tr></thead><tbody>
+<tr><td>1-1</td><td>客户内部有人觉目标未达</td><td>B→C</td><td>事先识别所有干系人并让其参与协议讨论</td></tr>
+<tr><td>1-10</td><td>高绩效成员行为退化</td><td>B→A</td><td>私下沟通找根因+教练支持</td></tr>
+<tr><td>1-13</td><td>状态报告数据多</td><td>A→C</td><td>信息适量、对准受众，别堆料</td></tr>
+<tr><td>1-41</td><td>多国团队整体差</td><td>C→D</td><td>先统一协作平台/会议规范+团建</td></tr>
+<tr><td>1-42</td><td>4 国虚拟团队配 PM</td><td>C→B</td><td>先建沟通规范/参与规则，再分工</td></tr>
+<tr><td>1-43</td><td>教练模式考虑什么</td><td>D→C</td><td>尊重个体发展需求与风格</td></tr>
+<tr><td>1-56(多)</td><td>两成员冲突首两行动</td><td>D→B</td><td>私下分别谈+促成合作，不公开裁决</td></tr>
+<tr><td>1-57(多)</td><td>某时区团队掉队</td><td>C→A</td><td>调整会议时间/一对一辅导</td></tr>
+<tr><td>1-58(多)</td><td>干系人绕过团队找发起人</td><td>A→多选漏</td><td>重开沟通渠道/角色对齐；多选别漏项</td></tr>
+<tr><td>2-5</td><td>团队负责人私自发状态</td><td>C→B</td><td>统一沟通口径：先与 PM 对齐</td></tr>
+<tr><td>2-9</td><td>让成员讲交付影响</td><td>D→C</td><td>领导力=授权+主人翁</td></tr>
+<tr><td>2-11</td><td>全球项目沟通规划</td><td>D→A</td><td>沟通管理计划先行</td></tr>
+<tr><td>2-12</td><td>全球多机构项目</td><td>A→D</td><td>先识别全部干系人，再分群策略</td></tr>
+<tr><td>2-18</td><td>新 PM 带混合资历团队</td><td>B→D</td><td>结对/师徒+授权，别让资深全包</td></tr>
+<tr><td>2-20</td><td>跨公司组队</td><td>A→D</td><td>先定协作规则/冲突解决机制</td></tr>
+<tr><td>2-22</td><td>仆人式领导但进度落后</td><td>D→A</td><td>仆人式≠放任：该设方向时出面</td></tr>
+<tr><td>2-29</td><td>老成员嫌微管理</td><td>A→C</td><td>停止微管理：授权+信任+成长空间</td></tr>
+<tr><td>2-31</td><td>新成员问 OPA</td><td>A→C</td><td>OPA=组织可复用资产，按需取用</td></tr>
+<tr><td>2-35</td><td>效率/ROI 导向</td><td>A→B</td><td>收益导向：让团队看到价值</td></tr>
+<tr><td>2-46</td><td>混合需求理解不一致</td><td>A→B</td><td>定义需求与验收标准（DoD）共享</td></tr>
+<tr><td>2-49</td><td>新人告状同事人际问题</td><td>B→C</td><td>先私下了解/调解，不采信单方</td></tr>
+</tbody></table></div>
+<h4>C. 进度（11 道）</h4>
+<div class="twrap"><table><thead><tr><th>#</th><th>场景</th><th>我→正</th><th>反射</th></tr></thead><tbody>
+<tr><td>1-16</td><td>工件优先级 vs 交付延迟</td><td>C→D</td><td>里程碑/承诺优先：重排优先级</td></tr>
+<tr><td>1-17</td><td>加班致误解+发起人拨资源</td><td>B→A</td><td>有新增资源先评估关键路径影响</td></tr>
+<tr><td>1-19</td><td>预测未来绩效</td><td>B→C</td><td>用 EVM 趋势（CPI/SPI）</td></tr>
+<tr><td>1-20</td><td>缺专业资源救项目</td><td>C→A</td><td>先评估资源缺口/影响，再调配</td></tr>
+<tr><td>1-28</td><td>13 月压缩</td><td>D→C</td><td>守关键路径+评估质量/风险</td></tr>
+<tr><td>1-33</td><td>电话会成员总打断</td><td>D→C</td><td>先定会议规则，主持人控场</td></tr>
+<tr><td>1-45</td><td>里程碑奖金+返工</td><td>C→A</td><td>质量优先：先找根因减返工</td></tr>
+<tr><td>1-46</td><td>关键资源突发离职</td><td>B→A</td><td>先查风险应对计划/资源池</td></tr>
+<tr><td>2-2</td><td>接管项目追踪 WIP/完成</td><td>B→A</td><td>看板最直观（在制品流）</td></tr>
+<tr><td>2-24</td><td>关键路径延迟</td><td>D→A</td><td>先评估影响再决策</td></tr>
+<tr><td>2-53</td><td>全员采用新产品</td><td>C→D</td><td>变革/采用管理：识别阻力+培训</td></tr>
+</tbody></table></div>
+<h4>D. 变更（9 道）</h4>
+<div class="twrap"><table><thead><tr><th>#</th><th>场景</th><th>我→正</th><th>反射</th></tr></thead><tbody>
+<tr><td>1-11</td><td>大量变更可能致目标失败</td><td>B→A</td><td>先评估整体影响，再逐一提 CCB</td></tr>
+<tr><td>1-15</td><td>HR 流程变更影响</td><td>D→B</td><td>流程变更也走变更管理</td></tr>
+<tr><td>1-21</td><td>新法规实施日期未定</td><td>B→D</td><td>评估影响→变更；不确定处做储备</td></tr>
+<tr><td>1-22</td><td>每日会遇客户需求变</td><td>D→A</td><td>敏捷：变更进 Backlog</td></tr>
+<tr><td>1-23</td><td>干系人要范围外工作+担心资金</td><td>A→B</td><td>走变更流程+商业论证，不口头承诺</td></tr>
+<tr><td>2-3</td><td>加功能但设备不到位</td><td>C→D</td><td>变更批准看"可实施性"</td></tr>
+<tr><td>2-13</td><td>最后阶段+关键路径+2 周</td><td>C→B</td><td>评估影响→提交审批，不自己定</td></tr>
+<tr><td>2-21</td><td>新干系人建议改参数</td><td>C→D</td><td>先记录变更请求（新人同样走流程）</td></tr>
+<tr><td>2-51</td><td>承包商未提变更小改规范</td><td>B→A</td><td>未批变更=违规，要求走流程</td></tr>
+</tbody></table></div>
+<h4>E. 质量（7 道）</h4>
+<div class="twrap"><table><thead><tr><th>#</th><th>场景</th><th>我→正</th><th>反射</th></tr></thead><tbody>
+<tr><td>1-25</td><td>工料合同完成后客户要修复</td><td>B→D</td><td>收尾后缺陷=合同/保修处理</td></tr>
+<tr><td>1-39</td><td>流程图找测试瓶颈</td><td>B→C</td><td>瓶颈→技能差距→培训</td></tr>
+<tr><td>1-55</td><td>飞行软件监管要求</td><td>A→C</td><td>合规写进质量计划+验证</td></tr>
+<tr><td>2-6</td><td>干系人嫌测试报告晚</td><td>D→B</td><td>沟通计划定报告频率/格式</td></tr>
+<tr><td>2-15</td><td>完工预算显著变动</td><td>B→A</td><td>根因+走变更</td></tr>
+<tr><td>2-17</td><td>保交付满足验收标准</td><td>A→B</td><td>QC+核对验收标准，预防为主</td></tr>
+<tr><td>2-42</td><td>成本报告误发全团队</td><td>D→B</td><td>敏感信息按沟通计划权限分发</td></tr>
+</tbody></table></div>
+<h4>F. 采购/合同（6 道）</h4>
+<div class="twrap"><table><thead><tr><th>#</th><th>场景</th><th>我→正</th><th>反射</th></tr></thead><tbody>
+<tr><td>1-8</td><td>合同部资源延迟</td><td>D→B</td><td>先查合同条款/对流程</td></tr>
+<tr><td>1-30</td><td>客户要求不清+外部承包商</td><td>C→A</td><td>澄清需求+合同责任界定</td></tr>
+<tr><td>1-37</td><td>救火项目合同重罚</td><td>D→B</td><td>先评估合同条款/索赔影响</td></tr>
+<tr><td>2-4</td><td>周采购+多供应商压价</td><td>B→C</td><td>长期需求：合同框架/集中采购</td></tr>
+<tr><td>2-47</td><td>供应商牌照过期</td><td>B→C</td><td>先查合同 SLA/索赔条款</td></tr>
+<tr><td>2-52</td><td>供应商称完成索尾款</td><td>C→D</td><td>按合同验收标准核实再付款</td></tr>
+</tbody></table></div>
+<h4>G. 干系人/沟通/授权（7 道）</h4>
+<div class="twrap"><table><thead><tr><th>#</th><th>场景</th><th>我→正</th><th>反射</th></tr></thead><tbody>
+<tr><td>1-29</td><td>数字产品愿景不清</td><td>D→C</td><td>愿景/期望管理：先对齐再执行</td></tr>
+<tr><td>1-32</td><td>层级组织"告知式"文化</td><td>A→D</td><td>转型教练：教团队自组织</td></tr>
+<tr><td>1-36</td><td>BA 要顾问投入被拒</td><td>A→C</td><td>管理干系人参与/重排，先沟通</td></tr>
+<tr><td>1-51</td><td>矩阵组织新沟通法</td><td>A→B</td><td>信息量身定制，不搞一刀切</td></tr>
+<tr><td>1-53</td><td>干系人抱怨没收到交付</td><td>C→B</td><td>先核实"发了没/收到没"，再补发</td></tr>
+<tr><td>2-8</td><td>分阶段上线+干系人批</td><td>A→D</td><td>阶段门：验收标准/批准机制先定</td></tr>
+<tr><td>2-45</td><td>跨国汇报频被要更新</td><td>D→C</td><td>与上级对齐汇报频率/内容</td></tr>
+</tbody></table></div>
+<h4>H. 情境/综合（12 道）</h4>
+<div class="twrap"><table><thead><tr><th>#</th><th>场景</th><th>我→正</th><th>反射</th></tr></thead><tbody>
+<tr><td>1-5</td><td>客户现场发现需求未满足</td><td>C→A</td><td>先安抚+了解缺口（先人后事）</td></tr>
+<tr><td>1-12</td><td>风险变问题+预见延迟</td><td>A→D</td><td>已发生=问题：查应对/评估</td></tr>
+<tr><td>1-18</td><td>全球医疗方案合规担忧</td><td>B→C</td><td>合规风险：评估+登记册+应对</td></tr>
+<tr><td>1-27</td><td>章程后拆工作包</td><td>C→B</td><td>拆 WBS=创建 WBS（识别过程）</td></tr>
+<tr><td>1-34</td><td>现有系统已知问题+集成</td><td>D→A</td><td>已知问题纳入范围/风险登记</td></tr>
+<tr><td>1-47</td><td>团队有热情没经验</td><td>B→D</td><td>培训/导师+渐进承诺</td></tr>
+<tr><td>1-50</td><td>多工作包、项目层资金</td><td>D→B</td><td>按工作包分配预算并监控</td></tr>
+<tr><td>2-1</td><td>中途接手 CPI 落后</td><td>B→A</td><td>先核实 CPI/EVM 数据</td></tr>
+<tr><td>2-34</td><td>规划期技能缺口</td><td>A→C</td><td>先评估（培训/招募）再决定</td></tr>
+<tr><td>2-38</td><td>新隐私法将生效</td><td>A→B</td><td>评估合规影响→变更流程</td></tr>
+<tr><td>2-50</td><td>发起人嫌报告缺信息</td><td>C→A</td><td>问清发起人要什么再补</td></tr>
+<tr><td>2-57(多)</td><td>初级 PM 两周后开工找导师</td><td>B→D</td><td>先了解项目+章程再规划</td></tr>
+<tr><td>2-58(多)</td><td>竞品 8 个月抢先</td><td>B→B</td><td>压缩发布窗口：范围/风险权衡</td></tr>
+</tbody></table></div>
+<p>---</p>
+<h2 class="module" id="三、全局结论与行动">三、全局结论与行动</h2>
+<ol><li><strong>敏捷 32%</strong>：错因集中 ④敏捷缺失 ②角色 ⑤协作 → 练"敏捷树"，多选前先问"PO/SM/团队谁会做"</li><li><strong>团队/人本 17%</strong>：口诀"冲突私下谈、抱怨先倾听、授权不微管"</li><li><strong>流程漏步/顺序错（约 20 道）</strong>：把变更/风险/收尾流程骨架背死，按步骤号选</li><li><strong>概念/工具混</strong>：文档三问 + 工具七场景（回查 08-每日必背手册 第 6/7/12 章）</li><li><strong>多选（9 道）全因漏选</strong>：多选题=保守勾选，100% 确定才选</li><li>两卷稳定 67% = 上述五类习惯性错误；<strong>按五类各做 10 道变体即可破线</strong></li></ol>
+<blockquote><p>注：# 为卷内错题序号（非原卷题号）。</p></blockquote></section>
 
       <section id="kb" class="hidden">
         <nav id="idx" class="idx" aria-label="模块索引"></nav>
@@ -1948,7 +2145,7 @@ CPFF：总价 = 实际成本 + 初始估算 × 固定百分比（费用不随实
 <blockquote><p>注：# 为卷内错题序号（非原卷题号）；错因为基于题干摘要的推理，个别题如与你的真实场景有出入，以原题批注为准。</p></blockquote>
       </section>
 
-      <footer class="foot">数据源 lark-ws/pmp/（git 私有仓库）· 学习站自动同步 · 更新于 2026-09-06 19:54 · author: shifan</footer>
+      <footer class="foot">数据源 lark-ws/pmp/（git 私有仓库）· 学习站自动同步 · 更新于 2026-09-11 16:08 · author: shifan</footer>
     </main>
   </div>
 </div>
@@ -2066,6 +2263,8 @@ function showTab(name) {
   document.getElementById('recap').classList.toggle('hidden', name !== 'recap');
   document.getElementById('dia').classList.toggle('hidden', name !== 'dia');
   document.getElementById('manual').classList.toggle('hidden', name !== 'manual');
+  document.getElementById('last').classList.toggle('hidden', name !== 'last');
+  document.getElementById('rev').classList.toggle('hidden', name !== 'rev');
 }
 tabBtns.forEach(function(b){ b.onclick = function(){ showTab(b.dataset.tab); }; });
 
